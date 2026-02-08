@@ -3,21 +3,111 @@ languageCode = "vi-vn"
 title = "Nhật ký học lập trình"
 theme = "PaperMod"
 
+# PaperMod khuyên bật paginate để list bài nhìn gọn
+paginate = 10
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+# Để có /tags/ /categories/
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
 [params]
-  ShowReadingTime = true
-  ShowCodeCopyButtons = true
+  env = "production"
+  description = "Learning log về C/C++, Linux, Embedded & Computer Vision."
+  author = "Nguyen Duc"
+
   defaultTheme = "auto"
+  disableThemeToggle = false
+
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowToc = true
+  TocOpen = false
+
+  # Home page: kiểu profile nhìn “xịn”
+  [params.profileMode]
+    enabled = true
+    title = "Nguyen Duc"
+    subtitle = "Learning log • C/C++ • Linux • Embedded • Computer Vision"
+    imageUrl = "/images/avatar.png"        # bạn tự thêm ảnh vào static/images/
+    imageTitle = "avatar"
+    imageWidth = 140
+    imageHeight = 140
+    [[params.profileMode.buttons]]
+      name = "Blog"
+      url = "/posts/"
+    [[params.profileMode.buttons]]
+      name = "Projects"
+      url = "/projects/"
+    [[params.profileMode.buttons]]
+      name = "About"
+      url = "/about/"
+
+  # Social icons (PaperMod)
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/saccarozo03"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:saccarozo04@gmail.com"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/"   # sửa sau
+
+  # Search (PaperMod built-in)
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    threshold = 0.4
+    distance = 1000
+    minMatchCharLength = 2
+    keys = ["title", "permalink", "summary", "content"]
+
+  # Nếu bạn muốn mỗi bài có nút "Edit on GitHub"
+  [params.editPost]
+    URL = "https://github.com/saccarozo03/saccarozo03.github.io/tree/main/content"
+    Text = "Suggest edits"
+    appendFilePath = true
 
 [menu]
   [[menu.main]]
-    name = "Blog"
+    name = "Posts"
     url = "/posts/"
     weight = 1
   [[menu.main]]
+    name = "Series"
+    url = "/series/"
+    weight = 2
+  [[menu.main]]
     name = "Tags"
     url = "/tags/"
-    weight = 2
+    weight = 3
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 4
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 3
+    weight = 5
+
+# Tạo page search + RSS/ sitemap tốt hơn
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Markdown render đẹp hơn
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+  [markup.goldmark.renderer]
+    unsafe = true
