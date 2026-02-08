@@ -33,18 +33,32 @@
 &lt;/div&gt;</description>
     </item>
     <item>
-      <title>Tặng cho người yêu xinh gái nhất của Đức</title>
+      <title></title>
       <link>http://localhost:1313/posts/sendto_siimbee/</link>
-      <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/sendto_siimbee/</guid>
-      <description>&lt;h2 id=&#34;con-lợn-của-đức-sớm-đi-ngủ-nhé&#34;&gt;Con lợn của Đức sớm đi ngủ nhé&lt;/h2&gt;
+      <description>&lt;p&gt;title: &amp;ldquo;Tặng người yêu xinh gái của Đức 💖&amp;rdquo;
+date: 2026-02-08&lt;/p&gt;
+&lt;h1 id=&#34;-không-phải-post&#34;&gt;❌ không phải post&lt;/h1&gt;
+&lt;p&gt;type: &amp;ldquo;page&amp;rdquo;
+layout: &amp;ldquo;single&amp;rdquo;&lt;/p&gt;
+&lt;h1 id=&#34;-ẩn-khỏi-list&#34;&gt;👀 ẨN KHỎI LIST&lt;/h1&gt;
+&lt;p&gt;draft: false
+private: true
+noindex: true&lt;/p&gt;
+&lt;h1 id=&#34;-tắt-preview--meta&#34;&gt;🚫 TẮT PREVIEW + META&lt;/h1&gt;
+&lt;h2 id=&#34;disableshare-true&#34;&gt;params:
+disableOG: true
+hideMeta: true
+disableShare: true&lt;/h2&gt;
+&lt;h2 id=&#34;con-lợn-của-đức-sớm-đi-ngủ-nhé&#34;&gt;Con lợn của Đức sớm đi ngủ nhé&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Gửi một chút yêu thương trước khi ngủ 💖
 &lt;img alt=&#34;Ngủ ngon nhé người yêu 💕&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/ngu-ngon.jpg&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;Chúc người đẹp ngủ ngon&lt;/li&gt;
-&lt;li&gt;Ngủ sớm mai còn đi làm ní ơi&lt;/li&gt;
+&lt;li&gt;Ngủ sớm mai còn đi làm ní ơi &amp;mdash;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
   </channel>
