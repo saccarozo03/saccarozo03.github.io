@@ -1,0 +1,23 @@
+baseURL = "https://saccarozo03.github.io/"
+languageCode = "vi-vn"
+title = "Nhật ký học lập trình"
+theme = "PaperMod"
+
+[params]
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  defaultTheme = "auto"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
