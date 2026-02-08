@@ -1,0 +1,21 @@
+/* Tăng cỡ chữ title ở header */
+.logo a {
+  font-size: 1.8rem;   /* mặc định ~1.2rem */
+  font-weight: 700;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .logo a {
+    font-size: 1.4rem;
+  }
+}
+.profile_inner h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+/* Header site title */
+.logo a { font-size: 1.8rem; font-weight: 800; }
+
+/* ProfileMode title (trang Home) */
+.profile_inner h1 { font-size: 2.6rem; font-weight: 900; }

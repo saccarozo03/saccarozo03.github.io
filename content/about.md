@@ -1,30 +1,30 @@
 ---
-title: "Content Placeholder"
-build:
-  render: never
-  list: never
-  publishResources: false
----
-
----
 title: "About"
 date: 2026-02-08
 draft: false
 ---
 
-## Mình là ai?
-Mình ghi lại hành trình học **C/C++**, **Linux/Embedded**, và **Computer Vision** dưới dạng learning log.
+## 👋 Xin chào, mình là Đức
 
-## Mình đang học gì?
-- C/C++ và DSA (ôn lại từ nền tảng)
-- Linux / systemd / networking (NFS/SMB…)
-- Computer Vision (YOLO/OCR) cho bài toán thực tế
+Mình xây dựng blog này như một **learning log** để ghi lại quá trình học và làm việc với **C/C++**, **Linux/Embedded**, và **Computer Vision**.  
+Mục tiêu chính là **hiểu sâu – làm được – và có thể tra lại sau này**.
 
-## Mục tiêu của blog
-- Lưu lại lỗi và cách fix (để sau này tra nhanh)
-- Viết rõ ràng đủ để người khác làm lại được
-- Xây portfolio từ những project nhỏ
+---
 
-## Liên hệ
-- GitHub: https://github.com/saccarozo03
-- Email: saccarozo04@gmail.com
+## 🚀 Mình đang học & làm gì?
+- **C/C++ & DSA**: ôn nền tảng, luyện tư duy thuật toán
+- **Linux / Embedded**: systemd, networking (NFS, SMB), build & debug môi trường
+- **Computer Vision**: YOLO, OCR và các bài toán thực tế
+
+---
+
+## 🎯 Mục tiêu của blog
+- Ghi lại lỗi và cách fix một cách rõ ràng, có thể tái hiện
+- Viết đủ chi tiết để người khác làm theo được
+- Xây dựng portfolio từ các project nhỏ nhưng thực tế
+
+---
+
+## 📬 Liên hệ
+- **GitHub**: https://github.com/saccarozo03  
+- **Email**: saccarozo04@gmail.com

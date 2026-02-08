@@ -9,6 +9,35 @@
     <lastBuildDate>Sun, 08 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h2 id=&#34;-xin-chào-mình-là-đức&#34;&gt;👋 Xin chào, mình là Đức&lt;/h2&gt;
+&lt;p&gt;Mình xây dựng blog này như một &lt;strong&gt;learning log&lt;/strong&gt; để ghi lại quá trình học và làm việc với &lt;strong&gt;C/C++&lt;/strong&gt;, &lt;strong&gt;Linux/Embedded&lt;/strong&gt;, và &lt;strong&gt;Computer Vision&lt;/strong&gt;.&lt;br&gt;
+Mục tiêu chính là &lt;strong&gt;hiểu sâu – làm được – và có thể tra lại sau này&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-mình-đang-học--làm-gì&#34;&gt;🚀 Mình đang học &amp;amp; làm gì?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;C/C++ &amp;amp; DSA&lt;/strong&gt;: ôn nền tảng, luyện tư duy thuật toán&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linux / Embedded&lt;/strong&gt;: systemd, networking (NFS, SMB), build &amp;amp; debug môi trường&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Computer Vision&lt;/strong&gt;: YOLO, OCR và các bài toán thực tế&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-mục-tiêu-của-blog&#34;&gt;🎯 Mục tiêu của blog&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Ghi lại lỗi và cách fix một cách rõ ràng, có thể tái hiện&lt;/li&gt;
+&lt;li&gt;Viết đủ chi tiết để người khác làm theo được&lt;/li&gt;
+&lt;li&gt;Xây dựng portfolio từ các project nhỏ nhưng thực tế&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-liên-hệ&#34;&gt;📬 Liên hệ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/saccarozo03&#34;&gt;https://github.com/saccarozo03&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: &lt;a href=&#34;mailto:saccarozo04@gmail.com&#34;&gt;saccarozo04@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
       <title>Hello World</title>
       <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
@@ -31,6 +60,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Project</title>
+      <link>http://localhost:1313/projects/</link>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -5,7 +5,7 @@ theme = "PaperMod"
 
 # PaperMod khuyên bật paginate để list bài nhìn gọn
 [pagination]
-  pagerSize = 10
+  pagerSize = 15
 
 enableRobotsTXT = true
 buildDrafts = false
@@ -19,21 +19,23 @@ buildExpired = false
   series = "series"
 
 [params]
+  
   env = "production"
   description = "Learning log về C/C++, Linux, Embedded & Computer Vision."
   author = "Saccarozo03"
 
   defaultTheme = "auto"
   disableThemeToggle = false
-
+  customCSS = ["css/custom.css"]
   ShowReadingTime = true
-  ShowShareButtons = true
+  ShowShareButtons = false
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowWordCount = true
   ShowToc = true
   TocOpen = false
+  
 
   # Home page: kiểu profile nhìn “xịn”
   [params.profileMode]
@@ -63,7 +65,7 @@ buildExpired = false
     url = "mailto:saccarozo04@gmail.com"
   [[params.socialIcons]]
     name = "linkedin"
-    url = "https://www.linkedin.com/"   # sửa sau
+    url = "https://www.linkedin.com/in/ti%E1%BA%BFn-%C4%91%E1%BB%A9c-nguy%E1%BB%85n-133104227/"   # sửa sau
 
   # Search (PaperMod built-in)
   [params.fuseOpts]
@@ -113,3 +115,4 @@ buildExpired = false
     lineNos = true
   [markup.goldmark.renderer]
     unsafe = true
+
