@@ -9,13 +9,16 @@ layout: "single"
 # ẨN KHỎI BLOG LIST
 draft: false
 noindex: true
-
+_build:
+  list: never
+  render: always
 # TẮT PREVIEW + META
 params:
   disableOG: true
   hideMeta: true
   disableShare: true
 ---
+
 
 ## Con lợn của Đức sớm đi ngủ nhé 🐷💤
 

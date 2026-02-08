@@ -5,25 +5,13 @@
     <loc>http://localhost:1313/tags/c/</loc>
     <lastmod>2026-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2026-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/hello-world/</loc>
     <lastmod>2026-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/learning-log/</loc>
     <lastmod>2026-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/life/</loc>
-    <lastmod>2026-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/life-/</loc>
-    <lastmod>2026-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/linux/</loc>
-    <lastmod>2026-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/my-life/</loc>
     <lastmod>2026-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
@@ -32,15 +20,16 @@
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
-    <lastmod>2026-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/sendto_siimbee/</loc>
+    <loc>http://localhost:1313/posts/love/</loc>
     <lastmod>2026-02-08T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
     <loc>http://localhost:1313/search/</loc>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
   </url>
 </urlset>
