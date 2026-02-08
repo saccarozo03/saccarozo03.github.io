@@ -21,7 +21,7 @@ buildExpired = false
 [params]
   env = "production"
   description = "Learning log về C/C++, Linux, Embedded & Computer Vision."
-  author = "Nguyen Duc"
+  author = "Saccarozo03"
 
   defaultTheme = "auto"
   disableThemeToggle = false
@@ -38,9 +38,9 @@ buildExpired = false
   # Home page: kiểu profile nhìn “xịn”
   [params.profileMode]
     enabled = true
-    title = "Nguyen Duc"
+    title = "Saccarozo03"
     subtitle = "Learning log • C/C++ • Linux • Embedded • Computer Vision"
-    imageUrl = "/images/avatar.png"        # bạn tự thêm ảnh vào static/images/
+    imageUrl = "/images/pictureprofile.jpg"        # bạn tự thêm ảnh vào static/images/
     imageTitle = "avatar"
     imageWidth = 140
     imageHeight = 140
