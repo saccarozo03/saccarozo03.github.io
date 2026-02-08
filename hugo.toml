@@ -4,7 +4,9 @@ title = "Nhật ký học lập trình"
 theme = "PaperMod"
 
 # PaperMod khuyên bật paginate để list bài nhìn gọn
-paginate = 10
+[pagination]
+  pagerSize = 10
+
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
