@@ -4,7 +4,7 @@
     <title>Learning-Log on Nhật ký học lập trình</title>
     <link>http://localhost:1313/tags/learning-log/</link>
     <description>Recent content in Learning-Log on Nhật ký học lập trình</description>
-    <generator>Hugo -- 0.155.2</generator>
+    <generator>Hugo -- 0.155.3</generator>
     <language>vi-vn</language>
     <lastBuildDate>Sun, 08 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/learning-log/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +15,7 @@
       <guid>http://localhost:1313/posts/hello-world/</guid>
       <description>&lt;h2 id=&#34;hôm-nay-học-gì&#34;&gt;Hôm nay học gì?&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Học về các chuỗi ( string ) trong ngôn ngữ C&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;vấn-đề-gặp-phải&#34;&gt;Vấn đề gặp phải&lt;/h2&gt;
 &lt;ul&gt;

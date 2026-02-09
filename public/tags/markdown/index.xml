@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Markdown on Nhật ký học lập trình</title>
+    <link>http://localhost:1313/tags/markdown/</link>
+    <description>Recent content in Markdown on Nhật ký học lập trình</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Mon, 09 Feb 2026 11:10:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bài 00 — Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
+      <link>http://localhost:1313/posts/use_hogo/</link>
+      <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/use_hogo/</guid>
+      <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Học Lại C on Nhật ký học lập trình</title>
+    <link>http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/</link>
+    <description>Recent content in Học Lại C on Nhật ký học lập trình</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Mon, 09 Feb 2026 10:30:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nhật ký học C ngày 1</title>
+      <link>http://localhost:1313/posts/use_hogo/</link>
+      <pubDate>Mon, 09 Feb 2026 10:30:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/use_hogo/</guid>
+      <description>Tóm tắt nhanh về con trỏ, mảng, và bài tập nhỏ.</description>
+    </item>
+  </channel>
+</rss>
