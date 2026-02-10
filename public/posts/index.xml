@@ -6,20 +6,13 @@
     <description>Recent content in Posts on Nhật ký học lập trình</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Mon, 09 Feb 2026 11:10:00 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
-      <link>http://localhost:1313/posts/use_hogo/</link>
-      <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
-      <guid>http://localhost:1313/posts/use_hogo/</guid>
-      <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
-    </item>
-    <item>
       <title>Bài 1. Hello World</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
+      <link>http://localhost:1313/posts/bai1_hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <guid>http://localhost:1313/posts/bai1_hello-world/</guid>
       <description>&lt;h2 id=&#34;c-is-a-language-for-small-fast-programs&#34;&gt;C is a language for small, fast programs.&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ?&lt;/li&gt;
@@ -96,6 +89,49 @@
 &lt;li&gt;hàm &lt;code&gt;printf()&lt;/code&gt; trong hàm &lt;code&gt;main()&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Tưởng tượng giống hàm toán học &lt;code&gt;f(g(x))&lt;/code&gt; ta coi &lt;code&gt;g(x)&lt;/code&gt; giống &lt;code&gt;x&lt;/code&gt; , thì từ đó ta có &lt;code&gt;f(x)&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Bài 2. Biến và nhập xúât cơ bản trong C</title>
+      <link>http://localhost:1313/posts/bai2_io_var/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bai2_io_var/</guid>
+      <description>&lt;h2 id=&#34;string-way-up-close-chuỗi-trong-ngôn-ngữ-c&#34;&gt;String way up close (Chuỗi trong ngôn ngữ C)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;string&lt;/code&gt; chỉ là mảng ký tự&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Shatter&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;C&lt;/code&gt; nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;sc&#34;&gt;&amp;#39;S&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;h&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;t&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;n&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;e&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Mỗi ký tự chỉ là 1 phần tử trong chuỗi&lt;/li&gt;
+&lt;li&gt;Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục
+như &lt;code&gt;s[0]&lt;/code&gt; và &lt;code&gt;s[1]&lt;/code&gt;
+&lt;img alt=&#34;mô tả về chuỗi nhé&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/bai2_Nhapxuatchuoi/string.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Vậy &lt;code&gt;string&lt;/code&gt; khác gì &lt;code&gt;char&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
+      <link>http://localhost:1313/posts/use_hogo/</link>
+      <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/use_hogo/</guid>
+      <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
     </item>
   </channel>
 </rss>

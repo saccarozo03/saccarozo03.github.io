@@ -163,6 +163,30 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Bài 1. Hello World
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>C is a language for small, fast programs. Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ? Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn. Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể . The way C works. Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : mã máy , một ngôn ngữ mà chỉ toàn 0 và 1. Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy. Để thực hiện điều này , bạn cần 1 cái gọi là trình biên dịch - compiler Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi .c, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó. Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy. 1 2 3 4 5 6 7 8 9 #include &lt;stdio.h&gt; // Dòng này là các thư viện , các hàm đã được viết sẵn // Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất , // Việc của chúng ta là sử dụng mà thôi int main() { printf(&#34;Hello world!&#34;); return 0; } Hàm trong toán học và hàm trong ngôn ngữ lập trình Ví dụ bạn đang có hàm f(x) = 2*x &#43;1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2&#43;1 Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy, 1 printf(&#34;Hello World!&#34;); Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra Ở đây mình truyền tham số hello world! để in ra màn hình Hàm printf() đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v Tiếp đó là giá trị trả về của 1 hàm số , ví dụ ở hàm f(x)=2*x&#43;2 với tham số là 2 , giá trị cần trả về là 4 . 1 return 0; Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc. Khái niệm hàm trong hàm : hàm printf() trong hàm main() Tưởng tượng giống hàm toán học f(g(x)) ta coi g(x) giống x , thì từ đó ta có f(x) </p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-08 00:00:00 +0000 UTC'>February 8, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>516 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
+  <a class="entry-link" aria-label="post link to Bài 1. Hello World" href="http://localhost:1313/posts/bai1_hello-world/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Bài 2. Biến và nhập xúât cơ bản trong C
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = &#34;Shatter&#34;; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {&#39;S&#39;, &#39;h&#39;, &#39;a&#39;, &#39;t&#39;, &#39;n&#39;, &#39;e&#39;, &#39;r&#39;}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char </p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>89 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
+  <a class="entry-link" aria-label="post link to Bài 2. Biến và nhập xúât cơ bản trong C" href="http://localhost:1313/posts/bai2_io_var/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod
     </h2>
   </header>
@@ -173,18 +197,6 @@ Mục tiêu TL;DR Nội dung chính (chia theo mục) Ví dụ code &#43; cách 
   </div>
   <footer class="entry-footer"><span title='2026-02-09 11:10:00 +0700 +07'>February 9, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>155 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
   <a class="entry-link" aria-label="post link to Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod" href="http://localhost:1313/posts/use_hogo/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Bài 1. Hello World
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>C is a language for small, fast programs. Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ? Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn. Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể . The way C works. Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : mã máy , một ngôn ngữ mà chỉ toàn 0 và 1. Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy. Để thực hiện điều này , bạn cần 1 cái gọi là trình biên dịch - compiler Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi .c, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó. Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy. 1 2 3 4 5 6 7 8 9 #include &lt;stdio.h&gt; // Dòng này là các thư viện , các hàm đã được viết sẵn // Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất , // Việc của chúng ta là sử dụng mà thôi int main() { printf(&#34;Hello world!&#34;); return 0; } Hàm trong toán học và hàm trong ngôn ngữ lập trình Ví dụ bạn đang có hàm f(x) = 2*x &#43;1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2&#43;1 Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy, 1 printf(&#34;Hello World!&#34;); Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra Ở đây mình truyền tham số hello world! để in ra màn hình Hàm printf() đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v Tiếp đó là giá trị trả về của 1 hàm số , ví dụ ở hàm f(x)=2*x&#43;2 với tham số là 2 , giá trị cần trả về là 4 . 1 return 0; Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc. Khái niệm hàm trong hàm : hàm printf() trong hàm main() Tưởng tượng giống hàm toán học f(g(x)) ta coi g(x) giống x , thì từ đó ta có f(x) </p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-08 00:00:00 +0000 UTC'>February 8, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>516 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
-  <a class="entry-link" aria-label="post link to Bài 1. Hello World" href="http://localhost:1313/posts/hello-world/"></a>
 </article>
     </main>
     

@@ -2,6 +2,8 @@
 title: "Bài 1. Hello World"
 date: 2026-02-08
 draft: false
+series: ["Học lại C"]
+weight: 1
 tags: ["learning-log", "c", "linux"]
 ---
 

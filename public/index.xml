@@ -9,380 +9,10 @@
     <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;style&gt;
-  :root {
-    --primary: #007aff;
-    --primary-dark: #0051d5;
-    --accent: #34c759;
-    --bg-card: rgba(255, 255, 255, 0.95);
-    --text-main: #1d1d1f;
-    --text-sub: #424245;
-    --text-light: #86868b;
-    --radius: 24px;
-    --border: 1px solid rgba(0, 122, 255, 0.08);
-    --shadow-sm: 0 4px 20px rgba(0,0,0,0.04);
-    --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
-  }
-
-  /* Container tổng */
-  .about-container {
-    font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, &#34;SF Pro Display&#34;, sans-serif;
-    color: var(--text-main);
-    line-height: 1.7;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  /* Header Greeting */
-  .hero-section {
-    padding: 60px 0 40px;
-    text-align: left;
-  }
-
-  .status-badge {
-    display: inline-flex;
-    align-items: center;
-    background: linear-gradient(135deg, rgba(52, 199, 89, 0.12) 0%, rgba(52, 199, 89, 0.08) 100%);
-    color: #1d7a3a;
-    padding: 8px 18px;
-    border-radius: 100px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    border: 1px solid rgba(52, 199, 89, 0.2);
-  }
-
-  .status-dot {
-    height: 8px;
-    width: 8px;
-    background: linear-gradient(135deg, #34c759 0%, #30d158 100%);
-    border-radius: 50%;
-    margin-right: 10px;
-    box-shadow: 0 0 12px rgba(52, 199, 89, 0.6);
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.95); }
-  }
-
-  .hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin: 15px 0;
-    background: linear-gradient(135deg, var(--text-main) 0%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--text-sub);
-    margin-top: 15px;
-    line-height: 1.6;
-  }
-
-  /* Grid Layout */
-  .modern-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-    margin: 40px 0;
-  }
-
-  /* Modern Flat Card */
-  .flat-card {
-    background: var(--bg-card);
-    border: var(--border);
-    border-radius: var(--radius);
-    padding: 32px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(20px);
-    box-shadow: var(--shadow-sm);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .flat-card::before {
-    content: &#34;&#34;;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .flat-card:hover {
-    background: #ffffff;
-    border-color: var(--primary);
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .flat-card:hover::before {
-    transform: scaleX(1);
-  }
-
-  .flat-card h3 {
-    margin: 0 0 20px 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--text-main);
-    font-size: 1.35rem;
-    font-weight: 700;
-  }
-
-  .flat-card h3 span {
-    font-size: 1.5rem;
-    filter: grayscale(0.3);
-    transition: filter 0.3s;
-  }
-
-  .flat-card:hover h3 span {
-    filter: grayscale(0);
-  }
-
-  .flat-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .flat-card li {
-    padding: 14px 0 14px 28px;
-    border-bottom: 1px solid rgba(0,0,0,0.04);
-    color: var(--text-sub);
-    font-size: 0.975rem;
-    position: relative;
-    transition: all 0.3s;
-  }
-
-  .flat-card li::before {
-    content: &#34;→&#34;;
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-    font-weight: 700;
-    opacity: 0;
-    transform: translateX(-5px);
-    transition: all 0.3s;
-  }
-
-  .flat-card li:hover {
-    padding-left: 32px;
-    color: var(--primary);
-  }
-
-  .flat-card li:hover::before {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .flat-card li:last-child { 
-    border-bottom: none; 
-  }
-
-  /* Section Titles */
-  .section-title {
-    font-size: 2rem;
-    font-weight: 800;
-    margin: 60px 0 30px;
-    position: relative;
-    padding-left: 20px;
-    color: var(--text-main);
-  }
-
-  .section-title::before {
-    content: &#34;&#34;;
-    position: absolute;
-    left: 0;
-    top: 15%;
-    height: 70%;
-    width: 5px;
-    background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 122, 255, 0.3);
-  }
-
-  /* Workflow Section */
-  .workflow-container {
-    background: var(--bg-card);
-    border-radius: var(--radius);
-    padding: 32px;
-    margin-top: 20px;
-    border: var(--border);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .workflow-step {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 24px;
-    padding: 20px;
-    border-radius: 16px;
-    transition: all 0.3s;
-  }
-
-  .workflow-step:hover {
-    background: rgba(0, 122, 255, 0.03);
-  }
-
-  .workflow-number {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-right: 20px;
-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-  }
-
-  .workflow-content {
-    flex: 1;
-  }
-
-  .workflow-content strong {
-    color: var(--text-main);
-    font-size: 1.1rem;
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .workflow-content p {
-    margin: 0;
-    color: var(--text-sub);
-    line-height: 1.6;
-  }
-
-  /* Contact Pills */
-  .contact-wrapper {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 24px;
-  }
-
-  .contact-pill {
-    padding: 14px 28px;
-    border-radius: 100px;
-    background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
-    text-decoration: none;
-    color: var(--text-main);
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid transparent;
-    box-shadow: var(--shadow-sm);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
-  }
-
-  .contact-pill:hover {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.35);
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero-section h1 {
-      font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.1rem;
-    }
-    
-    .modern-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .section-title {
-      font-size: 1.6rem;
-    }
-  }
-
-  /* Dark Mode support */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg-card: rgba(30, 30, 32, 0.95);
-      --text-main: #f5f5f7;
-      --text-sub: #a1a1a6;
-      --text-light: #86868b;
-      --border: 1px solid rgba(255, 255, 255, 0.08);
-      --shadow-sm: 0 4px 20px rgba(0,0,0,0.3);
-      --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
-    }
-    
-    .contact-pill { 
-      background: linear-gradient(135deg, #2c2c2e 0%, #1c1c1e 100%);
-      color: var(--text-main);
-    }
-    
-    .flat-card {
-      background: rgba(30, 30, 32, 0.8);
-    }
-    
-    .flat-card:hover {
-      background: rgba(40, 40, 42, 0.95);
-    }
-    
-    .workflow-container {
-      background: rgba(30, 30, 32, 0.8);
-    }
-    
-    .workflow-step:hover {
-      background: rgba(255, 255, 255, 0.05);
-    }
-  }
-
-  /* Smooth scroll */
-  html {
-    scroll-behavior: smooth;
-  }
-&lt;/style&gt;
-&lt;div class=&#34;about-container&#34;&gt;
-  &lt;div class=&#34;hero-section&#34;&gt;
-    &lt;div class=&#34;status-badge&#34;&gt;
-      &lt;span class=&#34;status-dot&#34;&gt;&lt;/span&gt; Available for Research &amp; Collaboration
-    &lt;/div&gt;
-    &lt;h1&gt;Chào, mình là Đức 👋&lt;/h1&gt;
-    &lt;p class=&#34;hero-subtitle&#34;&gt;
-      Kỹ sư Embedded &amp; Computer Vision. Đam mê tối ưu hóa thuật toán trên thiết bị biên (Edge Learning).
-    &lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
-      <link>http://localhost:1313/posts/use_hogo/</link>
-      <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
-      <guid>http://localhost:1313/posts/use_hogo/</guid>
-      <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
-    </item>
-    <item>
       <title>Bài 1. Hello World</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
+      <link>http://localhost:1313/posts/bai1_hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <guid>http://localhost:1313/posts/bai1_hello-world/</guid>
       <description>&lt;h2 id=&#34;c-is-a-language-for-small-fast-programs&#34;&gt;C is a language for small, fast programs.&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ?&lt;/li&gt;
@@ -459,6 +89,90 @@
 &lt;li&gt;hàm &lt;code&gt;printf()&lt;/code&gt; trong hàm &lt;code&gt;main()&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Tưởng tượng giống hàm toán học &lt;code&gt;f(g(x))&lt;/code&gt; ta coi &lt;code&gt;g(x)&lt;/code&gt; giống &lt;code&gt;x&lt;/code&gt; , thì từ đó ta có &lt;code&gt;f(x)&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h1 id=&#34;chào-mình-là-đức-&#34;&gt;Chào, mình là Đức 👋&lt;/h1&gt;
+&lt;p&gt;Mình là &lt;strong&gt;Kỹ sư Embedded &amp;amp; Computer Vision&lt;/strong&gt;, tập trung tối ưu thuật toán trên thiết bị biên (&lt;strong&gt;Edge AI/Edge Learning&lt;/strong&gt;).&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-trọng-tâm&#34;&gt;🎯 Trọng tâm&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Firmware / Embedded Software&lt;/li&gt;
+&lt;li&gt;Computer Vision (YOLO, OCR)&lt;/li&gt;
+&lt;li&gt;Hệ thống Linux &amp;amp; Debugging&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-công-cụ&#34;&gt;🛠 Công cụ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;C/C++, GCC, CMake, Makefile&lt;/li&gt;
+&lt;li&gt;GDB, Valgrind, perf&lt;/li&gt;
+&lt;li&gt;Git, Docker, GitHub Actions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-project-hiện-tại&#34;&gt;🚀 Project hiện tại&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;License Plate Recognition (YOLO + PaddleOCR)&lt;/li&gt;
+&lt;li&gt;Thermal Imaging Processing (Halcon)&lt;/li&gt;
+&lt;li&gt;Edge AI on Raspberry Pi 5&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-quy-trình-làm-việc&#34;&gt;🧪 Quy trình làm việc&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Hiểu bài toán&lt;/strong&gt;: Xác định rõ input/output và giới hạn phần cứng.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thiết kế &amp;amp; Prototype&lt;/strong&gt;: Module hóa, đo hiệu năng sớm.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tài liệu hóa&lt;/strong&gt;: Ghi lại pitfalls và hướng giải quyết để tái sử dụng.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-kết-nối&#34;&gt;📬 Kết nối&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/saccarozo03&#34;&gt;https://github.com/saccarozo03&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email: &lt;a href=&#34;mailto:saccarozo04@gmail.com&#34;&gt;saccarozo04@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LinkedIn: (cập nhật sau)&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Bài 2. Biến và nhập xúât cơ bản trong C</title>
+      <link>http://localhost:1313/posts/bai2_io_var/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bai2_io_var/</guid>
+      <description>&lt;h2 id=&#34;string-way-up-close-chuỗi-trong-ngôn-ngữ-c&#34;&gt;String way up close (Chuỗi trong ngôn ngữ C)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;string&lt;/code&gt; chỉ là mảng ký tự&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Shatter&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;C&lt;/code&gt; nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;sc&#34;&gt;&amp;#39;S&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;h&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;t&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;n&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;e&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Mỗi ký tự chỉ là 1 phần tử trong chuỗi&lt;/li&gt;
+&lt;li&gt;Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục
+như &lt;code&gt;s[0]&lt;/code&gt; và &lt;code&gt;s[1]&lt;/code&gt;
+&lt;img alt=&#34;mô tả về chuỗi nhé&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/bai2_Nhapxuatchuoi/string.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Vậy &lt;code&gt;string&lt;/code&gt; khác gì &lt;code&gt;char&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
+      <link>http://localhost:1313/posts/use_hogo/</link>
+      <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/use_hogo/</guid>
+      <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
     </item>
     <item>
       <title>Project</title>
