@@ -1,5 +1,5 @@
 ---
-title: "Hello World"
+title: "Bài 1. Hello World"
 date: 2026-02-08
 draft: false
 tags: ["learning-log", "c", "linux"]
@@ -45,3 +45,7 @@ printf("Hello World!");
 return 0;
 ```
 - Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là `main()`, giá trị trả về là `0` , hoặc `1` để báo rằng hàm hoặc chương trình đã kết thúc. 
+
+### Khái niệm hàm trong hàm : 
+- hàm `printf()` trong hàm `main()`
+- Tưởng tượng giống hàm toán học `f(g(x))` ta coi `g(x)` giống `x` , thì từ đó ta có `f(x)` 

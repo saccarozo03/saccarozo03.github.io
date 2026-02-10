@@ -16,7 +16,7 @@
       <description></description>
     </item>
     <item>
-      <title>Learning-Log</title>
+      <title>Learning Log</title>
       <link>http://localhost:1313/tags/learning-log/</link>
       <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
       <guid>http://localhost:1313/tags/learning-log/</guid>
@@ -48,20 +48,6 @@
       <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DSA</title>
-      <link>http://localhost:1313/tags/dsa/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dsa/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Learninblogg Log</title>
-      <link>http://localhost:1313/tags/learninblogg-log/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/learninblogg-log/</guid>
       <description></description>
     </item>
   </channel>

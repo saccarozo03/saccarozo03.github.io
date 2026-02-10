@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Hello World | Nhật ký học lập trình</title>
+<title>Bài 1. Hello World | Nhật ký học lập trình</title>
 <meta name="keywords" content="learning-log, c, linux">
 <meta name="description" content="C is a language for small, fast programs.
 
@@ -77,6 +77,11 @@ return 0;
 
 
 Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc.
+
+Khái niệm hàm trong hàm :
+
+hàm printf() trong hàm main()
+Tưởng tượng giống hàm toán học f(g(x)) ta coi g(x) giống x , thì từ đó ta có f(x)
 ">
 <meta name="author" content="Saccarozo03">
 <link rel="canonical" href="http://localhost:1313/posts/hello-world/">
@@ -142,18 +147,18 @@ Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn t
 
 </script><meta property="og:url" content="http://localhost:1313/posts/hello-world/">
   <meta property="og:site_name" content="Nhật ký học lập trình">
-  <meta property="og:title" content="Hello World">
-  <meta property="og:description" content="C is a language for small, fast programs. Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ? Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn. Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể . The way C works. Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : mã máy , một ngôn ngữ mà chỉ toàn 0 và 1. Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy. Để thực hiện điều này , bạn cần 1 cái gọi là trình biên dịch - compiler Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi .c, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó. Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy. 1 2 3 4 5 6 7 8 9 #include &lt;stdio.h&gt; // Dòng này là các thư viện , các hàm đã được viết sẵn // Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất , // Việc của chúng ta là sử dụng mà thôi int main() { printf(&#34;Hello world!&#34;); return 0; } Hàm trong toán học và hàm trong ngôn ngữ lập trình Ví dụ bạn đang có hàm f(x) = 2*x &#43;1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2&#43;1 Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy, 1 printf(&#34;Hello World!&#34;); Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra Ở đây mình truyền tham số hello world! để in ra màn hình Hàm printf() đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v Tiếp đó là giá trị trả về của 1 hàm số , ví dụ ở hàm f(x)=2*x&#43;2 với tham số là 2 , giá trị cần trả về là 4 . 1 return 0; Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc. ">
+  <meta property="og:title" content="Bài 1. Hello World">
+  <meta property="og:description" content="C is a language for small, fast programs. Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ? Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn. Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể . The way C works. Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : mã máy , một ngôn ngữ mà chỉ toàn 0 và 1. Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy. Để thực hiện điều này , bạn cần 1 cái gọi là trình biên dịch - compiler Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi .c, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó. Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy. 1 2 3 4 5 6 7 8 9 #include &lt;stdio.h&gt; // Dòng này là các thư viện , các hàm đã được viết sẵn // Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất , // Việc của chúng ta là sử dụng mà thôi int main() { printf(&#34;Hello world!&#34;); return 0; } Hàm trong toán học và hàm trong ngôn ngữ lập trình Ví dụ bạn đang có hàm f(x) = 2*x &#43;1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2&#43;1 Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy, 1 printf(&#34;Hello World!&#34;); Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra Ở đây mình truyền tham số hello world! để in ra màn hình Hàm printf() đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v Tiếp đó là giá trị trả về của 1 hàm số , ví dụ ở hàm f(x)=2*x&#43;2 với tham số là 2 , giá trị cần trả về là 4 . 1 return 0; Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc. Khái niệm hàm trong hàm : hàm printf() trong hàm main() Tưởng tượng giống hàm toán học f(g(x)) ta coi g(x) giống x , thì từ đó ta có f(x) ">
   <meta property="og:locale" content="vi-vn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-02-08T00:00:00+00:00">
     <meta property="article:modified_time" content="2026-02-08T00:00:00+00:00">
-    <meta property="article:tag" content="Learning-Log">
+    <meta property="article:tag" content="Learning Log">
     <meta property="article:tag" content="C">
     <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
+<meta name="twitter:title" content="Bài 1. Hello World">
 <meta name="twitter:description" content="C is a language for small, fast programs.
 
 Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ?
@@ -224,6 +229,11 @@ return 0;
 
 
 Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc.
+
+Khái niệm hàm trong hàm :
+
+hàm printf() trong hàm main()
+Tưởng tượng giống hàm toán học f(g(x)) ta coi g(x) giống x , thì từ đó ta có f(x)
 ">
 
 
@@ -241,7 +251,7 @@ Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn t
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Hello World",
+      "name": "Bài 1. Hello World",
       "item": "http://localhost:1313/posts/hello-world/"
     }
   ]
@@ -251,14 +261,14 @@ Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn t
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Hello World",
-  "name": "Hello World",
-  "description": "C is a language for small, fast programs. Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ? Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn. Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể . The way C works. Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : mã máy , một ngôn ngữ mà chỉ toàn 0 và 1. Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy. Để thực hiện điều này , bạn cần 1 cái gọi là trình biên dịch - compiler Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi .c, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó. Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy. 1 2 3 4 5 6 7 8 9 #include \u0026lt;stdio.h\u0026gt; // Dòng này là các thư viện , các hàm đã được viết sẵn // Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất , // Việc của chúng ta là sử dụng mà thôi int main() { printf(\u0026#34;Hello world!\u0026#34;); return 0; } Hàm trong toán học và hàm trong ngôn ngữ lập trình Ví dụ bạn đang có hàm f(x) = 2*x +1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2+1 Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy, 1 printf(\u0026#34;Hello World!\u0026#34;); Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra Ở đây mình truyền tham số hello world! để in ra màn hình Hàm printf() đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v Tiếp đó là giá trị trả về của 1 hàm số , ví dụ ở hàm f(x)=2*x+2 với tham số là 2 , giá trị cần trả về là 4 . 1 return 0; Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc. ",
+  "headline": "Bài 1. Hello World",
+  "name": "Bài 1. Hello World",
+  "description": "C is a language for small, fast programs. Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ? Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn. Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể . The way C works. Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : mã máy , một ngôn ngữ mà chỉ toàn 0 và 1. Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy. Để thực hiện điều này , bạn cần 1 cái gọi là trình biên dịch - compiler Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi .c, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó. Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy. 1 2 3 4 5 6 7 8 9 #include \u0026lt;stdio.h\u0026gt; // Dòng này là các thư viện , các hàm đã được viết sẵn // Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất , // Việc của chúng ta là sử dụng mà thôi int main() { printf(\u0026#34;Hello world!\u0026#34;); return 0; } Hàm trong toán học và hàm trong ngôn ngữ lập trình Ví dụ bạn đang có hàm f(x) = 2*x +1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2+1 Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy, 1 printf(\u0026#34;Hello World!\u0026#34;); Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra Ở đây mình truyền tham số hello world! để in ra màn hình Hàm printf() đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v Tiếp đó là giá trị trả về của 1 hàm số , ví dụ ở hàm f(x)=2*x+2 với tham số là 2 , giá trị cần trả về là 4 . 1 return 0; Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc. Khái niệm hàm trong hàm : hàm printf() trong hàm main() Tưởng tượng giống hàm toán học f(g(x)) ta coi g(x) giống x , thì từ đó ta có f(x) ",
   "keywords": [
     "learning-log", "c", "linux"
   ],
-  "articleBody": "C is a language for small, fast programs. Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ? Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn. Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể . The way C works. Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : mã máy , một ngôn ngữ mà chỉ toàn 0 và 1. Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy. Để thực hiện điều này , bạn cần 1 cái gọi là trình biên dịch - compiler Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi .c, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó. Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy. 1 2 3 4 5 6 7 8 9 #include // Dòng này là các thư viện , các hàm đã được viết sẵn // Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất , // Việc của chúng ta là sử dụng mà thôi int main() { printf(\"Hello world!\"); return 0; } Hàm trong toán học và hàm trong ngôn ngữ lập trình Ví dụ bạn đang có hàm f(x) = 2*x +1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2+1 Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy, 1 printf(\"Hello World!\"); Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra Ở đây mình truyền tham số hello world! để in ra màn hình Hàm printf() đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v Tiếp đó là giá trị trả về của 1 hàm số , ví dụ ở hàm f(x)=2*x+2 với tham số là 2 , giá trị cần trả về là 4 . 1 return 0; Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc. ",
-  "wordCount" : "486",
+  "articleBody": "C is a language for small, fast programs. Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ? Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn. Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể . The way C works. Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : mã máy , một ngôn ngữ mà chỉ toàn 0 và 1. Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy. Để thực hiện điều này , bạn cần 1 cái gọi là trình biên dịch - compiler Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi .c, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó. Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy. 1 2 3 4 5 6 7 8 9 #include // Dòng này là các thư viện , các hàm đã được viết sẵn // Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất , // Việc của chúng ta là sử dụng mà thôi int main() { printf(\"Hello world!\"); return 0; } Hàm trong toán học và hàm trong ngôn ngữ lập trình Ví dụ bạn đang có hàm f(x) = 2*x +1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2+1 Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy, 1 printf(\"Hello World!\"); Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra Ở đây mình truyền tham số hello world! để in ra màn hình Hàm printf() đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v Tiếp đó là giá trị trả về của 1 hàm số , ví dụ ở hàm f(x)=2*x+2 với tham số là 2 , giá trị cần trả về là 4 . 1 return 0; Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc. Khái niệm hàm trong hàm : hàm printf() trong hàm main() Tưởng tượng giống hàm toán học f(g(x)) ta coi g(x) giống x , thì từ đó ta có f(x) ",
+  "wordCount" : "516",
   "inLanguage": "en",
   "datePublished": "2026-02-08T00:00:00Z",
   "dateModified": "2026-02-08T00:00:00Z",
@@ -344,9 +354,9 @@ Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn t
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      Hello World
+      Bài 1. Hello World
     </h1>
-    <div class="post-meta"><span title='2026-02-08 00:00:00 +0000 UTC'>February 8, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>486 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span>&nbsp;|&nbsp;<span>
+    <div class="post-meta"><span title='2026-02-08 00:00:00 +0000 UTC'>February 8, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>516 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span>&nbsp;|&nbsp;<span>
     <a href="https://github.com/saccarozo03/saccarozo03.github.io/tree/main/content/posts/hello-world.md" rel="noopener noreferrer edit" target="_blank">Suggest edits</a>
 </span>
 
@@ -363,8 +373,13 @@ Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn t
                 <li>
                     <a href="#the-way-c-works" aria-label="The way C works.">The way C works.</a></li>
                 <li>
-                    <a href="#h%c3%a0m-trong-to%c3%a1n-h%e1%bb%8dc-v%c3%a0-h%c3%a0m-trong-ng%c3%b4n-ng%e1%bb%af-l%e1%ba%adp-tr%c3%acnh" aria-label="Hàm trong toán học và hàm trong ngôn ngữ lập trình">Hàm trong toán học và hàm trong ngôn ngữ lập trình</a>
+                    <a href="#h%c3%a0m-trong-to%c3%a1n-h%e1%bb%8dc-v%c3%a0-h%c3%a0m-trong-ng%c3%b4n-ng%e1%bb%af-l%e1%ba%adp-tr%c3%acnh" aria-label="Hàm trong toán học và hàm trong ngôn ngữ lập trình">Hàm trong toán học và hàm trong ngôn ngữ lập trình</a><ul>
+                        
+                <li>
+                    <a href="#kh%c3%a1i-ni%e1%bb%87m-h%c3%a0m-trong-h%c3%a0m-" aria-label="Khái niệm hàm trong hàm :">Khái niệm hàm trong hàm :</a>
                 </li>
+            </ul>
+            </li>
             </ul>
         </div>
     </details>
@@ -441,13 +456,18 @@ Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn t
 </div><ul>
 <li>Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là <code>main()</code>, giá trị trả về là <code>0</code> , hoặc <code>1</code> để báo rằng hàm hoặc chương trình đã kết thúc.</li>
 </ul>
+<h3 id="khái-niệm-hàm-trong-hàm-">Khái niệm hàm trong hàm :<a hidden class="anchor" aria-hidden="true" href="#khái-niệm-hàm-trong-hàm-">#</a></h3>
+<ul>
+<li>hàm <code>printf()</code> trong hàm <code>main()</code></li>
+<li>Tưởng tượng giống hàm toán học <code>f(g(x))</code> ta coi <code>g(x)</code> giống <code>x</code> , thì từ đó ta có <code>f(x)</code></li>
+</ul>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/learning-log/">Learning-Log</a></li>
+      <li><a href="http://localhost:1313/tags/learning-log/">Learning Log</a></li>
       <li><a href="http://localhost:1313/tags/c/">C</a></li>
       <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
     </ul>
@@ -455,7 +475,7 @@ Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn t
   <a class="prev" href="http://localhost:1313/posts/use_hogo/">
     <span class="title">« Prev</span>
     <br>
-    <span>Bài 00 — Markdown căn bản để viết blog với Hugo &#43; PaperMod</span>
+    <span>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</span>
   </a>
 </nav>
 

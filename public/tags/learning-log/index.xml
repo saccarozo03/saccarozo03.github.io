@@ -1,36 +1,101 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Learning-Log on Nhật ký học lập trình</title>
+    <title>Learning Log on Nhật ký học lập trình</title>
     <link>http://localhost:1313/tags/learning-log/</link>
-    <description>Recent content in Learning-Log on Nhật ký học lập trình</description>
+    <description>Recent content in Learning Log on Nhật ký học lập trình</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Sun, 08 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Feb 2026 11:10:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/learning-log/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello World</title>
+      <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
+      <link>http://localhost:1313/posts/use_hogo/</link>
+      <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/use_hogo/</guid>
+      <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
+    </item>
+    <item>
+      <title>Bài 1. Hello World</title>
       <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>&lt;h2 id=&#34;hôm-nay-học-gì&#34;&gt;Hôm nay học gì?&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;c-is-a-language-for-small-fast-programs&#34;&gt;C is a language for small, fast programs.&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Học về các chuỗi ( string ) trong ngôn ngữ C&lt;/li&gt;
+&lt;li&gt;Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ?&lt;/li&gt;
+&lt;li&gt;Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn.&lt;/li&gt;
+&lt;li&gt;Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể .&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;vấn-đề-gặp-phải&#34;&gt;Vấn đề gặp phải&lt;/h2&gt;
+&lt;h2 id=&#34;the-way-c-works&#34;&gt;The way C works.&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : &lt;strong&gt;mã máy&lt;/strong&gt; , một ngôn ngữ mà chỉ toàn &lt;strong&gt;0&lt;/strong&gt; và &lt;strong&gt;1&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy.&lt;/li&gt;
+&lt;li&gt;Để thực hiện điều này , bạn cần 1 cái gọi là &lt;strong&gt;trình biên dịch&lt;/strong&gt; - &lt;strong&gt;compiler&lt;/strong&gt;
+&lt;img alt=&#34;Hình ảnh mô tả cách trình biên dịch hoạt động&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/Bai1_helloworld/code_to_binary.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi &lt;strong&gt;.c&lt;/strong&gt;, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó.&lt;/li&gt;
+&lt;li&gt;Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;cách-mình-fix&#34;&gt;Cách mình fix&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Dòng này là các thư viện , các hàm đã được viết sẵn
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất ,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Việc của chúng ta là sử  dụng mà thôi 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;hàm-trong-toán-học-và-hàm-trong-ngôn-ngữ-lập-trình&#34;&gt;Hàm trong toán học và hàm trong ngôn ngữ lập trình&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Ví dụ bạn đang có hàm f(x) = 2*x +1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2+1&lt;/li&gt;
+&lt;li&gt;Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy,&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// code ở đây
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ&lt;/li&gt;
+&lt;li&gt;Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra&lt;/li&gt;
+&lt;li&gt;Ở đây mình truyền tham số &lt;code&gt;hello world!&lt;/code&gt; để in ra màn hình&lt;/li&gt;
+&lt;li&gt;Hàm &lt;code&gt;printf()&lt;/code&gt; đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v&lt;/li&gt;
+&lt;li&gt;Tiếp đó là giá trị trả về  của 1 hàm số , ví dụ ở hàm &lt;code&gt;f(x)=2*x+2&lt;/code&gt; với tham số là &lt;code&gt;2&lt;/code&gt; , giá trị cần trả về là &lt;code&gt;4&lt;/code&gt; .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là &lt;code&gt;main()&lt;/code&gt;, giá trị trả về là &lt;code&gt;0&lt;/code&gt; , hoặc &lt;code&gt;1&lt;/code&gt; để báo rằng hàm hoặc chương trình đã kết thúc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;khái-niệm-hàm-trong-hàm-&#34;&gt;Khái niệm hàm trong hàm :&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hàm &lt;code&gt;printf()&lt;/code&gt; trong hàm &lt;code&gt;main()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Tưởng tượng giống hàm toán học &lt;code&gt;f(g(x))&lt;/code&gt; ta coi &lt;code&gt;g(x)&lt;/code&gt; giống &lt;code&gt;x&lt;/code&gt; , thì từ đó ta có &lt;code&gt;f(x)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

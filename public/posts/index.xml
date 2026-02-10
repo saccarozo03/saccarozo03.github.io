@@ -9,14 +9,14 @@
     <lastBuildDate>Mon, 09 Feb 2026 11:10:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bài 00 — Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
+      <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
       <link>http://localhost:1313/posts/use_hogo/</link>
       <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
       <guid>http://localhost:1313/posts/use_hogo/</guid>
       <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
     </item>
     <item>
-      <title>Hello World</title>
+      <title>Bài 1. Hello World</title>
       <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/hello-world/</guid>
@@ -90,6 +90,11 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là &lt;code&gt;main()&lt;/code&gt;, giá trị trả về là &lt;code&gt;0&lt;/code&gt; , hoặc &lt;code&gt;1&lt;/code&gt; để báo rằng hàm hoặc chương trình đã kết thúc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;khái-niệm-hàm-trong-hàm-&#34;&gt;Khái niệm hàm trong hàm :&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hàm &lt;code&gt;printf()&lt;/code&gt; trong hàm &lt;code&gt;main()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Tưởng tượng giống hàm toán học &lt;code&gt;f(g(x))&lt;/code&gt; ta coi &lt;code&gt;g(x)&lt;/code&gt; giống &lt;code&gt;x&lt;/code&gt; , thì từ đó ta có &lt;code&gt;f(x)&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
   </channel>
