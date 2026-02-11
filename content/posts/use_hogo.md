@@ -6,7 +6,7 @@ description: "Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay
 tags: ["Hugo", "Markdown", "PaperMod", "Learning Log"]
 categories: ["Blog"]
 weight: 1
-series: ["Học lại C"]
+series: ["Học và sử dụng AI "]
 showToc: true
 tocOpen: true
 ShowReadingTime: true

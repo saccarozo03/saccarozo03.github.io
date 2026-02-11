@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Nhật ký học lập trình</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
@@ -95,6 +95,24 @@
 &lt;ul&gt;
 &lt;li&gt;hàm &lt;code&gt;printf()&lt;/code&gt; trong hàm &lt;code&gt;main()&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Tưởng tượng giống hàm toán học &lt;code&gt;f(g(x))&lt;/code&gt; ta coi &lt;code&gt;g(x)&lt;/code&gt; giống &lt;code&gt;x&lt;/code&gt; , thì từ đó ta có &lt;code&gt;f(x)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project</title>
+      <link>http://localhost:1313/posts/using_ai/</link>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/using_ai/</guid>
+      <description>&lt;h2 id=&#34;các-khái-niệm-cơ-bản&#34;&gt;Các khái niệm cơ bản&lt;/h2&gt;
+&lt;h3 id=&#34;context-window&#34;&gt;Context Window&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;AI có bộ nhớ suy luận hữu hạn&lt;/li&gt;
+&lt;li&gt;1,000,000 tokens đối với ClaudeAI&lt;/li&gt;
+&lt;li&gt;Tokens có thể hiểu là 1 từ có ngữ nghĩa đối trong câu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;attention--độ-tập-trung-&#34;&gt;Attention ( Độ tập trung )&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau&lt;/li&gt;
+&lt;li&gt;Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     <item>

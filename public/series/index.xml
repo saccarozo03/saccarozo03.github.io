@@ -6,13 +6,34 @@
     <description>Recent content in Series on Nhật ký học lập trình</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Học Và Sử Dụng AI </title>
+      <link>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/</link>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Học Lại C</title>
       <link>http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/</link>
       <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/series/ai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/series/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>H</title>
+      <link>http://localhost:1313/series/h/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/series/h/</guid>
       <description></description>
     </item>
   </channel>

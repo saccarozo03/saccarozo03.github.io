@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Học Lại C | Nhật ký học lập trình</title>
+<title>Học Và Sử Dụng AI  | Nhật ký học lập trình</title>
 <meta name="keywords" content="">
 <meta name="description" content="Learning log về C/C&#43;&#43;, Linux, Embedded &amp; Computer Vision.">
 <meta name="author" content="Saccarozo03">
-<link rel="canonical" href="http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/">
+<link rel="canonical" href="http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/">
 <noscript>
     <style>
         #theme-toggle,
@@ -71,14 +71,14 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/">
+</script><meta property="og:url" content="http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/">
   <meta property="og:site_name" content="Nhật ký học lập trình">
-  <meta property="og:title" content="Học Lại C">
+  <meta property="og:title" content="Học Và Sử Dụng AI ">
   <meta property="og:description" content="Learning log về C/C&#43;&#43;, Linux, Embedded &amp; Computer Vision.">
   <meta property="og:locale" content="vi-vn">
   <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Học Lại C">
+<meta name="twitter:title" content="Học Và Sử Dụng AI ">
 <meta name="twitter:description" content="Learning log về C/C&#43;&#43;, Linux, Embedded &amp; Computer Vision.">
 
 </head>
@@ -142,32 +142,34 @@
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/series/">Series</a></div>
   <h1>
-    Học Lại C
+    Học Và Sử Dụng AI 
   </h1>
 </header>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Bài 1. Hello World
+    <h2 class="entry-hint-parent">Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod
     </h2>
   </header>
   <div class="entry-content">
-    <p>C is a language for small, fast programs. Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ? Ngôn ngữ C được dùng trong việc thiết kế các chương trình mà yêu cầu thực thi nhanh, nhỏ gọn. Hơn nữa nó cũng là một ngôn ngữ bậc thấp so với các ngôn ngữ lập trình bậc cao khác, điều này có nghĩa rằng, nó tạo ra các đoạn mã, cái mà gần với mã máy nhất có thể . The way C works. Máy tính thật sự chỉ hiểu 1 ngôn ngữ duy nhất : mã máy , một ngôn ngữ mà chỉ toàn 0 và 1. Việc của bạn cần làm là chuyển mã chương trình ngôn ngữ C sang mã máy. Để thực hiện điều này , bạn cần 1 cái gọi là trình biên dịch - compiler Việc đầu tiên của bạn cần làm là viết 1 chương trình có đuôi .c, với mọi ngôn ngữ bạn viết được chương trình hello world là đã bắt đầu bước chân vào cánh cửa của ngôn ngữ đó. Bạn có thể thử copy đoạn code này vào tất cả các công cụ phát triển tích hợp nào (IDE) để chạy. 1 2 3 4 5 6 7 8 9 #include &lt;stdio.h&gt; // Dòng này là các thư viện , các hàm đã được viết sẵn // Họ đã viết sẵn bằng mã máy 1 số hàm như nhập xuất , // Việc của chúng ta là sử dụng mà thôi int main() { printf(&#34;Hello world!&#34;); return 0; } Hàm trong toán học và hàm trong ngôn ngữ lập trình Ví dụ bạn đang có hàm f(x) = 2*x &#43;1 , thì x ở đây là biến số , nếu thay x=2 , thì 2 là tham số , ta được hàm mới như sau : f(2) = 2.2&#43;1 Tương tự trong ngôn ngữ lập trình, hàm cũng như vậy, 1 printf(&#34;Hello World!&#34;); Đây là hàm in ra màn hình 1 ký tự hay đoạn văn bản bất kỳ Công việc của bạn chỉ cần truyền tham số nhưng phải đúng theo cú pháp mã ngôn ngữ lập trình đề ra Ở đây mình truyền tham số hello world! để in ra màn hình Hàm printf() đã được người sáng lập ngôn ngữ lập trình viết trước đó rồi, công việc của bạn là tạo ra các hàm khác,Tính căn bậc 2 của 1 số chẳng hạn :v Tiếp đó là giá trị trả về của 1 hàm số , ví dụ ở hàm f(x)=2*x&#43;2 với tham số là 2 , giá trị cần trả về là 4 . 1 return 0; Ngôn ngữ lập trình cũng vậy, với hàm đặc biệt mà bạn nhìn trên đầu là main(), giá trị trả về là 0 , hoặc 1 để báo rằng hàm hoặc chương trình đã kết thúc. Khái niệm hàm trong hàm : hàm printf() trong hàm main() Tưởng tượng giống hàm toán học f(g(x)) ta coi g(x) giống x , thì từ đó ta có f(x) </p>
+    <p>Mục tiêu bài này Biết cấu trúc 1 bài viết “đẹp” trong Hugo &#43; PaperMod Nắm các “lệnh” Markdown quan trọng (heading, list, link, ảnh, quote, table…) Biết cách chèn code (C, bash, json…) và tránh lỗi hay gặp 1) Bố cục bài viết chuẩn (khuyến nghị) Mình dùng 1 format cố định để viết learning log, dễ đọc và nhất quán:
+Mục tiêu TL;DR Nội dung chính (chia theo mục) Ví dụ code &#43; cách chạy Lỗi thường gặp Checklist / Next steps Tài liệu tham khảo Bạn có thể copy “template nhanh” cho các bài sau:
+...</p>
   </div>
-  <footer class="entry-footer"><span title='2026-02-08 00:00:00 +0000 UTC'>February 8, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>516 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
-  <a class="entry-link" aria-label="post link to Bài 1. Hello World" href="http://localhost:1313/posts/bai1_hello-world/"></a>
+  <footer class="entry-footer"><span title='2026-02-09 11:10:00 +0700 +07'>February 9, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>155 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
+  <a class="entry-link" aria-label="post link to Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod" href="http://localhost:1313/posts/use_hogo/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Bài 2. Biến và nhập xúât cơ bản trong C
+    <h2 class="entry-hint-parent">Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project
     </h2>
   </header>
   <div class="entry-content">
-    <p>String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = &#34;Shatter&#34;; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {&#39;S&#39;, &#39;h&#39;, &#39;a&#39;, &#39;t&#39;, &#39;n&#39;, &#39;e&#39;, &#39;r&#39;}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char Coi char là viên gạch , còn string là bức tường Chiếm đúng 1 byte (8 bit) . Ví dụ ký tự A thực chất là số 65 string là tập hợp mảng nhiều char đứng liên tiếp nhau , kích thước của nó thay đổi tùy vào độ dài từng chuỗi Quy tắc “dấu nháy” , đừng bao giờ nhầm lẫn : Dấu nháy đơn chỉ dành cho char Đúng : 1 char c = &#39;A&#39;; Sai : 1 char c = &#34;A&#34;; Dấu nháy kép dành cho string Đúng : 1 string c = &#34;I love u !&#34;; Đúng : 1 string c = &#34;A&#34;; Bí mật của ký tự \0 Khi khai báo char c = &#39;A&#39;; , bộ tốn chỉ chứa 1 ô duy nhất chứa số 65 Khi bạn khai báo char c[] = &#34;A&#34;; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự A và ô chứa ký tự đặc biệt \0 (null terminal) Tại sao máy tính cần ký tự \0 Vì máy tính của bạn không biết chuỗi dài bao nhiêu , nó sẽ đọc vào ô đầu tiên chỉ số c[0] và chỉ dừng lại tới ô có ký tự c[end] = &#39;\0&#39; Nếu bạn quên hoặc không có ký tự này , máy tính sẽ không biết dừng ở đâu , đọc tràn sang các bộ nhớ khác Toán tử với chuỗi và mảng ký tự Với mảng ký tự , nó sẽ xử lý ký tự như 1 số học đơn thuần , ví dụ : 1 2 char c = &#39;A&#39;; c = c &#43; 1 ; Nó sẽ thực hiện bằng cách : biến ký tự A thành 65 , và bắt đầu cộng thêm 1 c = 65 &#43; 1 = 66 Sau đó nó sẽ biến đổi ngược lại từ 66 thành ký tự B Kết quả c = &#39;B&#39; String thì không thể lấy &#34;Hello&#34; - 1 , Phép cộng thường là Phép nối chuỗi Ví dụ : &#34;Hello&#34; &#43; &#34;World!&#34; Ví dụ về char 1 char *c = &#34;Hello&#34;; Biến S không chứa chữ &#34;Hello&#34; . nó chỉ chứa tọa độ địa chỉ của ô nhớ đầu tiên nơi chữ &#34;H&#34; tọa lạc Vì chữ &#34;Hello&#34; nằm trong vùng nhớ chỉ đọc , nên bạn không thể sửa nó Đó là lý do vì sao Gọi &#34;Hello&#34; là hằng số chuỗi ( string literal) , còn char a = &#39;C&#39; , bạn có thể đổi c = &#39;B&#39; thoải mái vì giá trị có nó nằm ngay Stack của hàm đang chạy Lỗi xảy ra với char có thể gặp Nhầm char với chuỗi 1 2 char c = &#39;A&#39; ; // &lt;------ Đúng char c = &#34;B&#34; ; // &lt;------ Sai Nguyên nhân &#34;A&#34; là chuỗi (char[2]) &#39;A&#39; là chuỗi char[1] Gán vượt quá phạm vị của char 1 char c = 300; char c thường nhận ký tự từ -128 đến 127 hoặc 0 -&gt; 255 Giá trị bị tràn </p>
+    <p>Các khái niệm cơ bản Context Window AI có bộ nhớ suy luận hữu hạn 1,000,000 tokens đối với ClaudeAI Tokens có thể hiểu là 1 từ có ngữ nghĩa đối trong câu Attention ( Độ tập trung ) Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn </p>
   </div>
-  <footer class="entry-footer"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>591 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
-  <a class="entry-link" aria-label="post link to Bài 2. Biến và nhập xúât cơ bản trong C" href="http://localhost:1313/posts/bai2_io_var/"></a>
+  <footer class="entry-footer"><span title='2026-02-11 00:00:00 +0000 UTC'>February 11, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>80 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
+  <a class="entry-link" aria-label="post link to Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project" href="http://localhost:1313/posts/using_ai/"></a>
 </article>
     </main>
     

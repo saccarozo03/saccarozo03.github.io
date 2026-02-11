@@ -6,7 +6,7 @@
     <description>Recent content in Learning-Log on Nhật ký học lập trình</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/learning-log/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
@@ -98,6 +98,13 @@
 &lt;/ul&gt;</description>
     </item>
     <item>
+      <title>Tổng quan và hướng dẫn AI đọc hiểu project</title>
+      <link>http://localhost:1313/posts/using_ai/</link>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/using_ai/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Bài 2. Biến và nhập xúât cơ bản trong C</title>
       <link>http://localhost:1313/posts/bai2_io_var/</link>
       <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
@@ -149,7 +156,7 @@ như &lt;code&gt;s[0]&lt;/code&gt; và &lt;code&gt;s[1]&lt;/code&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Sai :&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;strong&gt;Sai :&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -179,13 +186,84 @@ như &lt;code&gt;s[0]&lt;/code&gt; và &lt;code&gt;s[1]&lt;/code&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;s&#34;&gt;&amp;#34;A &amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;s&#34;&gt;&amp;#34;A&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;bí-mật-của-ký-tự-0&#34;&gt;Bí mật của ký tự &lt;code&gt;\0&lt;/code&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Khi khai báo &lt;code&gt;char c = &#39;A&#39;;&lt;/code&gt; , bộ tốn chỉ chứa 1 ô duy nhất chứa số &lt;code&gt;65&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Khi bạn khai báo &lt;code&gt;char c[] = &#39;A&#39;;&lt;/code&gt; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự &lt;code&gt;A&lt;/code&gt; và ô chứa ký tự &lt;code&gt;\0 (null terminal)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Khi bạn khai báo &lt;code&gt;char c[] = &amp;quot;A&amp;quot;;&lt;/code&gt; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự &lt;code&gt;A&lt;/code&gt; và ô chứa ký tự đặc biệt &lt;code&gt;\0 (null terminal)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tại-sao-máy-tính-cần-ký-tự-0&#34;&gt;Tại sao máy tính cần ký tự &lt;code&gt;\0&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Vì máy tính của bạn không biết chuỗi dài bao nhiêu , nó sẽ đọc vào ô đầu tiên chỉ số &lt;code&gt;c[0]&lt;/code&gt; và chỉ dừng lại tới ô có ký tự &lt;code&gt;c[end] = &#39;\0&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Nếu bạn quên hoặc không có ký tự này , máy tính sẽ không biết dừng ở đâu , đọc tràn sang các bộ nhớ khác&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;toán-tử-với-chuỗi-và-mảng-ký-tự&#34;&gt;Toán tử với chuỗi và mảng ký tự&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Với mảng ký tự , nó sẽ xử lý ký tự như 1 số học đơn thuần , ví dụ :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Nó sẽ thực hiện bằng cách : biến ký tự &lt;code&gt;A&lt;/code&gt; thành &lt;code&gt;65&lt;/code&gt; , và bắt đầu cộng thêm &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;c = 65 + 1 = 66&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Sau đó nó sẽ biến đổi ngược lại từ &lt;code&gt;66&lt;/code&gt; thành ký tự &lt;code&gt;B&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Kết quả &lt;code&gt;c = &#39;B&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;String&lt;/code&gt; thì không thể  lấy &lt;code&gt;&amp;quot;Hello&amp;quot; - 1&lt;/code&gt; , Phép cộng thường là Phép nối chuỗi&lt;/li&gt;
+&lt;li&gt;Ví dụ : &lt;code&gt;&amp;quot;Hello&amp;quot; + &amp;quot;World!&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ví-dụ-về-char&#34;&gt;Ví dụ về char&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Biến &lt;code&gt;S&lt;/code&gt; không chứa chữ &lt;code&gt;&amp;quot;Hello&amp;quot;&lt;/code&gt; . nó chỉ chứa tọa độ địa chỉ của ô nhớ đầu tiên nơi chữ &lt;code&gt;&amp;quot;H&amp;quot;&lt;/code&gt; tọa lạc&lt;/li&gt;
+&lt;li&gt;Vì chữ &lt;code&gt;&amp;quot;Hello&amp;quot;&lt;/code&gt; nằm trong vùng nhớ chỉ đọc , nên bạn không thể sửa nó&lt;/li&gt;
+&lt;li&gt;Đó là lý do vì sao Gọi &lt;code&gt;&amp;quot;Hello&amp;quot;&lt;/code&gt; là &lt;code&gt;hằng số chuỗi ( string literal)&lt;/code&gt; , còn &lt;code&gt;char a = &#39;C&#39;&lt;/code&gt; , bạn có thể đổi &lt;code&gt;c = &#39;B&#39;&lt;/code&gt; thoải mái vì giá trị có nó nằm ngay &lt;code&gt;Stack&lt;/code&gt; của hàm đang chạy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;lỗi-xảy-ra-với-char-có-thể-gặp&#34;&gt;Lỗi xảy ra với char có thể gặp&lt;/h2&gt;
+&lt;h3 id=&#34;nhầm-char-với-chuỗi&#34;&gt;Nhầm &lt;code&gt;char&lt;/code&gt; với chuỗi&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// &amp;lt;------ Đúng 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;B&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// &amp;lt;------ Sai 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;strong&gt;Nguyên nhân&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;A&amp;quot;&lt;/code&gt; là chuỗi &lt;code&gt;(char[2])&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;A&#39;&lt;/code&gt; là chuỗi &lt;code&gt;char[1]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;gán-vượt-quá-phạm-vị-của-char&#34;&gt;Gán vượt quá phạm vị của &lt;code&gt;char&lt;/code&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;char c thường nhận ký tự từ &lt;code&gt;-128 đến 127&lt;/code&gt; hoặc &lt;code&gt;0 -&amp;gt; 255&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Giá trị bị tràn&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
   </channel>
