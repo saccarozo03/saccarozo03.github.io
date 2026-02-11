@@ -9,6 +9,13 @@
     <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
+      <link>http://localhost:1313/posts/use_hogo/</link>
+      <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/use_hogo/</guid>
+      <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
+    </item>
+    <item>
       <title>Bài 1. Hello World</title>
       <link>http://localhost:1313/posts/bai1_hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
@@ -124,6 +131,61 @@
 như &lt;code&gt;s[0]&lt;/code&gt; và &lt;code&gt;s[1]&lt;/code&gt;
 &lt;img alt=&#34;mô tả về chuỗi nhé&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/bai2_Nhapxuatchuoi/string.png&#34;&gt;&lt;/li&gt;
 &lt;li&gt;Vậy &lt;code&gt;string&lt;/code&gt; khác gì &lt;code&gt;char&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Coi &lt;code&gt;char&lt;/code&gt; là viên gạch , còn &lt;code&gt;string&lt;/code&gt; là bức tường&lt;/li&gt;
+&lt;li&gt;Chiếm đúng &lt;code&gt;1 byte (8 bit)&lt;/code&gt; . Ví dụ ký tự &lt;code&gt;A&lt;/code&gt; thực chất là số &lt;code&gt;65&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;string&lt;/code&gt; là tập hợp mảng nhiều &lt;code&gt;char&lt;/code&gt; đứng liên tiếp nhau , kích thước của nó thay đổi tùy vào độ dài từng chuỗi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;quy-tắc-dấu-nháy--đừng-bao-giờ-nhầm-lẫn-&#34;&gt;Quy tắc &amp;ldquo;dấu nháy&amp;rdquo; , đừng bao giờ nhầm lẫn :&lt;/h2&gt;
+&lt;h3 id=&#34;dấu-nháy-đơn-chỉ-dành-cho-char&#34;&gt;Dấu nháy đơn chỉ dành cho &lt;code&gt;char&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Đúng :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Sai :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;A&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;dấu-nháy-kép-dành-cho-string&#34;&gt;Dấu nháy kép dành cho &lt;code&gt;string&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Đúng :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;I love u !&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Đúng :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;s&#34;&gt;&amp;#34;A &amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;bí-mật-của-ký-tự-0&#34;&gt;Bí mật của ký tự &lt;code&gt;\0&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Khi khai báo &lt;code&gt;char c = &#39;A&#39;;&lt;/code&gt; , bộ tốn chỉ chứa 1 ô duy nhất chứa số &lt;code&gt;65&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Khi bạn khai báo &lt;code&gt;char c[] = &#39;A&#39;;&lt;/code&gt; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự &lt;code&gt;A&lt;/code&gt; và ô chứa ký tự &lt;code&gt;\0 (null terminal)&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
   </channel>

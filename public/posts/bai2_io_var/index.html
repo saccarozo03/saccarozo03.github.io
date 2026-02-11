@@ -36,6 +36,132 @@ Mỗi ký tự chỉ là 1 phần tử trong chuỗi
 như s[0] và s[1]
 
 Vậy string khác gì char
+Coi char là viên gạch , còn string là bức tường
+Chiếm đúng 1 byte (8 bit) . Ví dụ ký tự A thực chất là số 65
+string là tập hợp mảng nhiều char đứng liên tiếp nhau , kích thước của nó thay đổi tùy vào độ dài từng chuỗi
+
+Quy tắc &ldquo;dấu nháy&rdquo; , đừng bao giờ nhầm lẫn :
+Dấu nháy đơn chỉ dành cho char
+
+Đúng :
+
+
+
+1
+
+
+char c = &#39;A&#39;;
+
+
+
+Sai :
+
+
+
+1
+
+
+char c = &#34;A&#34;;
+
+
+Dấu nháy kép dành cho string
+
+Đúng :
+
+
+
+1
+
+
+string c = &#34;I love u !&#34;; 
+
+
+
+Đúng :
+
+
+
+1
+
+
+string c =  &#34;A&#34;;
+
+
+Bí mật của ký tự \0
+
+Khi khai báo char c = &#39;A&#39;; , bộ tốn chỉ chứa 1 ô duy nhất chứa số 65
+Khi bạn khai báo char c[] = &quot;A&quot;; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự A và ô chứa ký tự đặc biệt \0 (null terminal)
+
+Tại sao máy tính cần ký tự \0
+
+Vì máy tính của bạn không biết chuỗi dài bao nhiêu , nó sẽ đọc vào ô đầu tiên chỉ số c[0] và chỉ dừng lại tới ô có ký tự c[end] = &#39;\0&#39;
+Nếu bạn quên hoặc không có ký tự này , máy tính sẽ không biết dừng ở đâu , đọc tràn sang các bộ nhớ khác
+
+Toán tử với chuỗi và mảng ký tự
+
+Với mảng ký tự , nó sẽ xử lý ký tự như 1 số học đơn thuần , ví dụ :
+
+
+
+1
+2
+
+
+char c = &#39;A&#39;;
+c =  c &#43; 1 ;
+
+
+
+Nó sẽ thực hiện bằng cách : biến ký tự A thành 65 , và bắt đầu cộng thêm 1
+c = 65 &#43; 1 = 66
+Sau đó nó sẽ biến đổi ngược lại từ 66 thành ký tự B
+Kết quả c = &#39;B&#39;
+String thì không thể  lấy &quot;Hello&quot; - 1 , Phép cộng thường là Phép nối chuỗi
+Ví dụ : &quot;Hello&quot; &#43; &quot;World!&quot;
+
+Ví dụ về char
+
+
+1
+
+
+char *c = &#34;Hello&#34;;
+
+
+
+Biến S không chứa chữ &quot;Hello&quot; . nó chỉ chứa tọa độ địa chỉ của ô nhớ đầu tiên nơi chữ &quot;H&quot; tọa lạc
+Vì chữ &quot;Hello&quot; nằm trong vùng nhớ chỉ đọc , nên bạn không thể sửa nó
+Đó là lý do vì sao Gọi &quot;Hello&quot; là hằng số chuỗi ( string literal) , còn char a = &#39;C&#39; , bạn có thể đổi c = &#39;B&#39; thoải mái vì giá trị có nó nằm ngay Stack của hàm đang chạy
+
+Lỗi xảy ra với char có thể gặp
+Nhầm char với chuỗi
+
+
+1
+2
+
+
+char c = &#39;A&#39; ; // &lt;------ Đúng 
+char c = &#34;B&#34; ; // &lt;------ Sai 
+
+
+
+Nguyên nhân
+&quot;A&quot; là chuỗi (char[2])
+&#39;A&#39; là chuỗi char[1]
+
+Gán vượt quá phạm vị của char
+
+
+1
+
+
+char c = 300;
+
+
+
+char c thường nhận ký tự từ -128 đến 127 hoặc 0 -&gt; 255
+Giá trị bị tràn
 ">
 <meta name="author" content="Saccarozo03">
 <link rel="canonical" href="http://localhost:1313/posts/bai2_io_var/">
@@ -102,15 +228,16 @@ Vậy string khác gì char
 </script><meta property="og:url" content="http://localhost:1313/posts/bai2_io_var/">
   <meta property="og:site_name" content="Nhật ký học lập trình">
   <meta property="og:title" content="Bài 2. Biến và nhập xúât cơ bản trong C">
-  <meta property="og:description" content="String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = &#34;Shatter&#34;; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {&#39;S&#39;, &#39;h&#39;, &#39;a&#39;, &#39;t&#39;, &#39;n&#39;, &#39;e&#39;, &#39;r&#39;}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char ">
+  <meta property="og:description" content="String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = &#34;Shatter&#34;; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {&#39;S&#39;, &#39;h&#39;, &#39;a&#39;, &#39;t&#39;, &#39;n&#39;, &#39;e&#39;, &#39;r&#39;}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char Coi char là viên gạch , còn string là bức tường Chiếm đúng 1 byte (8 bit) . Ví dụ ký tự A thực chất là số 65 string là tập hợp mảng nhiều char đứng liên tiếp nhau , kích thước của nó thay đổi tùy vào độ dài từng chuỗi Quy tắc “dấu nháy” , đừng bao giờ nhầm lẫn : Dấu nháy đơn chỉ dành cho char Đúng : 1 char c = &#39;A&#39;; Sai : 1 char c = &#34;A&#34;; Dấu nháy kép dành cho string Đúng : 1 string c = &#34;I love u !&#34;; Đúng : 1 string c = &#34;A&#34;; Bí mật của ký tự \0 Khi khai báo char c = &#39;A&#39;; , bộ tốn chỉ chứa 1 ô duy nhất chứa số 65 Khi bạn khai báo char c[] = &#34;A&#34;; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự A và ô chứa ký tự đặc biệt \0 (null terminal) Tại sao máy tính cần ký tự \0 Vì máy tính của bạn không biết chuỗi dài bao nhiêu , nó sẽ đọc vào ô đầu tiên chỉ số c[0] và chỉ dừng lại tới ô có ký tự c[end] = &#39;\0&#39; Nếu bạn quên hoặc không có ký tự này , máy tính sẽ không biết dừng ở đâu , đọc tràn sang các bộ nhớ khác Toán tử với chuỗi và mảng ký tự Với mảng ký tự , nó sẽ xử lý ký tự như 1 số học đơn thuần , ví dụ : 1 2 char c = &#39;A&#39;; c = c &#43; 1 ; Nó sẽ thực hiện bằng cách : biến ký tự A thành 65 , và bắt đầu cộng thêm 1 c = 65 &#43; 1 = 66 Sau đó nó sẽ biến đổi ngược lại từ 66 thành ký tự B Kết quả c = &#39;B&#39; String thì không thể lấy &#34;Hello&#34; - 1 , Phép cộng thường là Phép nối chuỗi Ví dụ : &#34;Hello&#34; &#43; &#34;World!&#34; Ví dụ về char 1 char *c = &#34;Hello&#34;; Biến S không chứa chữ &#34;Hello&#34; . nó chỉ chứa tọa độ địa chỉ của ô nhớ đầu tiên nơi chữ &#34;H&#34; tọa lạc Vì chữ &#34;Hello&#34; nằm trong vùng nhớ chỉ đọc , nên bạn không thể sửa nó Đó là lý do vì sao Gọi &#34;Hello&#34; là hằng số chuỗi ( string literal) , còn char a = &#39;C&#39; , bạn có thể đổi c = &#39;B&#39; thoải mái vì giá trị có nó nằm ngay Stack của hàm đang chạy Lỗi xảy ra với char có thể gặp Nhầm char với chuỗi 1 2 char c = &#39;A&#39; ; // &lt;------ Đúng char c = &#34;B&#34; ; // &lt;------ Sai Nguyên nhân &#34;A&#34; là chuỗi (char[2]) &#39;A&#39; là chuỗi char[1] Gán vượt quá phạm vị của char 1 char c = 300; char c thường nhận ký tự từ -128 đến 127 hoặc 0 -&gt; 255 Giá trị bị tràn ">
   <meta property="og:locale" content="vi-vn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-02-10T00:00:00+00:00">
     <meta property="article:modified_time" content="2026-02-10T00:00:00+00:00">
-    <meta property="article:tag" content="Learning Log">
+    <meta property="article:tag" content="Learning-Log">
     <meta property="article:tag" content="C">
     <meta property="article:tag" content="Linux">
+      <meta property="og:see_also" content="http://localhost:1313/posts/use_hogo/">
       <meta property="og:see_also" content="http://localhost:1313/posts/bai1_hello-world/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bài 2. Biến và nhập xúât cơ bản trong C">
@@ -143,6 +270,132 @@ Mỗi ký tự chỉ là 1 phần tử trong chuỗi
 như s[0] và s[1]
 
 Vậy string khác gì char
+Coi char là viên gạch , còn string là bức tường
+Chiếm đúng 1 byte (8 bit) . Ví dụ ký tự A thực chất là số 65
+string là tập hợp mảng nhiều char đứng liên tiếp nhau , kích thước của nó thay đổi tùy vào độ dài từng chuỗi
+
+Quy tắc &ldquo;dấu nháy&rdquo; , đừng bao giờ nhầm lẫn :
+Dấu nháy đơn chỉ dành cho char
+
+Đúng :
+
+
+
+1
+
+
+char c = &#39;A&#39;;
+
+
+
+Sai :
+
+
+
+1
+
+
+char c = &#34;A&#34;;
+
+
+Dấu nháy kép dành cho string
+
+Đúng :
+
+
+
+1
+
+
+string c = &#34;I love u !&#34;; 
+
+
+
+Đúng :
+
+
+
+1
+
+
+string c =  &#34;A&#34;;
+
+
+Bí mật của ký tự \0
+
+Khi khai báo char c = &#39;A&#39;; , bộ tốn chỉ chứa 1 ô duy nhất chứa số 65
+Khi bạn khai báo char c[] = &quot;A&quot;; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự A và ô chứa ký tự đặc biệt \0 (null terminal)
+
+Tại sao máy tính cần ký tự \0
+
+Vì máy tính của bạn không biết chuỗi dài bao nhiêu , nó sẽ đọc vào ô đầu tiên chỉ số c[0] và chỉ dừng lại tới ô có ký tự c[end] = &#39;\0&#39;
+Nếu bạn quên hoặc không có ký tự này , máy tính sẽ không biết dừng ở đâu , đọc tràn sang các bộ nhớ khác
+
+Toán tử với chuỗi và mảng ký tự
+
+Với mảng ký tự , nó sẽ xử lý ký tự như 1 số học đơn thuần , ví dụ :
+
+
+
+1
+2
+
+
+char c = &#39;A&#39;;
+c =  c &#43; 1 ;
+
+
+
+Nó sẽ thực hiện bằng cách : biến ký tự A thành 65 , và bắt đầu cộng thêm 1
+c = 65 &#43; 1 = 66
+Sau đó nó sẽ biến đổi ngược lại từ 66 thành ký tự B
+Kết quả c = &#39;B&#39;
+String thì không thể  lấy &quot;Hello&quot; - 1 , Phép cộng thường là Phép nối chuỗi
+Ví dụ : &quot;Hello&quot; &#43; &quot;World!&quot;
+
+Ví dụ về char
+
+
+1
+
+
+char *c = &#34;Hello&#34;;
+
+
+
+Biến S không chứa chữ &quot;Hello&quot; . nó chỉ chứa tọa độ địa chỉ của ô nhớ đầu tiên nơi chữ &quot;H&quot; tọa lạc
+Vì chữ &quot;Hello&quot; nằm trong vùng nhớ chỉ đọc , nên bạn không thể sửa nó
+Đó là lý do vì sao Gọi &quot;Hello&quot; là hằng số chuỗi ( string literal) , còn char a = &#39;C&#39; , bạn có thể đổi c = &#39;B&#39; thoải mái vì giá trị có nó nằm ngay Stack của hàm đang chạy
+
+Lỗi xảy ra với char có thể gặp
+Nhầm char với chuỗi
+
+
+1
+2
+
+
+char c = &#39;A&#39; ; // &lt;------ Đúng 
+char c = &#34;B&#34; ; // &lt;------ Sai 
+
+
+
+Nguyên nhân
+&quot;A&quot; là chuỗi (char[2])
+&#39;A&#39; là chuỗi char[1]
+
+Gán vượt quá phạm vị của char
+
+
+1
+
+
+char c = 300;
+
+
+
+char c thường nhận ký tự từ -128 đến 127 hoặc 0 -&gt; 255
+Giá trị bị tràn
 ">
 
 
@@ -172,12 +425,12 @@ Vậy string khác gì char
   "@type": "BlogPosting",
   "headline": "Bài 2. Biến và nhập xúât cơ bản trong C",
   "name": "Bài 2. Biến và nhập xúât cơ bản trong C",
-  "description": "String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = \u0026#34;Shatter\u0026#34;; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {\u0026#39;S\u0026#39;, \u0026#39;h\u0026#39;, \u0026#39;a\u0026#39;, \u0026#39;t\u0026#39;, \u0026#39;n\u0026#39;, \u0026#39;e\u0026#39;, \u0026#39;r\u0026#39;}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char ",
+  "description": "String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = \u0026#34;Shatter\u0026#34;; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {\u0026#39;S\u0026#39;, \u0026#39;h\u0026#39;, \u0026#39;a\u0026#39;, \u0026#39;t\u0026#39;, \u0026#39;n\u0026#39;, \u0026#39;e\u0026#39;, \u0026#39;r\u0026#39;}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char Coi char là viên gạch , còn string là bức tường Chiếm đúng 1 byte (8 bit) . Ví dụ ký tự A thực chất là số 65 string là tập hợp mảng nhiều char đứng liên tiếp nhau , kích thước của nó thay đổi tùy vào độ dài từng chuỗi Quy tắc \u0026ldquo;dấu nháy\u0026rdquo; , đừng bao giờ nhầm lẫn : Dấu nháy đơn chỉ dành cho char Đúng : 1 char c = \u0026#39;A\u0026#39;; Sai : 1 char c = \u0026#34;A\u0026#34;; Dấu nháy kép dành cho string Đúng : 1 string c = \u0026#34;I love u !\u0026#34;; Đúng : 1 string c = \u0026#34;A\u0026#34;; Bí mật của ký tự \\0 Khi khai báo char c = 'A'; , bộ tốn chỉ chứa 1 ô duy nhất chứa số 65 Khi bạn khai báo char c[] = \u0026quot;A\u0026quot;; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự A và ô chứa ký tự đặc biệt \\0 (null terminal) Tại sao máy tính cần ký tự \\0 Vì máy tính của bạn không biết chuỗi dài bao nhiêu , nó sẽ đọc vào ô đầu tiên chỉ số c[0] và chỉ dừng lại tới ô có ký tự c[end] = '\\0' Nếu bạn quên hoặc không có ký tự này , máy tính sẽ không biết dừng ở đâu , đọc tràn sang các bộ nhớ khác Toán tử với chuỗi và mảng ký tự Với mảng ký tự , nó sẽ xử lý ký tự như 1 số học đơn thuần , ví dụ : 1 2 char c = \u0026#39;A\u0026#39;; c = c + 1 ; Nó sẽ thực hiện bằng cách : biến ký tự A thành 65 , và bắt đầu cộng thêm 1 c = 65 + 1 = 66 Sau đó nó sẽ biến đổi ngược lại từ 66 thành ký tự B Kết quả c = 'B' String thì không thể lấy \u0026quot;Hello\u0026quot; - 1 , Phép cộng thường là Phép nối chuỗi Ví dụ : \u0026quot;Hello\u0026quot; + \u0026quot;World!\u0026quot; Ví dụ về char 1 char *c = \u0026#34;Hello\u0026#34;; Biến S không chứa chữ \u0026quot;Hello\u0026quot; . nó chỉ chứa tọa độ địa chỉ của ô nhớ đầu tiên nơi chữ \u0026quot;H\u0026quot; tọa lạc Vì chữ \u0026quot;Hello\u0026quot; nằm trong vùng nhớ chỉ đọc , nên bạn không thể sửa nó Đó là lý do vì sao Gọi \u0026quot;Hello\u0026quot; là hằng số chuỗi ( string literal) , còn char a = 'C' , bạn có thể đổi c = 'B' thoải mái vì giá trị có nó nằm ngay Stack của hàm đang chạy Lỗi xảy ra với char có thể gặp Nhầm char với chuỗi 1 2 char c = \u0026#39;A\u0026#39; ; // \u0026lt;------ Đúng char c = \u0026#34;B\u0026#34; ; // \u0026lt;------ Sai Nguyên nhân \u0026quot;A\u0026quot; là chuỗi (char[2]) 'A' là chuỗi char[1] Gán vượt quá phạm vị của char 1 char c = 300; char c thường nhận ký tự từ -128 đến 127 hoặc 0 -\u0026gt; 255 Giá trị bị tràn ",
   "keywords": [
     "learning-log", "c", "linux"
   ],
-  "articleBody": "String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = \"Shatter\"; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {'S', 'h', 'a', 't', 'n', 'e', 'r'}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char ",
-  "wordCount" : "89",
+  "articleBody": "String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = \"Shatter\"; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {'S', 'h', 'a', 't', 'n', 'e', 'r'}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char Coi char là viên gạch , còn string là bức tường Chiếm đúng 1 byte (8 bit) . Ví dụ ký tự A thực chất là số 65 string là tập hợp mảng nhiều char đứng liên tiếp nhau , kích thước của nó thay đổi tùy vào độ dài từng chuỗi Quy tắc “dấu nháy” , đừng bao giờ nhầm lẫn : Dấu nháy đơn chỉ dành cho char Đúng : 1 char c = 'A'; Sai : 1 char c = \"A\"; Dấu nháy kép dành cho string Đúng : 1 string c = \"I love u !\"; Đúng : 1 string c = \"A\"; Bí mật của ký tự \\0 Khi khai báo char c = 'A'; , bộ tốn chỉ chứa 1 ô duy nhất chứa số 65 Khi bạn khai báo char c[] = \"A\"; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự A và ô chứa ký tự đặc biệt \\0 (null terminal) Tại sao máy tính cần ký tự \\0 Vì máy tính của bạn không biết chuỗi dài bao nhiêu , nó sẽ đọc vào ô đầu tiên chỉ số c[0] và chỉ dừng lại tới ô có ký tự c[end] = '\\0' Nếu bạn quên hoặc không có ký tự này , máy tính sẽ không biết dừng ở đâu , đọc tràn sang các bộ nhớ khác Toán tử với chuỗi và mảng ký tự Với mảng ký tự , nó sẽ xử lý ký tự như 1 số học đơn thuần , ví dụ : 1 2 char c = 'A'; c = c + 1 ; Nó sẽ thực hiện bằng cách : biến ký tự A thành 65 , và bắt đầu cộng thêm 1 c = 65 + 1 = 66 Sau đó nó sẽ biến đổi ngược lại từ 66 thành ký tự B Kết quả c = 'B' String thì không thể lấy \"Hello\" - 1 , Phép cộng thường là Phép nối chuỗi Ví dụ : \"Hello\" + \"World!\" Ví dụ về char 1 char *c = \"Hello\"; Biến S không chứa chữ \"Hello\" . nó chỉ chứa tọa độ địa chỉ của ô nhớ đầu tiên nơi chữ \"H\" tọa lạc Vì chữ \"Hello\" nằm trong vùng nhớ chỉ đọc , nên bạn không thể sửa nó Đó là lý do vì sao Gọi \"Hello\" là hằng số chuỗi ( string literal) , còn char a = 'C' , bạn có thể đổi c = 'B' thoải mái vì giá trị có nó nằm ngay Stack của hàm đang chạy Lỗi xảy ra với char có thể gặp Nhầm char với chuỗi 1 2 char c = 'A' ; // \u003c------ Đúng char c = \"B\" ; // \u003c------ Sai Nguyên nhân \"A\" là chuỗi (char[2]) 'A' là chuỗi char[1] Gán vượt quá phạm vị của char 1 char c = 300; char c thường nhận ký tự từ -128 đến 127 hoặc 0 -\u003e 255 Giá trị bị tràn ",
+  "wordCount" : "591",
   "inLanguage": "en",
   "datePublished": "2026-02-10T00:00:00Z",
   "dateModified": "2026-02-10T00:00:00Z",
@@ -265,7 +518,7 @@ Vậy string khác gì char
     <h1 class="post-title entry-hint-parent">
       Bài 2. Biến và nhập xúât cơ bản trong C
     </h1>
-    <div class="post-meta"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>89 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span>&nbsp;|&nbsp;<span>
+    <div class="post-meta"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>591 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span>&nbsp;|&nbsp;<span>
     <a href="https://github.com/saccarozo03/saccarozo03.github.io/tree/main/content/posts/bai2_io_var.md" rel="noopener noreferrer edit" target="_blank">Suggest edits</a>
 </span>
 
@@ -278,8 +531,33 @@ Vậy string khác gì char
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#string-way-up-close-chu%e1%bb%97i-trong-ng%c3%b4n-ng%e1%bb%af-c" aria-label="String way up close (Chuỗi trong ngôn ngữ C)">String way up close (Chuỗi trong ngôn ngữ C)</a>
+                    <a href="#string-way-up-close-chu%e1%bb%97i-trong-ng%c3%b4n-ng%e1%bb%af-c" aria-label="String way up close (Chuỗi trong ngôn ngữ C)">String way up close (Chuỗi trong ngôn ngữ C)</a></li>
+                <li>
+                    <a href="#quy-t%e1%ba%afc-d%e1%ba%a5u-nh%c3%a1y--%c4%91%e1%bb%abng-bao-gi%e1%bb%9d-nh%e1%ba%a7m-l%e1%ba%abn-" aria-label="Quy tắc &ldquo;dấu nháy&rdquo; , đừng bao giờ nhầm lẫn :">Quy tắc &ldquo;dấu nháy&rdquo; , đừng bao giờ nhầm lẫn :</a><ul>
+                        
+                <li>
+                    <a href="#d%e1%ba%a5u-nh%c3%a1y-%c4%91%c6%a1n-ch%e1%bb%89-d%c3%a0nh-cho-char" aria-label="Dấu nháy đơn chỉ dành cho char">Dấu nháy đơn chỉ dành cho char</a></li>
+                <li>
+                    <a href="#d%e1%ba%a5u-nh%c3%a1y-k%c3%a9p-d%c3%a0nh-cho-string" aria-label="Dấu nháy kép dành cho string">Dấu nháy kép dành cho string</a></li>
+                <li>
+                    <a href="#b%c3%ad-m%e1%ba%adt-c%e1%bb%a7a-k%c3%bd-t%e1%bb%b1-0" aria-label="Bí mật của ký tự \0">Bí mật của ký tự \0</a></li>
+                <li>
+                    <a href="#t%e1%ba%a1i-sao-m%c3%a1y-t%c3%adnh-c%e1%ba%a7n-k%c3%bd-t%e1%bb%b1-0" aria-label="Tại sao máy tính cần ký tự \0">Tại sao máy tính cần ký tự \0</a></li>
+                <li>
+                    <a href="#to%c3%a1n-t%e1%bb%ad-v%e1%bb%9bi-chu%e1%bb%97i-v%c3%a0-m%e1%ba%a3ng-k%c3%bd-t%e1%bb%b1" aria-label="Toán tử với chuỗi và mảng ký tự">Toán tử với chuỗi và mảng ký tự</a></li>
+                <li>
+                    <a href="#v%c3%ad-d%e1%bb%a5-v%e1%bb%81-char" aria-label="Ví dụ về char">Ví dụ về char</a></li></ul>
                 </li>
+                <li>
+                    <a href="#l%e1%bb%97i-x%e1%ba%a3y-ra-v%e1%bb%9bi-char-c%c3%b3-th%e1%bb%83-g%e1%ba%b7p" aria-label="Lỗi xảy ra với char có thể gặp">Lỗi xảy ra với char có thể gặp</a><ul>
+                        
+                <li>
+                    <a href="#nh%e1%ba%a7m-char-v%e1%bb%9bi-chu%e1%bb%97i" aria-label="Nhầm char với chuỗi">Nhầm char với chuỗi</a></li>
+                <li>
+                    <a href="#g%c3%a1n-v%c6%b0%e1%bb%a3t-qu%c3%a1-ph%e1%ba%a1m-v%e1%bb%8b-c%e1%bb%a7a-char" aria-label="Gán vượt quá phạm vị của char">Gán vượt quá phạm vị của char</a>
+                </li>
+            </ul>
+            </li>
             </ul>
         </div>
     </details>
@@ -314,6 +592,132 @@ Vậy string khác gì char
 như <code>s[0]</code> và <code>s[1]</code>
 <img alt="mô tả về chuỗi nhé" loading="lazy" src="/images/bai2_Nhapxuatchuoi/string.png"></li>
 <li>Vậy <code>string</code> khác gì <code>char</code></li>
+<li>Coi <code>char</code> là viên gạch , còn <code>string</code> là bức tường</li>
+<li>Chiếm đúng <code>1 byte (8 bit)</code> . Ví dụ ký tự <code>A</code> thực chất là số <code>65</code></li>
+<li><code>string</code> là tập hợp mảng nhiều <code>char</code> đứng liên tiếp nhau , kích thước của nó thay đổi tùy vào độ dài từng chuỗi</li>
+</ul>
+<h2 id="quy-tắc-dấu-nháy--đừng-bao-giờ-nhầm-lẫn-">Quy tắc &ldquo;dấu nháy&rdquo; , đừng bao giờ nhầm lẫn :<a hidden class="anchor" aria-hidden="true" href="#quy-tắc-dấu-nháy--đừng-bao-giờ-nhầm-lẫn-">#</a></h2>
+<h3 id="dấu-nháy-đơn-chỉ-dành-cho-char">Dấu nháy đơn chỉ dành cho <code>char</code><a hidden class="anchor" aria-hidden="true" href="#dấu-nháy-đơn-chỉ-dành-cho-char">#</a></h3>
+<ul>
+<li>Đúng :</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><span style="color:red"><strong>Sai :</strong></span></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#34;A&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="dấu-nháy-kép-dành-cho-string">Dấu nháy kép dành cho <code>string</code><a hidden class="anchor" aria-hidden="true" href="#dấu-nháy-kép-dành-cho-string">#</a></h3>
+<ul>
+<li>Đúng :</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">string</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#34;I love u !&#34;</span><span class="p">;</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Đúng :</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">string</span> <span class="n">c</span> <span class="o">=</span>  <span class="s">&#34;A&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="bí-mật-của-ký-tự-0">Bí mật của ký tự <code>\0</code><a hidden class="anchor" aria-hidden="true" href="#bí-mật-của-ký-tự-0">#</a></h3>
+<ul>
+<li>Khi khai báo <code>char c = 'A';</code> , bộ tốn chỉ chứa 1 ô duy nhất chứa số <code>65</code></li>
+<li>Khi bạn khai báo <code>char c[] = &quot;A&quot;;</code> , bộ nhớ tốn 2 ô , 1 ô chứa ký tự <code>A</code> và ô chứa ký tự đặc biệt <code>\0 (null terminal)</code></li>
+</ul>
+<h3 id="tại-sao-máy-tính-cần-ký-tự-0">Tại sao máy tính cần ký tự <code>\0</code><a hidden class="anchor" aria-hidden="true" href="#tại-sao-máy-tính-cần-ký-tự-0">#</a></h3>
+<ul>
+<li>Vì máy tính của bạn không biết chuỗi dài bao nhiêu , nó sẽ đọc vào ô đầu tiên chỉ số <code>c[0]</code> và chỉ dừng lại tới ô có ký tự <code>c[end] = '\0'</code></li>
+<li>Nếu bạn quên hoặc không có ký tự này , máy tính sẽ không biết dừng ở đâu , đọc tràn sang các bộ nhớ khác</li>
+</ul>
+<h3 id="toán-tử-với-chuỗi-và-mảng-ký-tự">Toán tử với chuỗi và mảng ký tự<a hidden class="anchor" aria-hidden="true" href="#toán-tử-với-chuỗi-và-mảng-ký-tự">#</a></h3>
+<ul>
+<li>Với mảng ký tự , nó sẽ xử lý ký tự như 1 số học đơn thuần , ví dụ :</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span>  <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Nó sẽ thực hiện bằng cách : biến ký tự <code>A</code> thành <code>65</code> , và bắt đầu cộng thêm <code>1</code></li>
+<li><code>c = 65 + 1 = 66</code></li>
+<li>Sau đó nó sẽ biến đổi ngược lại từ <code>66</code> thành ký tự <code>B</code></li>
+<li>Kết quả <code>c = 'B'</code></li>
+<li><code>String</code> thì không thể  lấy <code>&quot;Hello&quot; - 1</code> , Phép cộng thường là Phép nối chuỗi</li>
+<li>Ví dụ : <code>&quot;Hello&quot; + &quot;World!&quot;</code></li>
+</ul>
+<h3 id="ví-dụ-về-char">Ví dụ về char<a hidden class="anchor" aria-hidden="true" href="#ví-dụ-về-char">#</a></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="o">*</span><span class="n">c</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Biến <code>S</code> không chứa chữ <code>&quot;Hello&quot;</code> . nó chỉ chứa tọa độ địa chỉ của ô nhớ đầu tiên nơi chữ <code>&quot;H&quot;</code> tọa lạc</li>
+<li>Vì chữ <code>&quot;Hello&quot;</code> nằm trong vùng nhớ chỉ đọc , nên bạn không thể sửa nó</li>
+<li>Đó là lý do vì sao Gọi <code>&quot;Hello&quot;</code> là <code>hằng số chuỗi ( string literal)</code> , còn <code>char a = 'C'</code> , bạn có thể đổi <code>c = 'B'</code> thoải mái vì giá trị có nó nằm ngay <code>Stack</code> của hàm đang chạy</li>
+</ul>
+<h2 id="lỗi-xảy-ra-với-char-có-thể-gặp">Lỗi xảy ra với char có thể gặp<a hidden class="anchor" aria-hidden="true" href="#lỗi-xảy-ra-với-char-có-thể-gặp">#</a></h2>
+<h3 id="nhầm-char-với-chuỗi">Nhầm <code>char</code> với chuỗi<a hidden class="anchor" aria-hidden="true" href="#nhầm-char-với-chuỗi">#</a></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span> <span class="p">;</span> <span class="c1">// &lt;------ Đúng 
+</span></span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#34;B&#34;</span> <span class="p">;</span> <span class="c1">// &lt;------ Sai 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><span style="color:red"><strong>Nguyên nhân</strong></span></li>
+<li><code>&quot;A&quot;</code> là chuỗi <code>(char[2])</code></li>
+<li><code>'A'</code> là chuỗi <code>char[1]</code></li>
+</ul>
+<h3 id="gán-vượt-quá-phạm-vị-của-char">Gán vượt quá phạm vị của <code>char</code><a hidden class="anchor" aria-hidden="true" href="#gán-vượt-quá-phạm-vị-của-char">#</a></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>char c thường nhận ký tự từ <code>-128 đến 127</code> hoặc <code>0 -&gt; 255</code></li>
+<li>Giá trị bị tràn</li>
 </ul>
 
 
@@ -321,7 +725,7 @@ như <code>s[0]</code> và <code>s[1]</code>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/learning-log/">Learning Log</a></li>
+      <li><a href="http://localhost:1313/tags/learning-log/">Learning-Log</a></li>
       <li><a href="http://localhost:1313/tags/c/">C</a></li>
       <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
     </ul>
@@ -330,11 +734,6 @@ như <code>s[0]</code> và <code>s[1]</code>
     <span class="title">« Prev</span>
     <br>
     <span>Bài 1. Hello World</span>
-  </a>
-  <a class="next" href="http://localhost:1313/posts/use_hogo/">
-    <span class="title">Next »</span>
-    <br>
-    <span>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</span>
   </a>
 </nav>
 

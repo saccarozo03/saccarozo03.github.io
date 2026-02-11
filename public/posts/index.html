@@ -163,6 +163,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Mục tiêu bài này Biết cấu trúc 1 bài viết “đẹp” trong Hugo &#43; PaperMod Nắm các “lệnh” Markdown quan trọng (heading, list, link, ảnh, quote, table…) Biết cách chèn code (C, bash, json…) và tránh lỗi hay gặp 1) Bố cục bài viết chuẩn (khuyến nghị) Mình dùng 1 format cố định để viết learning log, dễ đọc và nhất quán:
+Mục tiêu TL;DR Nội dung chính (chia theo mục) Ví dụ code &#43; cách chạy Lỗi thường gặp Checklist / Next steps Tài liệu tham khảo Bạn có thể copy “template nhanh” cho các bài sau:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-09 11:10:00 +0700 +07'>February 9, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>155 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
+  <a class="entry-link" aria-label="post link to Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod" href="http://localhost:1313/posts/use_hogo/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Bài 1. Hello World
     </h2>
   </header>
@@ -179,24 +193,10 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = &#34;Shatter&#34;; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {&#39;S&#39;, &#39;h&#39;, &#39;a&#39;, &#39;t&#39;, &#39;n&#39;, &#39;e&#39;, &#39;r&#39;}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char </p>
+    <p>String way up close (Chuỗi trong ngôn ngữ C) string chỉ là mảng ký tự 1 s = &#34;Shatter&#34;; C nhìn chuỗi theo cách sau : nó đọc như là mảng với từng ký tự rời rạc 1 s = {&#39;S&#39;, &#39;h&#39;, &#39;a&#39;, &#39;t&#39;, &#39;n&#39;, &#39;e&#39;, &#39;r&#39;}; Mỗi ký tự chỉ là 1 phần tử trong chuỗi Đó là lý do tại sao bạn có thể tham chiếu đến từng phần tử ở trong chuỗi bằng cách dùng chỉ mục như s[0] và s[1] Vậy string khác gì char Coi char là viên gạch , còn string là bức tường Chiếm đúng 1 byte (8 bit) . Ví dụ ký tự A thực chất là số 65 string là tập hợp mảng nhiều char đứng liên tiếp nhau , kích thước của nó thay đổi tùy vào độ dài từng chuỗi Quy tắc “dấu nháy” , đừng bao giờ nhầm lẫn : Dấu nháy đơn chỉ dành cho char Đúng : 1 char c = &#39;A&#39;; Sai : 1 char c = &#34;A&#34;; Dấu nháy kép dành cho string Đúng : 1 string c = &#34;I love u !&#34;; Đúng : 1 string c = &#34;A&#34;; Bí mật của ký tự \0 Khi khai báo char c = &#39;A&#39;; , bộ tốn chỉ chứa 1 ô duy nhất chứa số 65 Khi bạn khai báo char c[] = &#34;A&#34;; , bộ nhớ tốn 2 ô , 1 ô chứa ký tự A và ô chứa ký tự đặc biệt \0 (null terminal) Tại sao máy tính cần ký tự \0 Vì máy tính của bạn không biết chuỗi dài bao nhiêu , nó sẽ đọc vào ô đầu tiên chỉ số c[0] và chỉ dừng lại tới ô có ký tự c[end] = &#39;\0&#39; Nếu bạn quên hoặc không có ký tự này , máy tính sẽ không biết dừng ở đâu , đọc tràn sang các bộ nhớ khác Toán tử với chuỗi và mảng ký tự Với mảng ký tự , nó sẽ xử lý ký tự như 1 số học đơn thuần , ví dụ : 1 2 char c = &#39;A&#39;; c = c &#43; 1 ; Nó sẽ thực hiện bằng cách : biến ký tự A thành 65 , và bắt đầu cộng thêm 1 c = 65 &#43; 1 = 66 Sau đó nó sẽ biến đổi ngược lại từ 66 thành ký tự B Kết quả c = &#39;B&#39; String thì không thể lấy &#34;Hello&#34; - 1 , Phép cộng thường là Phép nối chuỗi Ví dụ : &#34;Hello&#34; &#43; &#34;World!&#34; Ví dụ về char 1 char *c = &#34;Hello&#34;; Biến S không chứa chữ &#34;Hello&#34; . nó chỉ chứa tọa độ địa chỉ của ô nhớ đầu tiên nơi chữ &#34;H&#34; tọa lạc Vì chữ &#34;Hello&#34; nằm trong vùng nhớ chỉ đọc , nên bạn không thể sửa nó Đó là lý do vì sao Gọi &#34;Hello&#34; là hằng số chuỗi ( string literal) , còn char a = &#39;C&#39; , bạn có thể đổi c = &#39;B&#39; thoải mái vì giá trị có nó nằm ngay Stack của hàm đang chạy Lỗi xảy ra với char có thể gặp Nhầm char với chuỗi 1 2 char c = &#39;A&#39; ; // &lt;------ Đúng char c = &#34;B&#34; ; // &lt;------ Sai Nguyên nhân &#34;A&#34; là chuỗi (char[2]) &#39;A&#39; là chuỗi char[1] Gán vượt quá phạm vị của char 1 char c = 300; char c thường nhận ký tự từ -128 đến 127 hoặc 0 -&gt; 255 Giá trị bị tràn </p>
   </div>
-  <footer class="entry-footer"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>89 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
+  <footer class="entry-footer"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>591 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
   <a class="entry-link" aria-label="post link to Bài 2. Biến và nhập xúât cơ bản trong C" href="http://localhost:1313/posts/bai2_io_var/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Mục tiêu bài này Biết cấu trúc 1 bài viết “đẹp” trong Hugo &#43; PaperMod Nắm các “lệnh” Markdown quan trọng (heading, list, link, ảnh, quote, table…) Biết cách chèn code (C, bash, json…) và tránh lỗi hay gặp 1) Bố cục bài viết chuẩn (khuyến nghị) Mình dùng 1 format cố định để viết learning log, dễ đọc và nhất quán:
-Mục tiêu TL;DR Nội dung chính (chia theo mục) Ví dụ code &#43; cách chạy Lỗi thường gặp Checklist / Next steps Tài liệu tham khảo Bạn có thể copy “template nhanh” cho các bài sau:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-09 11:10:00 +0700 +07'>February 9, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>155 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span></footer>
-  <a class="entry-link" aria-label="post link to Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod" href="http://localhost:1313/posts/use_hogo/"></a>
 </article>
     </main>
     

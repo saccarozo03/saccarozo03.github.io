@@ -5,6 +5,8 @@ draft: false
 description: "Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…"
 tags: ["Hugo", "Markdown", "PaperMod", "Learning Log"]
 categories: ["Blog"]
+weight: 1
+series: ["Học lại C"]
 showToc: true
 tocOpen: true
 ShowReadingTime: true
