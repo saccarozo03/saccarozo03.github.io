@@ -1,5 +1,5 @@
 ---
-title: "Bài 2. Biến và nhập xúât cơ bản trong C"
+title: "[C Course] Bài 2. Biến và nhập xúât cơ bản trong C"
 date: 2026-02-10
 draft: false
 series: ["Học lại C"]

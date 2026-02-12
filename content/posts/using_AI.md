@@ -1,5 +1,5 @@
 ---
-title: "Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project"
+title: "[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project"
 date: 2026-02-11
 draft: false
 series: ["Học và sử dụng AI "]

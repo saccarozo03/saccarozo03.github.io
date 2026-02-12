@@ -1,5 +1,5 @@
 ---
-title: "Bài 1. Hello World"
+title: "[C Course] Bài 1. Hello World"
 date: 2026-02-08
 draft: false
 series: ["Học lại C"]

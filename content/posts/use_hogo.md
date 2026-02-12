@@ -1,5 +1,5 @@
 ---
-title: "Bài 0. Markdown căn bản để viết blog với Hugo + PaperMod"
+title: "[AI Course] Bài 0. Markdown căn bản để viết blog với Hugo + PaperMod"
 date: 2026-02-09T11:10:00+07:00
 draft: false
 description: "Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…"
