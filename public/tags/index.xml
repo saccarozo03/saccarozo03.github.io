@@ -4,7 +4,7 @@
     <title>Tags on Nhật ký học lập trình</title>
     <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Nhật ký học lập trình</description>
-    <generator>Hugo -- 0.155.3</generator>
+    <generator>Hugo -- 0.155.2</generator>
     <language>vi-vn</language>
     <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -23,7 +23,7 @@
       <description></description>
     </item>
     <item>
-      <title>Learning-Log</title>
+      <title>Learning Log</title>
       <link>http://localhost:1313/tags/learning-log/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/learning-log/</guid>

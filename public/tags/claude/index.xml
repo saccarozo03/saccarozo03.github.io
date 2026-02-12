@@ -4,16 +4,27 @@
     <title>Claude on Nhật ký học lập trình</title>
     <link>http://localhost:1313/tags/claude/</link>
     <description>Recent content in Claude on Nhật ký học lập trình</description>
-    <generator>Hugo -- 0.155.3</generator>
+    <generator>Hugo -- 0.155.2</generator>
     <language>vi-vn</language>
     <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/claude/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tổng quan và hướng dẫn AI đọc hiểu project</title>
+      <title>[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project</title>
       <link>http://localhost:1313/posts/using_ai/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/using_ai/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;các-khái-niệm-cơ-bản&#34;&gt;Các khái niệm cơ bản&lt;/h2&gt;
+&lt;h3 id=&#34;context-window&#34;&gt;Context Window&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;AI có bộ nhớ suy luận hữu hạn&lt;/li&gt;
+&lt;li&gt;1,000,000 tokens đối với ClaudeAI&lt;/li&gt;
+&lt;li&gt;Tokens có thể hiểu là 1 từ có ngữ nghĩa đối trong câu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;attention--độ-tập-trung-&#34;&gt;Attention ( Độ tập trung )&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau&lt;/li&gt;
+&lt;li&gt;Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

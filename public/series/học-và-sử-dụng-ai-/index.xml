@@ -4,33 +4,79 @@
     <title>Học Và Sử Dụng AI  on Nhật ký học lập trình</title>
     <link>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/</link>
     <description>Recent content in Học Và Sử Dụng AI  on Nhật ký học lập trình</description>
-    <generator>Hugo -- 0.155.3</generator>
+    <generator>Hugo -- 0.155.2</generator>
     <language>vi-vn</language>
     <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
-      <link>http://localhost:1313/posts/use_hogo/</link>
+      <title>[AI Course] Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
+      <link>http://localhost:1313/posts/ai_use_hogo/</link>
       <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
-      <guid>http://localhost:1313/posts/use_hogo/</guid>
+      <guid>http://localhost:1313/posts/ai_use_hogo/</guid>
       <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
     </item>
     <item>
-      <title>Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project</title>
-      <link>http://localhost:1313/posts/using_ai/</link>
+      <title>[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project</title>
+      <link>http://localhost:1313/posts/ai_using_ai/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/using_ai/</guid>
+      <guid>http://localhost:1313/posts/ai_using_ai/</guid>
       <description>&lt;h2 id=&#34;các-khái-niệm-cơ-bản&#34;&gt;Các khái niệm cơ bản&lt;/h2&gt;
 &lt;h3 id=&#34;context-window&#34;&gt;Context Window&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;AI có bộ nhớ suy luận hữu hạn&lt;/li&gt;
 &lt;li&gt;1,000,000 tokens đối với ClaudeAI&lt;/li&gt;
-&lt;li&gt;Tokens có thể hiểu là 1 từ có ngữ nghĩa đối trong câu&lt;/li&gt;
+&lt;li&gt;Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu&lt;/li&gt;
+&lt;li&gt;Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token&lt;/li&gt;
+&lt;li&gt;1 triệu tokens tương đương 7 quyển Harry Potter&lt;/li&gt;
+&lt;li&gt;Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -&amp;gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước
+đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới &amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;attention--độ-tập-trung-&#34;&gt;Attention ( Độ tập trung )&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau&lt;/li&gt;
 &lt;li&gt;Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;không-gian-tri-thức-và-quá-trình-ghép-nối&#34;&gt;Không gian tri thức và quá trình ghép nối&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể&lt;/li&gt;
+&lt;li&gt;Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi )&lt;/li&gt;
+&lt;li&gt;Tri thức phổ biến , có nhiều người hỏi -&amp;gt; trả lời rất nhanh (hàng triệu người đã hỏi)&lt;/li&gt;
+&lt;li&gt;Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;quá-trình-ai-đọc-hiểu-project&#34;&gt;Quá trình AI đọc hiểu Project&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau&lt;/li&gt;
+&lt;li&gt;Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;người-dùng-amater&#34;&gt;Người dùng Amater&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Vất nguyên cả source code , bắt AI đọc&lt;/li&gt;
+&lt;li&gt;Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;tự-tạo-ra-thông-tin-ngầm-định-implicit-information&#34;&gt;Tự tạo ra thông tin ngầm định (Implicit Information)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;AI tự giả định mục đích của project&lt;/li&gt;
+&lt;li&gt;AI tự giả định về flow code&lt;/li&gt;
+&lt;li&gt;AI tự giả định về cách biên dịch , gỡ lỗi&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;strong&gt;Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;để-ai-tự-đọc-sẽ-tuân-theo-quy-tắc-mặc-định-default-behavior&#34;&gt;Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;AI sẽ ưu tiên đọc flow từ code hơn là tài liệu&lt;/li&gt;
+&lt;li&gt;Claude.md &amp;gt; default behavior (code &amp;gt; doc)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;người-dùng-chuyên-nghiệp&#34;&gt;Người dùng chuyên nghiệp&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng&lt;/li&gt;
+&lt;li&gt;Các rule trong file Claude.md có khả năng ghi đè behavior default của AI .&lt;/li&gt;
+&lt;li&gt;Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới .&lt;/li&gt;
+&lt;li&gt;Dữ liệu cốt lõi nhất luôn để ở trong file này&lt;/li&gt;
+&lt;li&gt;Nên để file này càng dài càng tốt , (dưới 150 dòng )&lt;/li&gt;
+&lt;li&gt;Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -&amp;gt; tin code&lt;/li&gt;
+&lt;li&gt;Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format&lt;/li&gt;
+&lt;li&gt;Commit message : Viết bằng tiếng việt&lt;/li&gt;
+&lt;li&gt;Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style&lt;/li&gt;
+&lt;li&gt;Indent không dùng tab &amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
   </channel>

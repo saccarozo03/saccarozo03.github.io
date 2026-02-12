@@ -4,12 +4,12 @@
     <title>C on Nhật ký học lập trình</title>
     <link>http://localhost:1313/tags/c/</link>
     <description>Recent content in C on Nhật ký học lập trình</description>
-    <generator>Hugo -- 0.155.3</generator>
+    <generator>Hugo -- 0.155.2</generator>
     <language>vi-vn</language>
     <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bài 1. Hello World</title>
+      <title>[C Course] Bài 1. Hello World</title>
       <link>http://localhost:1313/posts/bai1_hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/bai1_hello-world/</guid>
@@ -91,7 +91,7 @@
 &lt;/ul&gt;</description>
     </item>
     <item>
-      <title>Bài 2. Biến và nhập xúât cơ bản trong C</title>
+      <title>[C Course] Bài 2. Biến và nhập xúât cơ bản trong C</title>
       <link>http://localhost:1313/posts/bai2_io_var/</link>
       <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/bai2_io_var/</guid>

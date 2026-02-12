@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project | Nhật ký học lập trình</title>
+<meta name="keywords" content="learning-log, AI, claude">
+<meta name="description" content="Các khái niệm cơ bản
+Context Window
+
+AI có bộ nhớ suy luận hữu hạn
+1,000,000 tokens đối với ClaudeAI
+Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu
+Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token
+1 triệu tokens tương đương 7 quyển Harry Potter
+Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -&gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước
+đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới &hellip;
+
+Attention ( Độ tập trung )
+
+Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau
+Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn
+
+Không gian tri thức và quá trình ghép nối
+
+Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể
+Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi )
+Tri thức phổ biến , có nhiều người hỏi -&gt; trả lời rất nhanh (hàng triệu người đã hỏi)
+Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó
+
+Quá trình AI đọc hiểu Project
+
+Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau
+Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai
+
+Người dùng Amater
+
+Vất nguyên cả source code , bắt AI đọc
+Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc
+
+Tự tạo ra thông tin ngầm định (Implicit Information)
+
+AI tự giả định mục đích của project
+AI tự giả định về flow code
+AI tự giả định về cách biên dịch , gỡ lỗi
+Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin
+
+Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)
+
+AI sẽ ưu tiên đọc flow từ code hơn là tài liệu
+Claude.md &gt; default behavior (code &gt; doc)
+
+Người dùng chuyên nghiệp
+
+AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng
+Các rule trong file Claude.md có khả năng ghi đè behavior default của AI .
+Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới .
+Dữ liệu cốt lõi nhất luôn để ở trong file này
+Nên để file này càng dài càng tốt , (dưới 150 dòng )
+Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -&gt; tin code
+Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format
+Commit message : Viết bằng tiếng việt
+Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style
+Indent không dùng tab &hellip;
+">
+<meta name="author" content="Saccarozo03">
+<link rel="canonical" href="http://localhost:1313/posts/ai_using_ai/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/ai_using_ai/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://localhost:1313/posts/ai_using_ai/">
+  <meta property="og:site_name" content="Nhật ký học lập trình">
+  <meta property="og:title" content="[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project">
+  <meta property="og:description" content="Các khái niệm cơ bản Context Window AI có bộ nhớ suy luận hữu hạn 1,000,000 tokens đối với ClaudeAI Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token 1 triệu tokens tương đương 7 quyển Harry Potter Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -&gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới … Attention ( Độ tập trung ) Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn Không gian tri thức và quá trình ghép nối Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi ) Tri thức phổ biến , có nhiều người hỏi -&gt; trả lời rất nhanh (hàng triệu người đã hỏi) Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó Quá trình AI đọc hiểu Project Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai Người dùng Amater Vất nguyên cả source code , bắt AI đọc Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc Tự tạo ra thông tin ngầm định (Implicit Information) AI tự giả định mục đích của project AI tự giả định về flow code AI tự giả định về cách biên dịch , gỡ lỗi Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior) AI sẽ ưu tiên đọc flow từ code hơn là tài liệu Claude.md &gt; default behavior (code &gt; doc) Người dùng chuyên nghiệp AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng Các rule trong file Claude.md có khả năng ghi đè behavior default của AI . Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới . Dữ liệu cốt lõi nhất luôn để ở trong file này Nên để file này càng dài càng tốt , (dưới 150 dòng ) Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -&gt; tin code Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format Commit message : Viết bằng tiếng việt Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style Indent không dùng tab … ">
+  <meta property="og:locale" content="vi-vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-11T00:00:00+00:00">
+    <meta property="article:tag" content="Learning Log">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Claude">
+      <meta property="og:see_also" content="http://localhost:1313/posts/ai_use_hogo/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project">
+<meta name="twitter:description" content="Các khái niệm cơ bản
+Context Window
+
+AI có bộ nhớ suy luận hữu hạn
+1,000,000 tokens đối với ClaudeAI
+Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu
+Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token
+1 triệu tokens tương đương 7 quyển Harry Potter
+Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -&gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước
+đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới &hellip;
+
+Attention ( Độ tập trung )
+
+Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau
+Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn
+
+Không gian tri thức và quá trình ghép nối
+
+Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể
+Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi )
+Tri thức phổ biến , có nhiều người hỏi -&gt; trả lời rất nhanh (hàng triệu người đã hỏi)
+Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó
+
+Quá trình AI đọc hiểu Project
+
+Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau
+Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai
+
+Người dùng Amater
+
+Vất nguyên cả source code , bắt AI đọc
+Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc
+
+Tự tạo ra thông tin ngầm định (Implicit Information)
+
+AI tự giả định mục đích của project
+AI tự giả định về flow code
+AI tự giả định về cách biên dịch , gỡ lỗi
+Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin
+
+Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)
+
+AI sẽ ưu tiên đọc flow từ code hơn là tài liệu
+Claude.md &gt; default behavior (code &gt; doc)
+
+Người dùng chuyên nghiệp
+
+AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng
+Các rule trong file Claude.md có khả năng ghi đè behavior default của AI .
+Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới .
+Dữ liệu cốt lõi nhất luôn để ở trong file này
+Nên để file này càng dài càng tốt , (dưới 150 dòng )
+Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -&gt; tin code
+Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format
+Commit message : Viết bằng tiếng việt
+Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style
+Indent không dùng tab &hellip;
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project",
+      "item": "http://localhost:1313/posts/ai_using_ai/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project",
+  "name": "[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project",
+  "description": "Các khái niệm cơ bản Context Window AI có bộ nhớ suy luận hữu hạn 1,000,000 tokens đối với ClaudeAI Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token 1 triệu tokens tương đương 7 quyển Harry Potter Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -\u0026gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới \u0026hellip; Attention ( Độ tập trung ) Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn Không gian tri thức và quá trình ghép nối Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi ) Tri thức phổ biến , có nhiều người hỏi -\u0026gt; trả lời rất nhanh (hàng triệu người đã hỏi) Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó Quá trình AI đọc hiểu Project Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai Người dùng Amater Vất nguyên cả source code , bắt AI đọc Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc Tự tạo ra thông tin ngầm định (Implicit Information) AI tự giả định mục đích của project AI tự giả định về flow code AI tự giả định về cách biên dịch , gỡ lỗi Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior) AI sẽ ưu tiên đọc flow từ code hơn là tài liệu Claude.md \u0026gt; default behavior (code \u0026gt; doc) Người dùng chuyên nghiệp AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng Các rule trong file Claude.md có khả năng ghi đè behavior default của AI . Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới . Dữ liệu cốt lõi nhất luôn để ở trong file này Nên để file này càng dài càng tốt , (dưới 150 dòng ) Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -\u0026gt; tin code Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format Commit message : Viết bằng tiếng việt Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style Indent không dùng tab \u0026hellip; ",
+  "keywords": [
+    "learning-log", "AI", "claude"
+  ],
+  "articleBody": "Các khái niệm cơ bản Context Window AI có bộ nhớ suy luận hữu hạn 1,000,000 tokens đối với ClaudeAI Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token 1 triệu tokens tương đương 7 quyển Harry Potter Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -\u003e rất lag , chatGPT không mượt , phải xóa bớt token đằng trước đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới … Attention ( Độ tập trung ) Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn Không gian tri thức và quá trình ghép nối Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi ) Tri thức phổ biến , có nhiều người hỏi -\u003e trả lời rất nhanh (hàng triệu người đã hỏi) Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó Quá trình AI đọc hiểu Project Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai Người dùng Amater Vất nguyên cả source code , bắt AI đọc Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc Tự tạo ra thông tin ngầm định (Implicit Information) AI tự giả định mục đích của project AI tự giả định về flow code AI tự giả định về cách biên dịch , gỡ lỗi Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior) AI sẽ ưu tiên đọc flow từ code hơn là tài liệu Claude.md \u003e default behavior (code \u003e doc) Người dùng chuyên nghiệp AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng Các rule trong file Claude.md có khả năng ghi đè behavior default của AI . Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới . Dữ liệu cốt lõi nhất luôn để ở trong file này Nên để file này càng dài càng tốt , (dưới 150 dòng ) Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -\u003e tin code Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format Commit message : Viết bằng tiếng việt Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style Indent không dùng tab … ",
+  "wordCount" : "626",
+  "inLanguage": "en",
+  "datePublished": "2026-02-11T00:00:00Z",
+  "dateModified": "2026-02-11T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Saccarozo03"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/ai_using_ai/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nhật ký học lập trình",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Nhật ký học lập trình (Alt + H)">Nhật ký học lập trình</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/series/" title="Series">
+                    <span>Series</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project
+    </h1>
+    <div class="post-meta"><span title='2026-02-11 00:00:00 +0000 UTC'>February 11, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>626 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span>&nbsp;|&nbsp;<span>
+    <a href="https://github.com/saccarozo03/saccarozo03.github.io/tree/main/content/posts/AI_using_AI.md" rel="noopener noreferrer edit" target="_blank">Suggest edits</a>
+</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#c%c3%a1c-kh%c3%a1i-ni%e1%bb%87m-c%c6%a1-b%e1%ba%a3n" aria-label="Các khái niệm cơ bản">Các khái niệm cơ bản</a><ul>
+                        
+                <li>
+                    <a href="#context-window" aria-label="Context Window">Context Window</a></li>
+                <li>
+                    <a href="#attention--%c4%91%e1%bb%99-t%e1%ba%adp-trung-" aria-label="Attention ( Độ tập trung )">Attention ( Độ tập trung )</a></li>
+                <li>
+                    <a href="#kh%c3%b4ng-gian-tri-th%e1%bb%a9c-v%c3%a0-qu%c3%a1-tr%c3%acnh-gh%c3%a9p-n%e1%bb%91i" aria-label="Không gian tri thức và quá trình ghép nối">Không gian tri thức và quá trình ghép nối</a></li></ul>
+                </li>
+                <li>
+                    <a href="#qu%c3%a1-tr%c3%acnh-ai-%c4%91%e1%bb%8dc-hi%e1%bb%83u-project" aria-label="Quá trình AI đọc hiểu Project">Quá trình AI đọc hiểu Project</a><ul>
+                        
+                <li>
+                    <a href="#ng%c6%b0%e1%bb%9di-d%c3%b9ng-amater" aria-label="Người dùng Amater">Người dùng Amater</a><ul>
+                        
+                <li>
+                    <a href="#t%e1%bb%b1-t%e1%ba%a1o-ra-th%c3%b4ng-tin-ng%e1%ba%a7m-%c4%91%e1%bb%8bnh-implicit-information" aria-label="Tự tạo ra thông tin ngầm định (Implicit Information)">Tự tạo ra thông tin ngầm định (Implicit Information)</a></li>
+                <li>
+                    <a href="#%c4%91%e1%bb%83-ai-t%e1%bb%b1-%c4%91%e1%bb%8dc-s%e1%ba%bd-tu%c3%a2n-theo-quy-t%e1%ba%afc-m%e1%ba%b7c-%c4%91%e1%bb%8bnh-default-behavior" aria-label="Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)">Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ng%c6%b0%e1%bb%9di-d%c3%b9ng-chuy%c3%aan-nghi%e1%bb%87p" aria-label="Người dùng chuyên nghiệp">Người dùng chuyên nghiệp</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="các-khái-niệm-cơ-bản">Các khái niệm cơ bản<a hidden class="anchor" aria-hidden="true" href="#các-khái-niệm-cơ-bản">#</a></h2>
+<h3 id="context-window">Context Window<a hidden class="anchor" aria-hidden="true" href="#context-window">#</a></h3>
+<ul>
+<li>AI có bộ nhớ suy luận hữu hạn</li>
+<li>1,000,000 tokens đối với ClaudeAI</li>
+<li>Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu</li>
+<li>Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token</li>
+<li>1 triệu tokens tương đương 7 quyển Harry Potter</li>
+<li>Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -&gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước
+đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới &hellip;</li>
+</ul>
+<h3 id="attention--độ-tập-trung-">Attention ( Độ tập trung )<a hidden class="anchor" aria-hidden="true" href="#attention--độ-tập-trung-">#</a></h3>
+<ul>
+<li>Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau</li>
+<li>Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn</li>
+</ul>
+<h3 id="không-gian-tri-thức-và-quá-trình-ghép-nối">Không gian tri thức và quá trình ghép nối<a hidden class="anchor" aria-hidden="true" href="#không-gian-tri-thức-và-quá-trình-ghép-nối">#</a></h3>
+<ul>
+<li>Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể</li>
+<li>Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi )</li>
+<li>Tri thức phổ biến , có nhiều người hỏi -&gt; trả lời rất nhanh (hàng triệu người đã hỏi)</li>
+<li>Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó</li>
+</ul>
+<h2 id="quá-trình-ai-đọc-hiểu-project">Quá trình AI đọc hiểu Project<a hidden class="anchor" aria-hidden="true" href="#quá-trình-ai-đọc-hiểu-project">#</a></h2>
+<ul>
+<li>Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau</li>
+<li>Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai</li>
+</ul>
+<h3 id="người-dùng-amater">Người dùng Amater<a hidden class="anchor" aria-hidden="true" href="#người-dùng-amater">#</a></h3>
+<ul>
+<li>Vất nguyên cả source code , bắt AI đọc</li>
+<li>Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc</li>
+</ul>
+<h4 id="tự-tạo-ra-thông-tin-ngầm-định-implicit-information">Tự tạo ra thông tin ngầm định (Implicit Information)<a hidden class="anchor" aria-hidden="true" href="#tự-tạo-ra-thông-tin-ngầm-định-implicit-information">#</a></h4>
+<ul>
+<li>AI tự giả định mục đích của project</li>
+<li>AI tự giả định về flow code</li>
+<li>AI tự giả định về cách biên dịch , gỡ lỗi</li>
+<li><span style="color:red"><strong>Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin</strong></span></li>
+</ul>
+<h4 id="để-ai-tự-đọc-sẽ-tuân-theo-quy-tắc-mặc-định-default-behavior">Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)<a hidden class="anchor" aria-hidden="true" href="#để-ai-tự-đọc-sẽ-tuân-theo-quy-tắc-mặc-định-default-behavior">#</a></h4>
+<ul>
+<li>AI sẽ ưu tiên đọc flow từ code hơn là tài liệu</li>
+<li>Claude.md &gt; default behavior (code &gt; doc)</li>
+</ul>
+<h3 id="người-dùng-chuyên-nghiệp">Người dùng chuyên nghiệp<a hidden class="anchor" aria-hidden="true" href="#người-dùng-chuyên-nghiệp">#</a></h3>
+<ul>
+<li>AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng</li>
+<li>Các rule trong file Claude.md có khả năng ghi đè behavior default của AI .</li>
+<li>Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới .</li>
+<li>Dữ liệu cốt lõi nhất luôn để ở trong file này</li>
+<li>Nên để file này càng dài càng tốt , (dưới 150 dòng )</li>
+<li>Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -&gt; tin code</li>
+<li>Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format</li>
+<li>Commit message : Viết bằng tiếng việt</li>
+<li>Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style</li>
+<li>Indent không dùng tab &hellip;</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/learning-log/">Learning Log</a></li>
+      <li><a href="http://localhost:1313/tags/ai/">AI</a></li>
+      <li><a href="http://localhost:1313/tags/claude/">Claude</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/c_bai1_hello-world/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[C Course] Bài 1. Hello World</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/c_bai2_io_var/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[C Course] Bài 2. Biến và nhập xúât cơ bản trong C</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Nhật ký học lập trình</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

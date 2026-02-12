@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Learning-Log on Nhật ký học lập trình</title>
+    <title>Learning Log on Nhật ký học lập trình</title>
     <link>http://localhost:1313/tags/learning-log/</link>
-    <description>Recent content in Learning-Log on Nhật ký học lập trình</description>
-    <generator>Hugo -- 0.155.3</generator>
+    <description>Recent content in Learning Log on Nhật ký học lập trình</description>
+    <generator>Hugo -- 0.155.2</generator>
     <language>vi-vn</language>
     <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/learning-log/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
+      <title>[AI Course] Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
       <link>http://localhost:1313/posts/use_hogo/</link>
       <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
       <guid>http://localhost:1313/posts/use_hogo/</guid>
       <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
     </item>
     <item>
-      <title>Bài 1. Hello World</title>
+      <title>[C Course] Bài 1. Hello World</title>
       <link>http://localhost:1313/posts/bai1_hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/bai1_hello-world/</guid>
@@ -98,14 +98,25 @@
 &lt;/ul&gt;</description>
     </item>
     <item>
-      <title>Tổng quan và hướng dẫn AI đọc hiểu project</title>
+      <title>[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project</title>
       <link>http://localhost:1313/posts/using_ai/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/using_ai/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;các-khái-niệm-cơ-bản&#34;&gt;Các khái niệm cơ bản&lt;/h2&gt;
+&lt;h3 id=&#34;context-window&#34;&gt;Context Window&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;AI có bộ nhớ suy luận hữu hạn&lt;/li&gt;
+&lt;li&gt;1,000,000 tokens đối với ClaudeAI&lt;/li&gt;
+&lt;li&gt;Tokens có thể hiểu là 1 từ có ngữ nghĩa đối trong câu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;attention--độ-tập-trung-&#34;&gt;Attention ( Độ tập trung )&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau&lt;/li&gt;
+&lt;li&gt;Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
-      <title>Bài 2. Biến và nhập xúât cơ bản trong C</title>
+      <title>[C Course] Bài 2. Biến và nhập xúât cơ bản trong C</title>
       <link>http://localhost:1313/posts/bai2_io_var/</link>
       <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/bai2_io_var/</guid>
