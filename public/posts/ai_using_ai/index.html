@@ -5,66 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project | Nhật ký học lập trình</title>
-<meta name="keywords" content="learning-log, AI, claude">
-<meta name="description" content="Các khái niệm cơ bản
-Context Window
-
-AI có bộ nhớ suy luận hữu hạn
-1,000,000 tokens đối với ClaudeAI
-Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu
-Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token
-1 triệu tokens tương đương 7 quyển Harry Potter
-Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -&gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước
-đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới &hellip;
-
-Attention ( Độ tập trung )
-
-Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau
-Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn
-
-Không gian tri thức và quá trình ghép nối
-
-Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể
-Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi )
-Tri thức phổ biến , có nhiều người hỏi -&gt; trả lời rất nhanh (hàng triệu người đã hỏi)
-Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó
-
-Quá trình AI đọc hiểu Project
-
-Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau
-Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai
-
-Người dùng Amater
-
-Vất nguyên cả source code , bắt AI đọc
-Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc
-
-Tự tạo ra thông tin ngầm định (Implicit Information)
-
-AI tự giả định mục đích của project
-AI tự giả định về flow code
-AI tự giả định về cách biên dịch , gỡ lỗi
-Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin
-
-Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)
-
-AI sẽ ưu tiên đọc flow từ code hơn là tài liệu
-Claude.md &gt; default behavior (code &gt; doc)
-
-Người dùng chuyên nghiệp
-
-AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng
-Các rule trong file Claude.md có khả năng ghi đè behavior default của AI .
-Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới .
-Dữ liệu cốt lõi nhất luôn để ở trong file này
-Nên để file này càng dài càng tốt , (dưới 150 dòng )
-Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -&gt; tin code
-Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format
-Commit message : Viết bằng tiếng việt
-Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style
-Indent không dùng tab &hellip;
-">
+<title>[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project | Nhật ký học lập trình</title>
+<meta name="keywords" content="learning-log, AI, claude, software-development, ai-first">
+<meta name="description" content="Giới thiệu
+Trong thời đại AI-first development, việc biết cách giao tiếp hiệu quả với AI không chỉ là một kỹ năng bổ sung mà đã trở thành yếu tố then chốt quyết định năng suất làm việc. Bài viết này sẽ giúp bạn hiểu rõ cách AI hoạt động và làm thế nào để định hướng AI đọc hiểu project một cách chuyên nghiệp.
+Phần 1: Các khái niệm cơ bản về AI
+1.1. Context Window - Bộ nhớ suy luận của AI
+Context Window là không gian bộ nhớ mà AI sử dụng để suy luận và trả lời câu hỏi. Đối với Claude AI, con số này là 1,000,000 tokens - một con số khổng lồ nhưng vẫn có giới hạn.">
 <meta name="author" content="Saccarozo03">
 <link rel="canonical" href="http://localhost:1313/posts/ai_using_ai/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -129,8 +76,9 @@ Indent không dùng tab &hellip;
 
 </script><meta property="og:url" content="http://localhost:1313/posts/ai_using_ai/">
   <meta property="og:site_name" content="Nhật ký học lập trình">
-  <meta property="og:title" content="[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project">
-  <meta property="og:description" content="Các khái niệm cơ bản Context Window AI có bộ nhớ suy luận hữu hạn 1,000,000 tokens đối với ClaudeAI Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token 1 triệu tokens tương đương 7 quyển Harry Potter Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -&gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới … Attention ( Độ tập trung ) Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn Không gian tri thức và quá trình ghép nối Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi ) Tri thức phổ biến , có nhiều người hỏi -&gt; trả lời rất nhanh (hàng triệu người đã hỏi) Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó Quá trình AI đọc hiểu Project Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai Người dùng Amater Vất nguyên cả source code , bắt AI đọc Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc Tự tạo ra thông tin ngầm định (Implicit Information) AI tự giả định mục đích của project AI tự giả định về flow code AI tự giả định về cách biên dịch , gỡ lỗi Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior) AI sẽ ưu tiên đọc flow từ code hơn là tài liệu Claude.md &gt; default behavior (code &gt; doc) Người dùng chuyên nghiệp AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng Các rule trong file Claude.md có khả năng ghi đè behavior default của AI . Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới . Dữ liệu cốt lõi nhất luôn để ở trong file này Nên để file này càng dài càng tốt , (dưới 150 dòng ) Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -&gt; tin code Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format Commit message : Viết bằng tiếng việt Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style Indent không dùng tab … ">
+  <meta property="og:title" content="[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project">
+  <meta property="og:description" content="Giới thiệu Trong thời đại AI-first development, việc biết cách giao tiếp hiệu quả với AI không chỉ là một kỹ năng bổ sung mà đã trở thành yếu tố then chốt quyết định năng suất làm việc. Bài viết này sẽ giúp bạn hiểu rõ cách AI hoạt động và làm thế nào để định hướng AI đọc hiểu project một cách chuyên nghiệp.
+Phần 1: Các khái niệm cơ bản về AI 1.1. Context Window - Bộ nhớ suy luận của AI Context Window là không gian bộ nhớ mà AI sử dụng để suy luận và trả lời câu hỏi. Đối với Claude AI, con số này là 1,000,000 tokens - một con số khổng lồ nhưng vẫn có giới hạn.">
   <meta property="og:locale" content="vi-vn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -139,67 +87,15 @@ Indent không dùng tab &hellip;
     <meta property="article:tag" content="Learning Log">
     <meta property="article:tag" content="AI">
     <meta property="article:tag" content="Claude">
-      <meta property="og:see_also" content="http://localhost:1313/posts/ai_use_hogo/">
+    <meta property="article:tag" content="Software-Development">
+    <meta property="article:tag" content="Ai-First">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project">
-<meta name="twitter:description" content="Các khái niệm cơ bản
-Context Window
-
-AI có bộ nhớ suy luận hữu hạn
-1,000,000 tokens đối với ClaudeAI
-Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu
-Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token
-1 triệu tokens tương đương 7 quyển Harry Potter
-Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -&gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước
-đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới &hellip;
-
-Attention ( Độ tập trung )
-
-Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau
-Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn
-
-Không gian tri thức và quá trình ghép nối
-
-Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể
-Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi )
-Tri thức phổ biến , có nhiều người hỏi -&gt; trả lời rất nhanh (hàng triệu người đã hỏi)
-Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó
-
-Quá trình AI đọc hiểu Project
-
-Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau
-Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai
-
-Người dùng Amater
-
-Vất nguyên cả source code , bắt AI đọc
-Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc
-
-Tự tạo ra thông tin ngầm định (Implicit Information)
-
-AI tự giả định mục đích của project
-AI tự giả định về flow code
-AI tự giả định về cách biên dịch , gỡ lỗi
-Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin
-
-Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)
-
-AI sẽ ưu tiên đọc flow từ code hơn là tài liệu
-Claude.md &gt; default behavior (code &gt; doc)
-
-Người dùng chuyên nghiệp
-
-AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng
-Các rule trong file Claude.md có khả năng ghi đè behavior default của AI .
-Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới .
-Dữ liệu cốt lõi nhất luôn để ở trong file này
-Nên để file này càng dài càng tốt , (dưới 150 dòng )
-Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -&gt; tin code
-Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format
-Commit message : Viết bằng tiếng việt
-Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style
-Indent không dùng tab &hellip;
-">
+<meta name="twitter:title" content="[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project">
+<meta name="twitter:description" content="Giới thiệu
+Trong thời đại AI-first development, việc biết cách giao tiếp hiệu quả với AI không chỉ là một kỹ năng bổ sung mà đã trở thành yếu tố then chốt quyết định năng suất làm việc. Bài viết này sẽ giúp bạn hiểu rõ cách AI hoạt động và làm thế nào để định hướng AI đọc hiểu project một cách chuyên nghiệp.
+Phần 1: Các khái niệm cơ bản về AI
+1.1. Context Window - Bộ nhớ suy luận của AI
+Context Window là không gian bộ nhớ mà AI sử dụng để suy luận và trả lời câu hỏi. Đối với Claude AI, con số này là 1,000,000 tokens - một con số khổng lồ nhưng vẫn có giới hạn.">
 
 
 <script type="application/ld+json">
@@ -216,7 +112,7 @@ Indent không dùng tab &hellip;
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project",
+      "name": "[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project",
       "item": "http://localhost:1313/posts/ai_using_ai/"
     }
   ]
@@ -226,14 +122,14 @@ Indent không dùng tab &hellip;
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project",
-  "name": "[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project",
-  "description": "Các khái niệm cơ bản Context Window AI có bộ nhớ suy luận hữu hạn 1,000,000 tokens đối với ClaudeAI Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token 1 triệu tokens tương đương 7 quyển Harry Potter Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -\u0026gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới \u0026hellip; Attention ( Độ tập trung ) Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn Không gian tri thức và quá trình ghép nối Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi ) Tri thức phổ biến , có nhiều người hỏi -\u0026gt; trả lời rất nhanh (hàng triệu người đã hỏi) Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó Quá trình AI đọc hiểu Project Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai Người dùng Amater Vất nguyên cả source code , bắt AI đọc Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc Tự tạo ra thông tin ngầm định (Implicit Information) AI tự giả định mục đích của project AI tự giả định về flow code AI tự giả định về cách biên dịch , gỡ lỗi Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior) AI sẽ ưu tiên đọc flow từ code hơn là tài liệu Claude.md \u0026gt; default behavior (code \u0026gt; doc) Người dùng chuyên nghiệp AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng Các rule trong file Claude.md có khả năng ghi đè behavior default của AI . Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới . Dữ liệu cốt lõi nhất luôn để ở trong file này Nên để file này càng dài càng tốt , (dưới 150 dòng ) Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -\u0026gt; tin code Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format Commit message : Viết bằng tiếng việt Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style Indent không dùng tab \u0026hellip; ",
+  "headline": "[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project",
+  "name": "[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project",
+  "description": "Giới thiệu Trong thời đại AI-first development, việc biết cách giao tiếp hiệu quả với AI không chỉ là một kỹ năng bổ sung mà đã trở thành yếu tố then chốt quyết định năng suất làm việc. Bài viết này sẽ giúp bạn hiểu rõ cách AI hoạt động và làm thế nào để định hướng AI đọc hiểu project một cách chuyên nghiệp.\nPhần 1: Các khái niệm cơ bản về AI 1.1. Context Window - Bộ nhớ suy luận của AI Context Window là không gian bộ nhớ mà AI sử dụng để suy luận và trả lời câu hỏi. Đối với Claude AI, con số này là 1,000,000 tokens - một con số khổng lồ nhưng vẫn có giới hạn.\n",
   "keywords": [
-    "learning-log", "AI", "claude"
+    "learning-log", "AI", "claude", "software-development", "ai-first"
   ],
-  "articleBody": "Các khái niệm cơ bản Context Window AI có bộ nhớ suy luận hữu hạn 1,000,000 tokens đối với ClaudeAI Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token 1 triệu tokens tương đương 7 quyển Harry Potter Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -\u003e rất lag , chatGPT không mượt , phải xóa bớt token đằng trước đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới … Attention ( Độ tập trung ) Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn Không gian tri thức và quá trình ghép nối Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi ) Tri thức phổ biến , có nhiều người hỏi -\u003e trả lời rất nhanh (hàng triệu người đã hỏi) Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó Quá trình AI đọc hiểu Project Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai Người dùng Amater Vất nguyên cả source code , bắt AI đọc Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc Tự tạo ra thông tin ngầm định (Implicit Information) AI tự giả định mục đích của project AI tự giả định về flow code AI tự giả định về cách biên dịch , gỡ lỗi Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior) AI sẽ ưu tiên đọc flow từ code hơn là tài liệu Claude.md \u003e default behavior (code \u003e doc) Người dùng chuyên nghiệp AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng Các rule trong file Claude.md có khả năng ghi đè behavior default của AI . Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới . Dữ liệu cốt lõi nhất luôn để ở trong file này Nên để file này càng dài càng tốt , (dưới 150 dòng ) Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -\u003e tin code Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format Commit message : Viết bằng tiếng việt Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style Indent không dùng tab … ",
-  "wordCount" : "626",
+  "articleBody": "Giới thiệu Trong thời đại AI-first development, việc biết cách giao tiếp hiệu quả với AI không chỉ là một kỹ năng bổ sung mà đã trở thành yếu tố then chốt quyết định năng suất làm việc. Bài viết này sẽ giúp bạn hiểu rõ cách AI hoạt động và làm thế nào để định hướng AI đọc hiểu project một cách chuyên nghiệp.\nPhần 1: Các khái niệm cơ bản về AI 1.1. Context Window - Bộ nhớ suy luận của AI Context Window là không gian bộ nhớ mà AI sử dụng để suy luận và trả lời câu hỏi. Đối với Claude AI, con số này là 1,000,000 tokens - một con số khổng lồ nhưng vẫn có giới hạn.\nToken là gì?\nToken có thể hiểu đơn giản là một đơn vị ngữ nghĩa trong câu Ví dụ: “I love you” = 3 tokens (I, love, you) “Trái đất” tuy là 2 từ nhưng chỉ tính là 1 token 1 triệu tokens ≈ 7 quyển Harry Potter Vấn đề khi vượt quá giới hạn:\nChatGPT: Trở nên lag, không mượt, phải xóa bớt token đằng trước Claude: Nén lại dữ liệu hoặc tạo cuộc hội thoại mới 1.2. Attention - Độ tập trung của AI Trong không gian suy luận, không phải tất cả thông tin đều được AI chú ý như nhau. Đây là một điểm cực kỳ quan trọng khi thiết kế cấu trúc project.\nNguyên tắc vàng:\nThông tin ở đầu và cuối context window được chú ý nhiều hơn Thông tin ở giữa có thể bị “lu mờ” khi context quá dài 1.3. Không gian tri thức và quá trình ghép nối AI hoạt động dựa trên việc ghép nối các trường thông tin với nhau. Hiệu quả của AI phụ thuộc vào:\nCách bạn dẫn dắt AI:\nTri thức phổ biến (hàng triệu người đã hỏi) → AI trả lời rất nhanh Tri thức hẹp và hiếm → Cần đặt câu hỏi chính xác và dẫn dắt AI vào không gian tri thức đó Kỹ thuật ghép nối:\nCần biết ghép nối các trường thông tin với nhau nhiều nhất có thể Phụ thuộc vào cách chúng ta đặt câu hỏi và cung cấp context Phần 2: Hai cách tiếp cận khi làm việc với AI 2.1. Người dùng Amateur (Không chuyên nghiệp) Cách làm:\nVứt nguyên cả source code cho AI Bắt AI tự đọc và tự hiểu Hệ quả nguy hiểm:\n⚠️ AI tự tạo ra thông tin ngầm định (Implicit Information) AI tự giả định mục đích của project AI tự giả định về flow code AI tự giả định về cách biên dịch, gỡ lỗi Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin!\n⚠️ AI tuân theo quy tắc mặc định (Default Behavior) AI sẽ ưu tiên đọc flow từ code hơn là tài liệu Có thể dẫn đến hiểu sai về ý đồ thiết kế 2.2. Người dùng Professional (Chuyên nghiệp) Triết lý:\nAI đọc hiểu thông qua explicit rules (quy tắc rõ ràng) Hạn chế tối đa việc AI “ngầm hiểu” về project Đưa ra chỉ dẫn rõ ràng, cụ thể Công cụ: File CLAUDE.md - AI Control Panel\nFile này có khả năng ghi đè behavior mặc định của AI và luôn nằm trong vùng attention cao nhất.\nPhần 3: CLAUDE.md - Entry Point cho AI 3.1. Tại sao cần CLAUDE.md? File CLAUDE.md là điểm vào (entry point) đầu tiên mà AI phải đọc trước khi tiếp cận bất kỳ thứ gì khác trong project. Đây là tài liệu cốt lõi nhất với những đặc điểm:\nĐộ ưu tiên cao nhất: Dữ liệu luôn nằm trong vùng attention Persistent: Kể cả khi cuộc hội thoại bị reload, vượt quá 1 triệu token, hoặc bị compressed, dữ liệu vẫn được truyền sang cuộc hội thoại mới Độ dài tối ưu: Nên dài nhưng không quá 150 dòng 3.2. Cấu trúc Project theo chuẩn AI-First ai_mindset/\r├── CLAUDE.md # AI entry point (file này)\r├── README.md # Human entry point\r├── docs/\r│ ├── architecture.md # Kiến trúc tổng quan\r│ ├── api.md # API specification\r│ ├── data-format.md # Event formats\r│ ├── use-cases.md # Use cases\r│ ├── deployment.md # Deployment guide\r│ └── decisions/ # ADRs\r├── conversations/ # AI chat logs\r├── src/ # Source code\r└── tests/ # Test cases 3.3. Nội dung quan trọng trong CLAUDE.md 1. Project Overview 1 2 3 4 5 6 ## Project Overview - **Tên**: ai_mindset - **Mục đích**: Project mẫu (teaching example) minh họa quy trình phát triển phần mềm theo triết lý AI-first - **Tech stack**: C / Linux Kernel Module - **Ngôn ngữ tài liệu**: Tiếng Việt 2. Thứ tự đọc (Learning Order) Đây là phần CỰC KỲ QUAN TRỌNG - định hướng AI đọc theo trình tự logic:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 ## Thứ tự đọc (Learning Order) Khi tiếp cận project này, AI PHẢI đọc theo thứ tự: 1. `CLAUDE.md` (file này) — rules, constraints, context 2. `docs/architecture.md` — kiến trúc tổng quan 3. `src/` — code (ground truth) 4. `tests/` — test cases 5. `docs/decisions/` — ADRs (Architecture Decision Records) 6. `docs/api.md` — API specification 7. `docs/data-format.md` — event formats 8. `docs/use-cases.md` — use cases chi tiết 9. `docs/deployment.md` — deployment guide 10. `conversations/` — lịch sử thảo luận (nếu cần thêm context) Nguyên tắc vàng: Code là source of truth. Khi document và code mâu thuẫn → tin code.\n3. Rules - Quy tắc chung Nguyên tắc cốt lõi:\nExplicit \u003e Implicit: Không đoán. Nếu không rõ, hỏi lại. Rationale matters: Mọi quyết định phải kèm lý do (WHY, không chỉ WHAT) Text-first: Dùng Markdown, Mermaid cho tài liệu. Không dùng binary formats Không tự ý thêm feature ngoài scope được yêu cầu Commit messages: Viết bằng tiếng Việt 4. Quy tắc code (C / Kernel) Ví dụ cụ thể cho project C/Linux Kernel:\n1 2 3 4 5 6 7 8 9 ### Quy tắc code (C / Kernel) - Tuân thủ [Linux Kernel Coding Style] - Indent bằng TAB (không dùng spaces) - Tên biến, hàm: `snake_case` - Tên macro: `UPPER_SNAKE_CASE` - Mỗi function tối đa ~50 dòng. Nếu dài hơn, tách ra. - Comment giải thích WHY, không giải thích WHAT (code phải tự giải thích WHAT) - Luôn kiểm tra return value của các hàm có thể fail 5. Constraints đặc thù (System Programming) Phần này cực kỳ quan trọng khi làm việc với các domain đặc biệt:\n1 2 3 4 5 6 7 8 9 10 11 12 13 ### Constraints đặc thù System Programming AI **KHÔNG THỂ** compile hay chạy kernel code. Workflow bắt buộc: 1. **Human** chạy/debug trên máy thật → cung cấp output 2. **AI** phân tích output → đề xuất fix/giải pháp 3. **Human** verify và apply Khi cần debug, AI phải yêu cầu human cung cấp: - `dmesg` output - Stack trace (nếu có) - Steps to reproduce - Kernel version (`uname -r`) 3.4. Conversation Logs - Lưu trữ tri thức AI phải lưu lại cuộc hội thoại để tạo ra “knowledge base” cho project:\nQuy tắc đặt tên:\nconversations/YYYY-MM-DD_mô-tả-ngắn.md Thời điểm lưu (tối thiểu):\nCuối session (trước khi kết thúc) Khi có quyết định quan trọng (architecture, thay đổi rules) Khi chuyển sang phase mới trong workflow Nội dung:\nTóm tắt bối cảnh Các quyết định đã đưa ra Lý do đằng sau quyết định Commits liên quan Phần 4: Workflow AI-First Development Quy trình 5 bước làm việc với AI:\n1. Brainstorm Thảo luận requirement với AI Lưu vào conversations/ 2. Vibe Coding Prototype nhanh với AI Chất lượng thấp, tốc độ cao Mục đích: Khám phá ý tưởng 3. Review Demo và review sequence diagram Kiểm tra logic flow 4. Production Coding Code lại chuẩn Developer PHẢI hiểu từng dòng Áp dụng coding conventions 5. Testing Bàn giao docs + conversation logs cho tester Tester có đầy đủ context để test Phần 5: Best Practices DO’s ✅ Luôn tạo CLAUDE.md trước khi bắt đầu project Định nghĩa rõ ràng thứ tự đọc cho AI Viết explicit rules, không để AI tự đoán Document the WHY, không chỉ WHAT Lưu conversation logs thường xuyên Code là source of truth - khi có mâu thuẫn, tin code DON’Ts ❌ Không vứt nguyên source code cho AI Không để AI tự giả định về project Không dùng binary formats cho documentation Không bỏ qua việc review AI-generated code Không quên cập nhật CLAUDE.md khi có thay đổi lớn Kết luận Làm việc hiệu quả với AI không chỉ là việc biết prompt hay, mà là việc xây dựng một hệ thống explicit rules và structured information giúp AI hiểu đúng ý đồ của bạn.\nFile CLAUDE.md không chỉ là một tài liệu - nó là giao diện điều khiển (control panel) giúp bạn định hướng AI theo đúng cách bạn muốn. Đầu tư thời gian xây dựng file này sẽ giúp bạn tiết kiệm hàng giờ đồng hồ giao tiếp với AI sau này.\nTrong các bài tiếp theo, chúng ta sẽ đi sâu vào:\nKỹ thuật viết prompts hiệu quả Cách thiết kế architecture documents cho AI Workflow debugging với AI Case studies thực tế Tài liệu tham khảo:\nLinux Kernel Coding Style Markdown Guide Mermaid Documentation Tags: #AI #ClaudeAI #AIFirst #SoftwareDevelopment #BestPractices #LearningLog\n",
+  "wordCount" : "1574",
   "inLanguage": "en",
   "datePublished": "2026-02-11T00:00:00Z",
   "dateModified": "2026-02-11T00:00:00Z",
@@ -319,9 +215,9 @@ Indent không dùng tab &hellip;
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      [AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project
+      [AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project
     </h1>
-    <div class="post-meta"><span title='2026-02-11 00:00:00 +0000 UTC'>February 11, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>626 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span>&nbsp;|&nbsp;<span>
+    <div class="post-meta"><span title='2026-02-11 00:00:00 +0000 UTC'>February 11, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>1574 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span>&nbsp;|&nbsp;<span>
     <a href="https://github.com/saccarozo03/saccarozo03.github.io/tree/main/content/posts/AI_using_AI.md" rel="noopener noreferrer edit" target="_blank">Suggest edits</a>
 </span>
 
@@ -334,94 +230,384 @@ Indent không dùng tab &hellip;
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#c%c3%a1c-kh%c3%a1i-ni%e1%bb%87m-c%c6%a1-b%e1%ba%a3n" aria-label="Các khái niệm cơ bản">Các khái niệm cơ bản</a><ul>
+                    <a href="#gi%e1%bb%9bi-thi%e1%bb%87u" aria-label="Giới thiệu">Giới thiệu</a></li>
+                <li>
+                    <a href="#ph%e1%ba%a7n-1-c%c3%a1c-kh%c3%a1i-ni%e1%bb%87m-c%c6%a1-b%e1%ba%a3n-v%e1%bb%81-ai" aria-label="Phần 1: Các khái niệm cơ bản về AI">Phần 1: Các khái niệm cơ bản về AI</a><ul>
                         
                 <li>
-                    <a href="#context-window" aria-label="Context Window">Context Window</a></li>
+                    <a href="#11-context-window---b%e1%bb%99-nh%e1%bb%9b-suy-lu%e1%ba%adn-c%e1%bb%a7a-ai" aria-label="1.1. Context Window - Bộ nhớ suy luận của AI">1.1. Context Window - Bộ nhớ suy luận của AI</a></li>
                 <li>
-                    <a href="#attention--%c4%91%e1%bb%99-t%e1%ba%adp-trung-" aria-label="Attention ( Độ tập trung )">Attention ( Độ tập trung )</a></li>
+                    <a href="#12-attention---%c4%91%e1%bb%99-t%e1%ba%adp-trung-c%e1%bb%a7a-ai" aria-label="1.2. Attention - Độ tập trung của AI">1.2. Attention - Độ tập trung của AI</a></li>
                 <li>
-                    <a href="#kh%c3%b4ng-gian-tri-th%e1%bb%a9c-v%c3%a0-qu%c3%a1-tr%c3%acnh-gh%c3%a9p-n%e1%bb%91i" aria-label="Không gian tri thức và quá trình ghép nối">Không gian tri thức và quá trình ghép nối</a></li></ul>
+                    <a href="#13-kh%c3%b4ng-gian-tri-th%e1%bb%a9c-v%c3%a0-qu%c3%a1-tr%c3%acnh-gh%c3%a9p-n%e1%bb%91i" aria-label="1.3. Không gian tri thức và quá trình ghép nối">1.3. Không gian tri thức và quá trình ghép nối</a></li></ul>
                 </li>
                 <li>
-                    <a href="#qu%c3%a1-tr%c3%acnh-ai-%c4%91%e1%bb%8dc-hi%e1%bb%83u-project" aria-label="Quá trình AI đọc hiểu Project">Quá trình AI đọc hiểu Project</a><ul>
+                    <a href="#ph%e1%ba%a7n-2-hai-c%c3%a1ch-ti%e1%ba%bfp-c%e1%ba%adn-khi-l%c3%a0m-vi%e1%bb%87c-v%e1%bb%9bi-ai" aria-label="Phần 2: Hai cách tiếp cận khi làm việc với AI">Phần 2: Hai cách tiếp cận khi làm việc với AI</a><ul>
                         
                 <li>
-                    <a href="#ng%c6%b0%e1%bb%9di-d%c3%b9ng-amater" aria-label="Người dùng Amater">Người dùng Amater</a><ul>
+                    <a href="#21-ng%c6%b0%e1%bb%9di-d%c3%b9ng-amateur-kh%c3%b4ng-chuy%c3%aan-nghi%e1%bb%87p" aria-label="2.1. Người dùng Amateur (Không chuyên nghiệp)">2.1. Người dùng Amateur (Không chuyên nghiệp)</a><ul>
                         
                 <li>
-                    <a href="#t%e1%bb%b1-t%e1%ba%a1o-ra-th%c3%b4ng-tin-ng%e1%ba%a7m-%c4%91%e1%bb%8bnh-implicit-information" aria-label="Tự tạo ra thông tin ngầm định (Implicit Information)">Tự tạo ra thông tin ngầm định (Implicit Information)</a></li>
+                    <a href="#-ai-t%e1%bb%b1-t%e1%ba%a1o-ra-th%c3%b4ng-tin-ng%e1%ba%a7m-%c4%91%e1%bb%8bnh-implicit-information" aria-label="⚠️ AI tự tạo ra thông tin ngầm định (Implicit Information)">⚠️ AI tự tạo ra thông tin ngầm định (Implicit Information)</a></li>
                 <li>
-                    <a href="#%c4%91%e1%bb%83-ai-t%e1%bb%b1-%c4%91%e1%bb%8dc-s%e1%ba%bd-tu%c3%a2n-theo-quy-t%e1%ba%afc-m%e1%ba%b7c-%c4%91%e1%bb%8bnh-default-behavior" aria-label="Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)">Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)</a></li></ul>
+                    <a href="#-ai-tu%c3%a2n-theo-quy-t%e1%ba%afc-m%e1%ba%b7c-%c4%91%e1%bb%8bnh-default-behavior" aria-label="⚠️ AI tuân theo quy tắc mặc định (Default Behavior)">⚠️ AI tuân theo quy tắc mặc định (Default Behavior)</a></li></ul>
                 </li>
                 <li>
-                    <a href="#ng%c6%b0%e1%bb%9di-d%c3%b9ng-chuy%c3%aan-nghi%e1%bb%87p" aria-label="Người dùng chuyên nghiệp">Người dùng chuyên nghiệp</a>
+                    <a href="#22-ng%c6%b0%e1%bb%9di-d%c3%b9ng-professional-chuy%c3%aan-nghi%e1%bb%87p" aria-label="2.2. Người dùng Professional (Chuyên nghiệp)">2.2. Người dùng Professional (Chuyên nghiệp)</a></li></ul>
                 </li>
-            </ul>
-            </li>
+                <li>
+                    <a href="#ph%e1%ba%a7n-3-claudemd---entry-point-cho-ai" aria-label="Phần 3: CLAUDE.md - Entry Point cho AI">Phần 3: CLAUDE.md - Entry Point cho AI</a><ul>
+                        
+                <li>
+                    <a href="#31-t%e1%ba%a1i-sao-c%e1%ba%a7n-claudemd" aria-label="3.1. Tại sao cần CLAUDE.md?">3.1. Tại sao cần CLAUDE.md?</a></li>
+                <li>
+                    <a href="#32-c%e1%ba%a5u-tr%c3%bac-project-theo-chu%e1%ba%a9n-ai-first" aria-label="3.2. Cấu trúc Project theo chuẩn AI-First">3.2. Cấu trúc Project theo chuẩn AI-First</a></li>
+                <li>
+                    <a href="#33-n%e1%bb%99i-dung-quan-tr%e1%bb%8dng-trong-claudemd" aria-label="3.3. Nội dung quan trọng trong CLAUDE.md">3.3. Nội dung quan trọng trong CLAUDE.md</a><ul>
+                        
+                <li>
+                    <a href="#1-project-overview" aria-label="1. Project Overview">1. Project Overview</a></li>
+                <li>
+                    <a href="#2-th%e1%bb%a9-t%e1%bb%b1-%c4%91%e1%bb%8dc-learning-order" aria-label="2. Thứ tự đọc (Learning Order)">2. Thứ tự đọc (Learning Order)</a></li>
+                <li>
+                    <a href="#3-rules---quy-t%e1%ba%afc-chung" aria-label="3. Rules - Quy tắc chung">3. Rules - Quy tắc chung</a></li>
+                <li>
+                    <a href="#4-quy-t%e1%ba%afc-code-c--kernel" aria-label="4. Quy tắc code (C / Kernel)">4. Quy tắc code (C / Kernel)</a></li>
+                <li>
+                    <a href="#5-constraints-%c4%91%e1%ba%b7c-th%c3%b9-system-programming" aria-label="5. Constraints đặc thù (System Programming)">5. Constraints đặc thù (System Programming)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#34-conversation-logs---l%c6%b0u-tr%e1%bb%af-tri-th%e1%bb%a9c" aria-label="3.4. Conversation Logs - Lưu trữ tri thức">3.4. Conversation Logs - Lưu trữ tri thức</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ph%e1%ba%a7n-4-workflow-ai-first-development" aria-label="Phần 4: Workflow AI-First Development">Phần 4: Workflow AI-First Development</a><ul>
+                        
+                <li>
+                    <a href="#1-brainstorm" aria-label="1. Brainstorm">1. Brainstorm</a></li>
+                <li>
+                    <a href="#2-vibe-coding" aria-label="2. Vibe Coding">2. Vibe Coding</a></li>
+                <li>
+                    <a href="#3-review" aria-label="3. Review">3. Review</a></li>
+                <li>
+                    <a href="#4-production-coding" aria-label="4. Production Coding">4. Production Coding</a></li>
+                <li>
+                    <a href="#5-testing" aria-label="5. Testing">5. Testing</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ph%e1%ba%a7n-5-best-practices" aria-label="Phần 5: Best Practices">Phần 5: Best Practices</a><ul>
+                        
+                <li>
+                    <a href="#dos-" aria-label="DO&rsquo;s ✅">DO&rsquo;s ✅</a></li>
+                <li>
+                    <a href="#donts-" aria-label="DON&rsquo;Ts ❌">DON&rsquo;Ts ❌</a></li></ul>
+                </li>
+                <li>
+                    <a href="#k%e1%ba%bft-lu%e1%ba%adn" aria-label="Kết luận">Kết luận</a>
+                </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><h2 id="các-khái-niệm-cơ-bản">Các khái niệm cơ bản<a hidden class="anchor" aria-hidden="true" href="#các-khái-niệm-cơ-bản">#</a></h2>
-<h3 id="context-window">Context Window<a hidden class="anchor" aria-hidden="true" href="#context-window">#</a></h3>
+  <div class="post-content"><h2 id="giới-thiệu">Giới thiệu<a hidden class="anchor" aria-hidden="true" href="#giới-thiệu">#</a></h2>
+<p>Trong thời đại AI-first development, việc biết cách giao tiếp hiệu quả với AI không chỉ là một kỹ năng bổ sung mà đã trở thành yếu tố then chốt quyết định năng suất làm việc. Bài viết này sẽ giúp bạn hiểu rõ cách AI hoạt động và làm thế nào để định hướng AI đọc hiểu project một cách chuyên nghiệp.</p>
+<h2 id="phần-1-các-khái-niệm-cơ-bản-về-ai">Phần 1: Các khái niệm cơ bản về AI<a hidden class="anchor" aria-hidden="true" href="#phần-1-các-khái-niệm-cơ-bản-về-ai">#</a></h2>
+<h3 id="11-context-window---bộ-nhớ-suy-luận-của-ai">1.1. Context Window - Bộ nhớ suy luận của AI<a hidden class="anchor" aria-hidden="true" href="#11-context-window---bộ-nhớ-suy-luận-của-ai">#</a></h3>
+<p>Context Window là không gian bộ nhớ mà AI sử dụng để suy luận và trả lời câu hỏi. Đối với Claude AI, con số này là <strong>1,000,000 tokens</strong> - một con số khổng lồ nhưng vẫn có giới hạn.</p>
+<p><strong>Token là gì?</strong></p>
 <ul>
-<li>AI có bộ nhớ suy luận hữu hạn</li>
-<li>1,000,000 tokens đối với ClaudeAI</li>
-<li>Tokens có thể hiểu là 1 từ có ngữ nghĩa trong câu</li>
-<li>Ví dụ : I love u , trong đó I là 1 token , u là 1 token , love là 1 token , trái đất nghe là 2 từ nhưng cũng chỉ là 1 token</li>
-<li>1 triệu tokens tương đương 7 quyển Harry Potter</li>
-<li>Chẳng hạn : Khi cửa sửa context window vượt quá 1 triệu tokens , -&gt; rất lag , chatGPT không mượt , phải xóa bớt token đằng trước
-đối với Claude , nén lại dữ liệu , tạo cuộc hội thoại mới &hellip;</li>
+<li>Token có thể hiểu đơn giản là một đơn vị ngữ nghĩa trong câu</li>
+<li>Ví dụ: &ldquo;I love you&rdquo; = 3 tokens (I, love, you)</li>
+<li>&ldquo;Trái đất&rdquo; tuy là 2 từ nhưng chỉ tính là 1 token</li>
+<li><strong>1 triệu tokens ≈ 7 quyển Harry Potter</strong></li>
 </ul>
-<h3 id="attention--độ-tập-trung-">Attention ( Độ tập trung )<a hidden class="anchor" aria-hidden="true" href="#attention--độ-tập-trung-">#</a></h3>
+<p><strong>Vấn đề khi vượt quá giới hạn:</strong></p>
 <ul>
-<li>Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau</li>
-<li>Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn</li>
+<li>ChatGPT: Trở nên lag, không mượt, phải xóa bớt token đằng trước</li>
+<li>Claude: Nén lại dữ liệu hoặc tạo cuộc hội thoại mới</li>
 </ul>
-<h3 id="không-gian-tri-thức-và-quá-trình-ghép-nối">Không gian tri thức và quá trình ghép nối<a hidden class="anchor" aria-hidden="true" href="#không-gian-tri-thức-và-quá-trình-ghép-nối">#</a></h3>
+<h3 id="12-attention---độ-tập-trung-của-ai">1.2. Attention - Độ tập trung của AI<a hidden class="anchor" aria-hidden="true" href="#12-attention---độ-tập-trung-của-ai">#</a></h3>
+<p>Trong không gian suy luận, không phải tất cả thông tin đều được AI chú ý như nhau. Đây là một điểm cực kỳ quan trọng khi thiết kế cấu trúc project.</p>
+<p><strong>Nguyên tắc vàng:</strong></p>
+<ul>
+<li>Thông tin ở <strong>đầu</strong> và <strong>cuối</strong> context window được chú ý nhiều hơn</li>
+<li>Thông tin ở giữa có thể bị &ldquo;lu mờ&rdquo; khi context quá dài</li>
+</ul>
+<h3 id="13-không-gian-tri-thức-và-quá-trình-ghép-nối">1.3. Không gian tri thức và quá trình ghép nối<a hidden class="anchor" aria-hidden="true" href="#13-không-gian-tri-thức-và-quá-trình-ghép-nối">#</a></h3>
+<p>AI hoạt động dựa trên việc ghép nối các trường thông tin với nhau. Hiệu quả của AI phụ thuộc vào:</p>
+<p><strong>Cách bạn dẫn dắt AI:</strong></p>
+<ul>
+<li>Tri thức phổ biến (hàng triệu người đã hỏi) → AI trả lời rất nhanh</li>
+<li>Tri thức hẹp và hiếm → Cần đặt câu hỏi chính xác và dẫn dắt AI vào không gian tri thức đó</li>
+</ul>
+<p><strong>Kỹ thuật ghép nối:</strong></p>
 <ul>
 <li>Cần biết ghép nối các trường thông tin với nhau nhiều nhất có thể</li>
-<li>Cần phải dẫn dắt AI vào tri thức mà chúng ta cần (phụ thuộc vào cách chúng ta đặt câu hỏi )</li>
-<li>Tri thức phổ biến , có nhiều người hỏi -&gt; trả lời rất nhanh (hàng triệu người đã hỏi)</li>
-<li>Tri thức hẹp và hiếm , càng phải đặt câu hỏi , và dẫn dắt AI vào không gian tri thức đó</li>
+<li>Phụ thuộc vào cách chúng ta đặt câu hỏi và cung cấp context</li>
 </ul>
-<h2 id="quá-trình-ai-đọc-hiểu-project">Quá trình AI đọc hiểu Project<a hidden class="anchor" aria-hidden="true" href="#quá-trình-ai-đọc-hiểu-project">#</a></h2>
+<h2 id="phần-2-hai-cách-tiếp-cận-khi-làm-việc-với-ai">Phần 2: Hai cách tiếp cận khi làm việc với AI<a hidden class="anchor" aria-hidden="true" href="#phần-2-hai-cách-tiếp-cận-khi-làm-việc-với-ai">#</a></h2>
+<h3 id="21-người-dùng-amateur-không-chuyên-nghiệp">2.1. Người dùng Amateur (Không chuyên nghiệp)<a hidden class="anchor" aria-hidden="true" href="#21-người-dùng-amateur-không-chuyên-nghiệp">#</a></h3>
+<p><strong>Cách làm:</strong></p>
 <ul>
-<li>Phụ thuộc vào cách thiết kế con AI , Claude , Copilot hoạt động khác nhau</li>
-<li>Cách người dùng định hướng cho AI , cho AI đọc như nào , định hướng ra sao , cái gì trước cái gì sau , cái gì đúng , cái gì sai</li>
+<li>Vứt nguyên cả source code cho AI</li>
+<li>Bắt AI tự đọc và tự hiểu</li>
 </ul>
-<h3 id="người-dùng-amater">Người dùng Amater<a hidden class="anchor" aria-hidden="true" href="#người-dùng-amater">#</a></h3>
-<ul>
-<li>Vất nguyên cả source code , bắt AI đọc</li>
-<li>Sẽ có 1 số vấn đề nảy sinh nếu AI tự đọc</li>
-</ul>
-<h4 id="tự-tạo-ra-thông-tin-ngầm-định-implicit-information">Tự tạo ra thông tin ngầm định (Implicit Information)<a hidden class="anchor" aria-hidden="true" href="#tự-tạo-ra-thông-tin-ngầm-định-implicit-information">#</a></h4>
+<p><strong>Hệ quả nguy hiểm:</strong></p>
+<h4 id="-ai-tự-tạo-ra-thông-tin-ngầm-định-implicit-information">⚠️ AI tự tạo ra thông tin ngầm định (Implicit Information)<a hidden class="anchor" aria-hidden="true" href="#-ai-tự-tạo-ra-thông-tin-ngầm-định-implicit-information">#</a></h4>
 <ul>
 <li>AI tự giả định mục đích của project</li>
 <li>AI tự giả định về flow code</li>
-<li>AI tự giả định về cách biên dịch , gỡ lỗi</li>
-<li><span style="color:red"><strong>Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin</strong></span></li>
+<li>AI tự giả định về cách biên dịch, gỡ lỗi</li>
 </ul>
-<h4 id="để-ai-tự-đọc-sẽ-tuân-theo-quy-tắc-mặc-định-default-behavior">Để AI tự đọc ,sẽ tuân theo quy tắc mặc định (default behavior)<a hidden class="anchor" aria-hidden="true" href="#để-ai-tự-đọc-sẽ-tuân-theo-quy-tắc-mặc-định-default-behavior">#</a></h4>
+<blockquote>
+<p><strong>Rất nguy hiểm nếu chúng ta để AI tự giả định thông tin!</strong></p>
+</blockquote>
+<h4 id="-ai-tuân-theo-quy-tắc-mặc-định-default-behavior">⚠️ AI tuân theo quy tắc mặc định (Default Behavior)<a hidden class="anchor" aria-hidden="true" href="#-ai-tuân-theo-quy-tắc-mặc-định-default-behavior">#</a></h4>
 <ul>
-<li>AI sẽ ưu tiên đọc flow từ code hơn là tài liệu</li>
-<li>Claude.md &gt; default behavior (code &gt; doc)</li>
+<li>AI sẽ ưu tiên đọc flow từ <strong>code</strong> hơn là <strong>tài liệu</strong></li>
+<li>Có thể dẫn đến hiểu sai về ý đồ thiết kế</li>
 </ul>
-<h3 id="người-dùng-chuyên-nghiệp">Người dùng chuyên nghiệp<a hidden class="anchor" aria-hidden="true" href="#người-dùng-chuyên-nghiệp">#</a></h3>
+<h3 id="22-người-dùng-professional-chuyên-nghiệp">2.2. Người dùng Professional (Chuyên nghiệp)<a hidden class="anchor" aria-hidden="true" href="#22-người-dùng-professional-chuyên-nghiệp">#</a></h3>
+<p><strong>Triết lý:</strong></p>
 <ul>
-<li>AI đọc hiểu thông qua explicit rule , hạn chế tối đa AI ngầm hiểu về project , cần phải đưa ra chỉ dẫn rõ ràng</li>
-<li>Các rule trong file Claude.md có khả năng ghi đè behavior default của AI .</li>
-<li>Ưu tiên đọc file Claude.md , dữ liệu luôn nằm trong vùng attention , kể cả cuộc hội thoại có bị reload lại , bị quá 1 triệu token , hoặc bị compressed , dữ liệu vẫn được truyền sang cuộc hội thoại mới .</li>
-<li>Dữ liệu cốt lõi nhất luôn để ở trong file này</li>
-<li>Nên để file này càng dài càng tốt , (dưới 150 dòng )</li>
-<li>Nội dung bao gồm : Mục đích của project , thứ tự đọc , nguyên tắc chung (không đoán , nếu không rõ hỏi lại , mọi thứ khi quyết định phải đi kèm lý do (WHY , không chỉ WHAT)), khi đọc document mà mâu thuẫn , tin code hay document hơn -&gt; tin code</li>
-<li>Khi làm tài liệu cho AI , Dùng markdown , mermaid , không dùng binary format</li>
-<li>Commit message : Viết bằng tiếng việt</li>
-<li>Quy tắc code : Tuân thủ theo coding convention : ví dụ Linux Kernel Coding style</li>
-<li>Indent không dùng tab &hellip;</li>
+<li>AI đọc hiểu thông qua <strong>explicit rules</strong> (quy tắc rõ ràng)</li>
+<li>Hạn chế tối đa việc AI &ldquo;ngầm hiểu&rdquo; về project</li>
+<li>Đưa ra chỉ dẫn rõ ràng, cụ thể</li>
 </ul>
+<p><strong>Công cụ: File CLAUDE.md - AI Control Panel</strong></p>
+<p>File này có khả năng <strong>ghi đè behavior mặc định</strong> của AI và luôn nằm trong vùng attention cao nhất.</p>
+<h2 id="phần-3-claudemd---entry-point-cho-ai">Phần 3: CLAUDE.md - Entry Point cho AI<a hidden class="anchor" aria-hidden="true" href="#phần-3-claudemd---entry-point-cho-ai">#</a></h2>
+<h3 id="31-tại-sao-cần-claudemd">3.1. Tại sao cần CLAUDE.md?<a hidden class="anchor" aria-hidden="true" href="#31-tại-sao-cần-claudemd">#</a></h3>
+<p>File <code>CLAUDE.md</code> là điểm vào (entry point) đầu tiên mà AI phải đọc trước khi tiếp cận bất kỳ thứ gì khác trong project. Đây là tài liệu cốt lõi nhất với những đặc điểm:</p>
+<ul>
+<li><strong>Độ ưu tiên cao nhất</strong>: Dữ liệu luôn nằm trong vùng attention</li>
+<li><strong>Persistent</strong>: Kể cả khi cuộc hội thoại bị reload, vượt quá 1 triệu token, hoặc bị compressed, dữ liệu vẫn được truyền sang cuộc hội thoại mới</li>
+<li><strong>Độ dài tối ưu</strong>: Nên dài nhưng không quá 150 dòng</li>
+</ul>
+<h3 id="32-cấu-trúc-project-theo-chuẩn-ai-first">3.2. Cấu trúc Project theo chuẩn AI-First<a hidden class="anchor" aria-hidden="true" href="#32-cấu-trúc-project-theo-chuẩn-ai-first">#</a></h3>
+<pre tabindex="0"><code>ai_mindset/
+├── CLAUDE.md           # AI entry point (file này)
+├── README.md           # Human entry point
+├── docs/
+│   ├── architecture.md # Kiến trúc tổng quan
+│   ├── api.md          # API specification
+│   ├── data-format.md  # Event formats
+│   ├── use-cases.md    # Use cases
+│   ├── deployment.md   # Deployment guide
+│   └── decisions/      # ADRs
+├── conversations/      # AI chat logs
+├── src/                # Source code
+└── tests/              # Test cases
+</code></pre><h3 id="33-nội-dung-quan-trọng-trong-claudemd">3.3. Nội dung quan trọng trong CLAUDE.md<a hidden class="anchor" aria-hidden="true" href="#33-nội-dung-quan-trọng-trong-claudemd">#</a></h3>
+<h4 id="1-project-overview">1. Project Overview<a hidden class="anchor" aria-hidden="true" href="#1-project-overview">#</a></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gu">## Project Overview
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">-</span> **Tên**: ai_mindset
+</span></span><span class="line"><span class="cl"><span class="k">-</span> **Mục đích**: Project mẫu (teaching example) minh họa quy trình phát triển phần mềm theo triết lý AI-first
+</span></span><span class="line"><span class="cl"><span class="k">-</span> **Tech stack**: C / Linux Kernel Module
+</span></span><span class="line"><span class="cl"><span class="k">-</span> **Ngôn ngữ tài liệu**: Tiếng Việt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2-thứ-tự-đọc-learning-order">2. Thứ tự đọc (Learning Order)<a hidden class="anchor" aria-hidden="true" href="#2-thứ-tự-đọc-learning-order">#</a></h4>
+<p>Đây là phần <strong>CỰC KỲ QUAN TRỌNG</strong> - định hướng AI đọc theo trình tự logic:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gu">## Thứ tự đọc (Learning Order)
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Khi tiếp cận project này, AI PHẢI đọc theo thứ tự:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">1.</span> <span class="sb">`CLAUDE.md`</span> (file này) — rules, constraints, context
+</span></span><span class="line"><span class="cl"><span class="k">2.</span> <span class="sb">`docs/architecture.md`</span> — kiến trúc tổng quan
+</span></span><span class="line"><span class="cl"><span class="k">3.</span> <span class="sb">`src/`</span> — code (ground truth)
+</span></span><span class="line"><span class="cl"><span class="k">4.</span> <span class="sb">`tests/`</span> — test cases
+</span></span><span class="line"><span class="cl"><span class="k">5.</span> <span class="sb">`docs/decisions/`</span> — ADRs (Architecture Decision Records)
+</span></span><span class="line"><span class="cl"><span class="k">6.</span> <span class="sb">`docs/api.md`</span> — API specification
+</span></span><span class="line"><span class="cl"><span class="k">7.</span> <span class="sb">`docs/data-format.md`</span> — event formats
+</span></span><span class="line"><span class="cl"><span class="k">8.</span> <span class="sb">`docs/use-cases.md`</span> — use cases chi tiết
+</span></span><span class="line"><span class="cl"><span class="k">9.</span> <span class="sb">`docs/deployment.md`</span> — deployment guide
+</span></span><span class="line"><span class="cl"><span class="k">10.</span> <span class="sb">`conversations/`</span> — lịch sử thảo luận (nếu cần thêm context)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>Nguyên tắc vàng</strong>: Code là source of truth. Khi document và code mâu thuẫn → tin code.</p>
+</blockquote>
+<h4 id="3-rules---quy-tắc-chung">3. Rules - Quy tắc chung<a hidden class="anchor" aria-hidden="true" href="#3-rules---quy-tắc-chung">#</a></h4>
+<p><strong>Nguyên tắc cốt lõi:</strong></p>
+<ul>
+<li><strong>Explicit &gt; Implicit</strong>: Không đoán. Nếu không rõ, hỏi lại.</li>
+<li><strong>Rationale matters</strong>: Mọi quyết định phải kèm lý do (WHY, không chỉ WHAT)</li>
+<li><strong>Text-first</strong>: Dùng Markdown, Mermaid cho tài liệu. Không dùng binary formats</li>
+<li><strong>Không tự ý thêm feature</strong> ngoài scope được yêu cầu</li>
+<li><strong>Commit messages</strong>: Viết bằng tiếng Việt</li>
+</ul>
+<h4 id="4-quy-tắc-code-c--kernel">4. Quy tắc code (C / Kernel)<a hidden class="anchor" aria-hidden="true" href="#4-quy-tắc-code-c--kernel">#</a></h4>
+<p>Ví dụ cụ thể cho project C/Linux Kernel:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gu">### Quy tắc code (C / Kernel)
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Tuân thủ [Linux Kernel Coding Style]
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Indent bằng TAB (không dùng spaces)
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Tên biến, hàm: <span class="sb">`snake_case`</span>
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Tên macro: <span class="sb">`UPPER_SNAKE_CASE`</span>
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Mỗi function tối đa ~50 dòng. Nếu dài hơn, tách ra.
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Comment giải thích WHY, không giải thích WHAT (code phải tự giải thích WHAT)
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Luôn kiểm tra return value của các hàm có thể fail
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="5-constraints-đặc-thù-system-programming">5. Constraints đặc thù (System Programming)<a hidden class="anchor" aria-hidden="true" href="#5-constraints-đặc-thù-system-programming">#</a></h4>
+<p>Phần này cực kỳ quan trọng khi làm việc với các domain đặc biệt:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gu">### Constraints đặc thù System Programming
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">AI <span class="gs">**KHÔNG THỂ**</span> compile hay chạy kernel code. Workflow bắt buộc:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">1.</span> <span class="gs">**Human**</span> chạy/debug trên máy thật → cung cấp output
+</span></span><span class="line"><span class="cl"><span class="k">2.</span> <span class="gs">**AI**</span> phân tích output → đề xuất fix/giải pháp
+</span></span><span class="line"><span class="cl"><span class="k">3.</span> <span class="gs">**Human**</span> verify và apply
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Khi cần debug, AI phải yêu cầu human cung cấp:
+</span></span><span class="line"><span class="cl"><span class="k">-</span> <span class="sb">`dmesg`</span> output
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Stack trace (nếu có)
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Steps to reproduce
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Kernel version (<span class="sb">`uname -r`</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="34-conversation-logs---lưu-trữ-tri-thức">3.4. Conversation Logs - Lưu trữ tri thức<a hidden class="anchor" aria-hidden="true" href="#34-conversation-logs---lưu-trữ-tri-thức">#</a></h3>
+<p>AI phải lưu lại cuộc hội thoại để tạo ra &ldquo;knowledge base&rdquo; cho project:</p>
+<p><strong>Quy tắc đặt tên:</strong></p>
+<pre tabindex="0"><code>conversations/YYYY-MM-DD_mô-tả-ngắn.md
+</code></pre><p><strong>Thời điểm lưu (tối thiểu):</strong></p>
+<ul>
+<li>Cuối session (trước khi kết thúc)</li>
+<li>Khi có quyết định quan trọng (architecture, thay đổi rules)</li>
+<li>Khi chuyển sang phase mới trong workflow</li>
+</ul>
+<p><strong>Nội dung:</strong></p>
+<ul>
+<li>Tóm tắt bối cảnh</li>
+<li>Các quyết định đã đưa ra</li>
+<li>Lý do đằng sau quyết định</li>
+<li>Commits liên quan</li>
+</ul>
+<h2 id="phần-4-workflow-ai-first-development">Phần 4: Workflow AI-First Development<a hidden class="anchor" aria-hidden="true" href="#phần-4-workflow-ai-first-development">#</a></h2>
+<p>Quy trình 5 bước làm việc với AI:</p>
+<h3 id="1-brainstorm">1. Brainstorm<a hidden class="anchor" aria-hidden="true" href="#1-brainstorm">#</a></h3>
+<ul>
+<li>Thảo luận requirement với AI</li>
+<li>Lưu vào <code>conversations/</code></li>
+</ul>
+<h3 id="2-vibe-coding">2. Vibe Coding<a hidden class="anchor" aria-hidden="true" href="#2-vibe-coding">#</a></h3>
+<ul>
+<li>Prototype nhanh với AI</li>
+<li>Chất lượng thấp, tốc độ cao</li>
+<li>Mục đích: Khám phá ý tưởng</li>
+</ul>
+<h3 id="3-review">3. Review<a hidden class="anchor" aria-hidden="true" href="#3-review">#</a></h3>
+<ul>
+<li>Demo và review sequence diagram</li>
+<li>Kiểm tra logic flow</li>
+</ul>
+<h3 id="4-production-coding">4. Production Coding<a hidden class="anchor" aria-hidden="true" href="#4-production-coding">#</a></h3>
+<ul>
+<li>Code lại chuẩn</li>
+<li><strong>Developer PHẢI hiểu từng dòng</strong></li>
+<li>Áp dụng coding conventions</li>
+</ul>
+<h3 id="5-testing">5. Testing<a hidden class="anchor" aria-hidden="true" href="#5-testing">#</a></h3>
+<ul>
+<li>Bàn giao docs + conversation logs cho tester</li>
+<li>Tester có đầy đủ context để test</li>
+</ul>
+<h2 id="phần-5-best-practices">Phần 5: Best Practices<a hidden class="anchor" aria-hidden="true" href="#phần-5-best-practices">#</a></h2>
+<h3 id="dos-">DO&rsquo;s ✅<a hidden class="anchor" aria-hidden="true" href="#dos-">#</a></h3>
+<ol>
+<li><strong>Luôn tạo CLAUDE.md trước khi bắt đầu project</strong></li>
+<li><strong>Định nghĩa rõ ràng thứ tự đọc</strong> cho AI</li>
+<li><strong>Viết explicit rules</strong>, không để AI tự đoán</li>
+<li><strong>Document the WHY</strong>, không chỉ WHAT</li>
+<li><strong>Lưu conversation logs</strong> thường xuyên</li>
+<li><strong>Code là source of truth</strong> - khi có mâu thuẫn, tin code</li>
+</ol>
+<h3 id="donts-">DON&rsquo;Ts ❌<a hidden class="anchor" aria-hidden="true" href="#donts-">#</a></h3>
+<ol>
+<li><strong>Không</strong> vứt nguyên source code cho AI</li>
+<li><strong>Không</strong> để AI tự giả định về project</li>
+<li><strong>Không</strong> dùng binary formats cho documentation</li>
+<li><strong>Không</strong> bỏ qua việc review AI-generated code</li>
+<li><strong>Không</strong> quên cập nhật CLAUDE.md khi có thay đổi lớn</li>
+</ol>
+<h2 id="kết-luận">Kết luận<a hidden class="anchor" aria-hidden="true" href="#kết-luận">#</a></h2>
+<p>Làm việc hiệu quả với AI không chỉ là việc biết prompt hay, mà là việc xây dựng một hệ thống <strong>explicit rules</strong> và <strong>structured information</strong> giúp AI hiểu đúng ý đồ của bạn.</p>
+<p>File <code>CLAUDE.md</code> không chỉ là một tài liệu - nó là <strong>giao diện điều khiển</strong> (control panel) giúp bạn định hướng AI theo đúng cách bạn muốn. Đầu tư thời gian xây dựng file này sẽ giúp bạn tiết kiệm hàng giờ đồng hồ giao tiếp với AI sau này.</p>
+<p>Trong các bài tiếp theo, chúng ta sẽ đi sâu vào:</p>
+<ul>
+<li>Kỹ thuật viết prompts hiệu quả</li>
+<li>Cách thiết kế architecture documents cho AI</li>
+<li>Workflow debugging với AI</li>
+<li>Case studies thực tế</li>
+</ul>
+<hr>
+<p><strong>Tài liệu tham khảo:</strong></p>
+<ul>
+<li><a href="https://www.kernel.org/doc/html/latest/process/coding-style.html">Linux Kernel Coding Style</a></li>
+<li><a href="https://www.markdownguide.org/">Markdown Guide</a></li>
+<li><a href="https://mermaid.js.org/">Mermaid Documentation</a></li>
+</ul>
+<p><strong>Tags</strong>: #AI #ClaudeAI #AIFirst #SoftwareDevelopment #BestPractices #LearningLog</p>
 
 
   </div>
@@ -431,17 +617,19 @@ Indent không dùng tab &hellip;
       <li><a href="http://localhost:1313/tags/learning-log/">Learning Log</a></li>
       <li><a href="http://localhost:1313/tags/ai/">AI</a></li>
       <li><a href="http://localhost:1313/tags/claude/">Claude</a></li>
+      <li><a href="http://localhost:1313/tags/software-development/">Software-Development</a></li>
+      <li><a href="http://localhost:1313/tags/ai-first/">Ai-First</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/c_bai1_hello-world/">
+  <a class="prev" href="http://localhost:1313/posts/ai_use_hogo/">
     <span class="title">« Prev</span>
     <br>
-    <span>[C Course] Bài 1. Hello World</span>
+    <span>[AI Course] Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</span>
   </a>
-  <a class="next" href="http://localhost:1313/posts/c_bai2_io_var/">
+  <a class="next" href="http://localhost:1313/posts/c_bai1_hello-world/">
     <span class="title">Next »</span>
     <br>
-    <span>[C Course] Bài 2. Biến và nhập xúât cơ bản trong C</span>
+    <span>[C Course] Bài 1. Hello World</span>
   </a>
 </nav>
 

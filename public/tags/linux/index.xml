@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[C Course] Bài 1. Hello World</title>
-      <link>http://localhost:1313/posts/bai1_hello-world/</link>
+      <link>http://localhost:1313/posts/c_bai1_hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai1_hello-world/</guid>
+      <guid>http://localhost:1313/posts/c_bai1_hello-world/</guid>
       <description>&lt;h2 id=&#34;c-is-a-language-for-small-fast-programs&#34;&gt;C is a language for small, fast programs.&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ?&lt;/li&gt;
@@ -92,9 +92,9 @@
     </item>
     <item>
       <title>[C Course] Bài 2. Biến và nhập xúât cơ bản trong C</title>
-      <link>http://localhost:1313/posts/bai2_io_var/</link>
+      <link>http://localhost:1313/posts/c_bai2_io_var/</link>
       <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai2_io_var/</guid>
+      <guid>http://localhost:1313/posts/c_bai2_io_var/</guid>
       <description>&lt;h2 id=&#34;string-way-up-close-chuỗi-trong-ngôn-ngữ-c&#34;&gt;String way up close (Chuỗi trong ngôn ngữ C)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;string&lt;/code&gt; chỉ là mảng ký tự&lt;/li&gt;

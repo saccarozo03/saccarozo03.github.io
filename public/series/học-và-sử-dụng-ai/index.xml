@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>AI on Nhật ký học lập trình</title>
-    <link>http://localhost:1313/tags/ai/</link>
-    <description>Recent content in AI on Nhật ký học lập trình</description>
+    <title>Học Và Sử Dụng AI on Nhật ký học lập trình</title>
+    <link>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai/</link>
+    <description>Recent content in Học Và Sử Dụng AI on Nhật ký học lập trình</description>
     <generator>Hugo -- 0.155.2</generator>
     <language>vi-vn</language>
     <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project</title>
       <link>http://localhost:1313/posts/ai_using_ai/</link>

@@ -10,16 +10,27 @@
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[AI Course] Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
-      <link>http://localhost:1313/posts/use_hogo/</link>
+      <link>http://localhost:1313/posts/ai_use_hogo/</link>
       <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
-      <guid>http://localhost:1313/posts/use_hogo/</guid>
+      <guid>http://localhost:1313/posts/ai_use_hogo/</guid>
       <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
     </item>
     <item>
+      <title>[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project</title>
+      <link>http://localhost:1313/posts/ai_using_ai/</link>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ai_using_ai/</guid>
+      <description>&lt;h2 id=&#34;giới-thiệu&#34;&gt;Giới thiệu&lt;/h2&gt;
+&lt;p&gt;Trong thời đại AI-first development, việc biết cách giao tiếp hiệu quả với AI không chỉ là một kỹ năng bổ sung mà đã trở thành yếu tố then chốt quyết định năng suất làm việc. Bài viết này sẽ giúp bạn hiểu rõ cách AI hoạt động và làm thế nào để định hướng AI đọc hiểu project một cách chuyên nghiệp.&lt;/p&gt;
+&lt;h2 id=&#34;phần-1-các-khái-niệm-cơ-bản-về-ai&#34;&gt;Phần 1: Các khái niệm cơ bản về AI&lt;/h2&gt;
+&lt;h3 id=&#34;11-context-window---bộ-nhớ-suy-luận-của-ai&#34;&gt;1.1. Context Window - Bộ nhớ suy luận của AI&lt;/h3&gt;
+&lt;p&gt;Context Window là không gian bộ nhớ mà AI sử dụng để suy luận và trả lời câu hỏi. Đối với Claude AI, con số này là &lt;strong&gt;1,000,000 tokens&lt;/strong&gt; - một con số khổng lồ nhưng vẫn có giới hạn.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>[C Course] Bài 1. Hello World</title>
-      <link>http://localhost:1313/posts/bai1_hello-world/</link>
+      <link>http://localhost:1313/posts/c_bai1_hello-world/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai1_hello-world/</guid>
+      <guid>http://localhost:1313/posts/c_bai1_hello-world/</guid>
       <description>&lt;h2 id=&#34;c-is-a-language-for-small-fast-programs&#34;&gt;C is a language for small, fast programs.&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Tại sao lại cần phải sử dụng C mà không phải bất kỳ ngôn ngữ nào khác ?&lt;/li&gt;
@@ -98,28 +109,10 @@
 &lt;/ul&gt;</description>
     </item>
     <item>
-      <title>[AI Course] Bài 1. Tổng quan và hướng dẫn AI đọc hiểu project</title>
-      <link>http://localhost:1313/posts/using_ai/</link>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/using_ai/</guid>
-      <description>&lt;h2 id=&#34;các-khái-niệm-cơ-bản&#34;&gt;Các khái niệm cơ bản&lt;/h2&gt;
-&lt;h3 id=&#34;context-window&#34;&gt;Context Window&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;AI có bộ nhớ suy luận hữu hạn&lt;/li&gt;
-&lt;li&gt;1,000,000 tokens đối với ClaudeAI&lt;/li&gt;
-&lt;li&gt;Tokens có thể hiểu là 1 từ có ngữ nghĩa đối trong câu&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;attention--độ-tập-trung-&#34;&gt;Attention ( Độ tập trung )&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Trong không gian suy luận , không phải tất cả các thông tin dữ liệu đều được AI chú ý , tập trung như nhau&lt;/li&gt;
-&lt;li&gt;Thường các thông tin ở đầu , cuối của context window sẽ được chú ý hơn&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
       <title>[C Course] Bài 2. Biến và nhập xúât cơ bản trong C</title>
-      <link>http://localhost:1313/posts/bai2_io_var/</link>
+      <link>http://localhost:1313/posts/c_bai2_io_var/</link>
       <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai2_io_var/</guid>
+      <guid>http://localhost:1313/posts/c_bai2_io_var/</guid>
       <description>&lt;h2 id=&#34;string-way-up-close-chuỗi-trong-ngôn-ngữ-c&#34;&gt;String way up close (Chuỗi trong ngôn ngữ C)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;string&lt;/code&gt; chỉ là mảng ký tự&lt;/li&gt;

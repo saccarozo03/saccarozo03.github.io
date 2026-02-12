@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Học Và Sử Dụng AI </title>
-      <link>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/</link>
+      <title>Học Và Sử Dụng AI</title>
+      <link>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/</guid>
+      <guid>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai/</guid>
       <description></description>
     </item>
     <item>
@@ -20,6 +20,13 @@
       <link>http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/</link>
       <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/series/h%E1%BB%8Dc-l%E1%BA%A1i-c/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Học Và Sử Dụng AI </title>
+      <link>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/</link>
+      <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
+      <guid>http://localhost:1313/series/h%E1%BB%8Dc-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-ai-/</guid>
       <description></description>
     </item>
   </channel>
