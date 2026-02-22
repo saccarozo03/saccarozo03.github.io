@@ -3,7 +3,7 @@ title: "[Linux programing Course] Bài 1: Linux -Câu chuyện về một hệ �
 date: 2026-02-21
 draft: false
 series: ["Linux programing Course"]
-weight: 2
+weight: 1
 tags: ["learning-log", "linux"]
 ---
 Có thể bạn chưa biết :  Bạn đang dùng điện thoại Android , Netflix , Google. Tất cả đều chạy trên linux, nhưng Linux đến từ đâu.
@@ -28,3 +28,5 @@ Triết lý hay đến mức nó vẫn còn giữ nguyên vẹn đến tận ng�
 - Câu hỏi đó đã thay đổi lịch sử hiện nay.
 ## Phần 4 GNU và GPL - Cuộc chiến pháp lý vì tự do
 - Năm 1983 , Stallman tuyên bố dự án GNU ( GNU's Not UNIX ) một cái tên nhái theo UNIX  . Mục tiêu : Viết lại toàn bộ UNIX từ đầu , hoàn toàn miễn phí và mã nguồn mở
+- Năm 1985 , ông thành lập FSF ( Free Software Foundation ) để hỗ trợ chương trình khác
+(Còn nữa ...)
