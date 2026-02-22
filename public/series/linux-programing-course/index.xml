@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux Programing Course on Nhật ký học lập trình</title>
+    <link>http://localhost:1313/series/linux-programing-course/</link>
+    <description>Recent content in Linux Programing Course on Nhật ký học lập trình</description>
+    <generator>Hugo -- 0.155.2</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Sat, 21 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/series/linux-programing-course/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Linux programing Course] Bài 1: Linux -Câu chuyện về một hệ điều hành thay đổi cả thế giới</title>
+      <link>http://localhost:1313/posts/linux_b1_history/</link>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/linux_b1_history/</guid>
+      <description>&lt;h2 id=&#34;phần-1--trước-khi-có-linux---multics-và-cú-vấp-ngã&#34;&gt;Phần 1 : Trước khi có Linux - Multics và cú vấp ngã&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Năm 1965 , những bộ não thiên tài ở Bell Labs , MIT và General Eletric ngồi lại với nhau để tạo ra một hệ điều hành hoàn hảo , họ đặt tên là Multics&lt;/li&gt;
+&lt;li&gt;Nhưng Multics quá tham vọng , quá phức tạp , và cuối cùng thất bại&lt;/li&gt;
+&lt;li&gt;Bell Labs rút lui , một vài kỹ sư ở lại ở đó và không chịu bỏ cuộc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;phần-2--unix-ra-đời---năm-1969&#34;&gt;Phần 2 : Unix ra đời - Năm 1969&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Hai người đàn ông ngồi trong 1 góc của Bell Labs : Ken Thompson và Danis Ritchie&lt;/li&gt;
+&lt;li&gt;Họ đã tạo ra cái tên Unix , chơi chữ của Multics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;unix-có-triết-lý-rất-hay-&#34;&gt;Unix có triết lý rất hay :&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Mọi thứ đều là file&lt;/li&gt;
+&lt;li&gt;Mỗi chương trình chỉ làm một việc nhưng làm thật tốt&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

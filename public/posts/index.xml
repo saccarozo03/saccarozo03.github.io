@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Nhật ký học lập trình</description>
     <generator>Hugo -- 0.155.2</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[AI Course] Bài 0. Markdown căn bản để viết blog với Hugo &#43; PaperMod</title>
@@ -14,6 +14,37 @@
       <pubDate>Mon, 09 Feb 2026 11:10:00 +0700</pubDate>
       <guid>http://localhost:1313/posts/ai_use_hogo/</guid>
       <description>Bài đầu tiên: quy ước bố cục, các lệnh Markdown hay dùng, cách chèn code, ảnh, bảng, checklist…</description>
+    </item>
+    <item>
+      <title>[Linux programing Course] Bài 1: Linux -Câu chuyện về một hệ điều hành thay đổi cả thế giới</title>
+      <link>http://localhost:1313/posts/linux_b1_history/</link>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/linux_b1_history/</guid>
+      <description>&lt;p&gt;Có thể bạn chưa biết :  Bạn đang dùng điện thoại Android , Netflix , Google. Tất cả đều chạy trên linux, nhưng Linux đến từ đâu.&lt;/p&gt;
+&lt;h2 id=&#34;phần-1--trước-khi-có-linux---multics-và-cú-vấp-ngã&#34;&gt;Phần 1 : Trước khi có Linux - Multics và cú vấp ngã&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Năm 1965 , những bộ não thiên tài ở Bell Labs , MIT và General Eletric ngồi lại với nhau để tạo ra một hệ điều hành hoàn hảo , họ đặt tên là &lt;code&gt;Multics (Multiplexed Information and Computing Service)&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Linux programing Course] Bài 2: Cốt lõi của hệ điều hành - KERNEL</title>
+      <link>http://localhost:1313/posts/linux_b2_kernel/</link>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/linux_b2_kernel/</guid>
+      <description>&lt;h2 id=&#34;định-nghĩa-cơ-bản-&#34;&gt;Định nghĩa cơ bản :&lt;/h2&gt;
+&lt;p&gt;Thuật ngữ hệ điều hành được sử dụng với hai ngữ nghĩa khác nhau&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nghĩa rộng&lt;/strong&gt; : Là chương trình lớn bao gồm tất cả các phần mềm : phần mềm điều khiển tài nguyên hệ thống , các phần mềm cơ bản như Command Line , phần mềm đồ họa ,phần mềm chỉnh sửa &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nghĩa hẹp&lt;/strong&gt; : Là phần mềm trung tâm quản lý và phân bổ tài nguyên máy tính
+Từ kernel thường được sử dụng với ý nghĩa thứ 2 , và cũng chính là thứ chúng ta sẽ đi xuyên suốt khóa này&lt;/li&gt;
+&lt;li&gt;Mặc dù có thể chạy chương trình mà không cần kernel , sự hiện diện của nó giúp chúng ta đơn giản hóa rất nhiều việc viết và ghi chương trình khác.
+Tệp thực thi kernel thường được nằm trong đường dẫn &lt;code&gt;/boot/vmlinuz&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;các-công-việc-mà-được-thực-hiện-bởi-kernel&#34;&gt;Các công việc mà được thực hiện bởi Kernel&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;(Process Scheduling) Lập lịch quy trình&lt;/code&gt; : Một máy tính có nhiều hơn 1 bộ xử lý trung tâm ( CPU ) , cái mà thực thi các lệnh của chương trình . Giống như các hệ thống UNIX khác , LINUX là một hệ điều hành &lt;code&gt;đa nhiệm ưu tiên (preemptive multitasking)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project</title>
