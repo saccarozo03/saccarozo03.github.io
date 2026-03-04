@@ -4,15 +4,15 @@
     <title>AI on Nhật ký học lập trình</title>
     <link>http://localhost:1313/tags/ai/</link>
     <description>Recent content in AI on Nhật ký học lập trình</description>
-    <generator>Hugo -- 0.155.2</generator>
+    <generator>Hugo -- 0.155.3</generator>
     <language>vi-vn</language>
     <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project</title>
-      <link>http://localhost:1313/posts/ai_using_ai/</link>
+      <link>http://localhost:1313/posts/ai_bai1_using_ai/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ai_using_ai/</guid>
+      <guid>http://localhost:1313/posts/ai_bai1_using_ai/</guid>
       <description>&lt;h2 id=&#34;giới-thiệu&#34;&gt;Giới thiệu&lt;/h2&gt;
 &lt;p&gt;Trong thời đại AI-first development, việc biết cách giao tiếp hiệu quả với AI không chỉ là một kỹ năng bổ sung mà đã trở thành yếu tố then chốt quyết định năng suất làm việc. Bài viết này sẽ giúp bạn hiểu rõ cách AI hoạt động và làm thế nào để định hướng AI đọc hiểu project một cách chuyên nghiệp.&lt;/p&gt;
 &lt;h2 id=&#34;phần-1-các-khái-niệm-cơ-bản-về-ai&#34;&gt;Phần 1: Các khái niệm cơ bản về AI&lt;/h2&gt;

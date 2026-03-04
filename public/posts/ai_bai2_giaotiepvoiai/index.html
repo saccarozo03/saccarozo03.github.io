@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[AI Course] Bài 2: Kỹ năng giao tiếp với AI   | Nhật ký học lập trình</title>
+<meta name="keywords" content="learning-log, AI, claude, software-development, ai-first">
+<meta name="description" content="
+Giúp giao tiếp thông tin giữa người dùng và AI được truyền đi 2 chiều
+
+Phần 0 - Hiểu AI trước khi dùng
+AI &ldquo;nghĩ như thế nào &quot;
+AI ngôn ngữ (Claude , ChatGPT ) không có não thật , nó hoạt động theo nguyên lý :
+
+Bạn gõ văn bản vào
+AI nhìn vào toàn bộ văn bản đó
+Dự đoán từ tiếp theo có xác xuất cao nhất
+Lặp lại cho đến khi thành câu hoàn chỉnh
+
+
+Hệ quả bạn phải nhớ :
+
+Ai không &ldquo;hiểu &quot; - nó dự đoán . Câu hỏi rõ - dự đoán đúng hơn
+AI không biết bạn là ai , bạn muốn gì nếu bạn không nói rõ
+AI có thể bịa thông tin trông rất thật - gọi là hallunication
+AI không có bộ nhớ giữa các cuộc trò chuyện , mỗi chat là trang giấy trắng
+Garbage in , Garbage out : Prompt tệ -&gt; Câu trả lời tệ , dù AI giỏi đến đâu
+
+Phần 1 : Prompt là gì ?
+Prompt = toàn bộ nội dung bạn gửi cho AI , không chỉ câu hỏi - mà là bối cảnh &#43; yêu cầu &#43; ràng buộc">
+<meta name="author" content="Saccarozo03">
+<link rel="canonical" href="http://localhost:1313/posts/ai_bai2_giaotiepvoiai/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/ai_bai2_giaotiepvoiai/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://localhost:1313/posts/ai_bai2_giaotiepvoiai/">
+  <meta property="og:site_name" content="Nhật ký học lập trình">
+  <meta property="og:title" content="[AI Course] Bài 2: Kỹ năng giao tiếp với AI  ">
+  <meta property="og:description" content=" Giúp giao tiếp thông tin giữa người dùng và AI được truyền đi 2 chiều
+Phần 0 - Hiểu AI trước khi dùng AI “nghĩ như thế nào &#34; AI ngôn ngữ (Claude , ChatGPT ) không có não thật , nó hoạt động theo nguyên lý :
+Bạn gõ văn bản vào AI nhìn vào toàn bộ văn bản đó Dự đoán từ tiếp theo có xác xuất cao nhất Lặp lại cho đến khi thành câu hoàn chỉnh Hệ quả bạn phải nhớ : Ai không “hiểu &#34; - nó dự đoán . Câu hỏi rõ - dự đoán đúng hơn AI không biết bạn là ai , bạn muốn gì nếu bạn không nói rõ AI có thể bịa thông tin trông rất thật - gọi là hallunication AI không có bộ nhớ giữa các cuộc trò chuyện , mỗi chat là trang giấy trắng Garbage in , Garbage out : Prompt tệ -&gt; Câu trả lời tệ , dù AI giỏi đến đâu Phần 1 : Prompt là gì ? Prompt = toàn bộ nội dung bạn gửi cho AI , không chỉ câu hỏi - mà là bối cảnh &#43; yêu cầu &#43; ràng buộc">
+  <meta property="og:locale" content="vi-vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-04T00:00:00+00:00">
+    <meta property="article:tag" content="Learning Log">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Claude">
+    <meta property="article:tag" content="Software-Development">
+    <meta property="article:tag" content="Ai-First">
+      <meta property="og:see_also" content="http://localhost:1313/posts/ai_bai0_use_hogo/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/ai_bai1_using_ai/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[AI Course] Bài 2: Kỹ năng giao tiếp với AI  ">
+<meta name="twitter:description" content="
+Giúp giao tiếp thông tin giữa người dùng và AI được truyền đi 2 chiều
+
+Phần 0 - Hiểu AI trước khi dùng
+AI &ldquo;nghĩ như thế nào &quot;
+AI ngôn ngữ (Claude , ChatGPT ) không có não thật , nó hoạt động theo nguyên lý :
+
+Bạn gõ văn bản vào
+AI nhìn vào toàn bộ văn bản đó
+Dự đoán từ tiếp theo có xác xuất cao nhất
+Lặp lại cho đến khi thành câu hoàn chỉnh
+
+
+Hệ quả bạn phải nhớ :
+
+Ai không &ldquo;hiểu &quot; - nó dự đoán . Câu hỏi rõ - dự đoán đúng hơn
+AI không biết bạn là ai , bạn muốn gì nếu bạn không nói rõ
+AI có thể bịa thông tin trông rất thật - gọi là hallunication
+AI không có bộ nhớ giữa các cuộc trò chuyện , mỗi chat là trang giấy trắng
+Garbage in , Garbage out : Prompt tệ -&gt; Câu trả lời tệ , dù AI giỏi đến đâu
+
+Phần 1 : Prompt là gì ?
+Prompt = toàn bộ nội dung bạn gửi cho AI , không chỉ câu hỏi - mà là bối cảnh &#43; yêu cầu &#43; ràng buộc">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[AI Course] Bài 2: Kỹ năng giao tiếp với AI  ",
+      "item": "http://localhost:1313/posts/ai_bai2_giaotiepvoiai/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[AI Course] Bài 2: Kỹ năng giao tiếp với AI  ",
+  "name": "[AI Course] Bài 2: Kỹ năng giao tiếp với AI  ",
+  "description": " Giúp giao tiếp thông tin giữa người dùng và AI được truyền đi 2 chiều\nPhần 0 - Hiểu AI trước khi dùng AI \u0026ldquo;nghĩ như thế nào \u0026quot; AI ngôn ngữ (Claude , ChatGPT ) không có não thật , nó hoạt động theo nguyên lý :\nBạn gõ văn bản vào AI nhìn vào toàn bộ văn bản đó Dự đoán từ tiếp theo có xác xuất cao nhất Lặp lại cho đến khi thành câu hoàn chỉnh Hệ quả bạn phải nhớ : Ai không \u0026ldquo;hiểu \u0026quot; - nó dự đoán . Câu hỏi rõ - dự đoán đúng hơn AI không biết bạn là ai , bạn muốn gì nếu bạn không nói rõ AI có thể bịa thông tin trông rất thật - gọi là hallunication AI không có bộ nhớ giữa các cuộc trò chuyện , mỗi chat là trang giấy trắng Garbage in , Garbage out : Prompt tệ -\u0026gt; Câu trả lời tệ , dù AI giỏi đến đâu Phần 1 : Prompt là gì ? Prompt = toàn bộ nội dung bạn gửi cho AI , không chỉ câu hỏi - mà là bối cảnh + yêu cầu + ràng buộc\n",
+  "keywords": [
+    "learning-log", "AI", "claude", "software-development", "ai-first"
+  ],
+  "articleBody": " Giúp giao tiếp thông tin giữa người dùng và AI được truyền đi 2 chiều\nPhần 0 - Hiểu AI trước khi dùng AI “nghĩ như thế nào \" AI ngôn ngữ (Claude , ChatGPT ) không có não thật , nó hoạt động theo nguyên lý :\nBạn gõ văn bản vào AI nhìn vào toàn bộ văn bản đó Dự đoán từ tiếp theo có xác xuất cao nhất Lặp lại cho đến khi thành câu hoàn chỉnh Hệ quả bạn phải nhớ : Ai không “hiểu \" - nó dự đoán . Câu hỏi rõ - dự đoán đúng hơn AI không biết bạn là ai , bạn muốn gì nếu bạn không nói rõ AI có thể bịa thông tin trông rất thật - gọi là hallunication AI không có bộ nhớ giữa các cuộc trò chuyện , mỗi chat là trang giấy trắng Garbage in , Garbage out : Prompt tệ -\u003e Câu trả lời tệ , dù AI giỏi đến đâu Phần 1 : Prompt là gì ? Prompt = toàn bộ nội dung bạn gửi cho AI , không chỉ câu hỏi - mà là bối cảnh + yêu cầu + ràng buộc\nGiải phẫu một prompt hoàn chỉnh : [Vai trò / Bối cảnh ] [Nhiệm vụ yêu cầu cụ thể ] [Dữ liệu / Thông tin đầu vào ] [Định dạng đầu ra mong muốn ] [Ràng buộc /Giới hạn ] ví dụ thực tế\nPrompt tệ : “giải thích pointer” Prompt tốt : “Tôi là sinh viên năm 2 mới học C++, chưa hiểu khái niệm pointer. Hãy giải thích pointer là gì, tại sao cần dùng, kèm ví dụ code đơn giản nhất có thể. Giải thích từng dòng code. Không dùng thuật ngữ khó.\" Phần 2 : Các kỹ thuật cơ bản Kỹ thuật 1 : Specificity ( Tính cụ thể ) Là gì , càng nói cụ thể , AI trả lời càng đúng ý .\nTại sao ? AI phải đoán ý bạn , Bạn nói mơ hồ -\u003e AI đoán theo hướng phổ biển nhất , chưa chắc đúng với ý bạn 4 chiều cụ thể cần có:\nTiêu chí Mơ hồ (Vague) Cụ thể (Specific) Đối tượng \"Giải thích\" \"Giải thích cho người mới học\" Phạm vi \"Về Python\" \"Về List Comprehension trong Python\" Định dạng (Không yêu cầu) \"Dùng ví dụ, tối đa 5 dòng\" ",
+  "wordCount" : "402",
+  "inLanguage": "en",
+  "datePublished": "2026-03-04T00:00:00Z",
+  "dateModified": "2026-03-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Saccarozo03"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/ai_bai2_giaotiepvoiai/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nhật ký học lập trình",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Nhật ký học lập trình (Alt + H)">Nhật ký học lập trình</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/series/" title="Series">
+                    <span>Series</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [AI Course] Bài 2: Kỹ năng giao tiếp với AI  
+    </h1>
+    <div class="post-meta"><span title='2026-03-04 00:00:00 +0000 UTC'>March 4, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>402 words</span>&nbsp;·&nbsp;<span>Saccarozo03</span>&nbsp;|&nbsp;<span>
+    <a href="https://github.com/saccarozo03/saccarozo03.github.io/tree/main/content/posts/AI_bai2_giaotiepvoiAI.md" rel="noopener noreferrer edit" target="_blank">Suggest edits</a>
+</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#ph%e1%ba%a7n-0---hi%e1%bb%83u-ai-tr%c6%b0%e1%bb%9bc-khi-d%c3%b9ng" aria-label="Phần 0 - Hiểu AI trước khi dùng">Phần 0 - Hiểu AI trước khi dùng</a><ul>
+                        
+                <li>
+                    <a href="#h%e1%bb%87-qu%e1%ba%a3-b%e1%ba%a1n-ph%e1%ba%a3i-nh%e1%bb%9b-" aria-label="Hệ quả bạn phải nhớ :">Hệ quả bạn phải nhớ :</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ph%e1%ba%a7n-1--prompt-l%c3%a0-g%c3%ac-" aria-label="Phần 1 : Prompt là gì ?">Phần 1 : Prompt là gì ?</a><ul>
+                        
+                <li>
+                    <a href="#gi%e1%ba%a3i-ph%e1%ba%abu-m%e1%bb%99t-prompt-ho%c3%a0n-ch%e1%bb%89nh-" aria-label="Giải phẫu một prompt hoàn chỉnh :">Giải phẫu một prompt hoàn chỉnh :</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ph%e1%ba%a7n-2--c%c3%a1c-k%e1%bb%b9-thu%e1%ba%adt-c%c6%a1-b%e1%ba%a3n" aria-label="Phần 2 : Các kỹ thuật cơ bản">Phần 2 : Các kỹ thuật cơ bản</a><ul>
+                        
+                <li>
+                    <a href="#k%e1%bb%b9-thu%e1%ba%adt-1--specificity--t%c3%adnh-c%e1%bb%a5-th%e1%bb%83-" aria-label="Kỹ thuật 1 : Specificity ( Tính cụ thể )">Kỹ thuật 1 : Specificity ( Tính cụ thể )</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><blockquote>
+<p>Giúp giao tiếp thông tin giữa người dùng và AI được truyền đi 2 chiều</p>
+</blockquote>
+<h2 id="phần-0---hiểu-ai-trước-khi-dùng">Phần 0 - Hiểu AI trước khi dùng<a hidden class="anchor" aria-hidden="true" href="#phần-0---hiểu-ai-trước-khi-dùng">#</a></h2>
+<p>AI &ldquo;nghĩ như thế nào &quot;
+AI ngôn ngữ (Claude , ChatGPT ) không có não thật , nó hoạt động theo nguyên lý :</p>
+<ul>
+<li>Bạn gõ văn bản vào</li>
+<li>AI nhìn vào toàn bộ văn bản đó</li>
+<li>Dự đoán từ tiếp theo có xác xuất cao nhất</li>
+<li>Lặp lại cho đến khi thành câu hoàn chỉnh</li>
+</ul>
+<hr>
+<h3 id="hệ-quả-bạn-phải-nhớ-">Hệ quả bạn phải nhớ :<a hidden class="anchor" aria-hidden="true" href="#hệ-quả-bạn-phải-nhớ-">#</a></h3>
+<ul>
+<li>Ai không &ldquo;hiểu &quot; - nó dự đoán . Câu hỏi rõ - dự đoán đúng hơn</li>
+<li>AI không biết bạn là ai , bạn muốn gì nếu bạn không nói rõ</li>
+<li>AI có thể bịa thông tin trông rất thật - gọi là hallunication</li>
+<li>AI không có bộ nhớ giữa các cuộc trò chuyện , mỗi chat là trang giấy trắng</li>
+<li>Garbage in , Garbage out : Prompt tệ -&gt; Câu trả lời tệ , dù AI giỏi đến đâu</li>
+</ul>
+<h2 id="phần-1--prompt-là-gì-">Phần 1 : Prompt là gì ?<a hidden class="anchor" aria-hidden="true" href="#phần-1--prompt-là-gì-">#</a></h2>
+<p><em><strong>Prompt</strong></em> = <em><strong>toàn bộ nội dung bạn gửi cho AI</strong></em> , không chỉ <em><strong>câu hỏi</strong></em> - mà là <em><strong>bối cảnh + yêu cầu + ràng buộc</strong></em></p>
+<h3 id="giải-phẫu-một-prompt-hoàn-chỉnh-">Giải phẫu một <em><strong>prompt</strong></em> hoàn chỉnh :<a hidden class="anchor" aria-hidden="true" href="#giải-phẫu-một-prompt-hoàn-chỉnh-">#</a></h3>
+<ul>
+<li>[Vai trò / Bối cảnh ]</li>
+<li>[Nhiệm vụ yêu cầu cụ thể ]</li>
+<li>[Dữ liệu / Thông tin đầu vào ]</li>
+<li>[Định dạng đầu ra mong muốn ]</li>
+<li>[Ràng buộc /Giới hạn ]</li>
+</ul>
+<blockquote>
+<p>ví dụ thực tế</p>
+</blockquote>
+<ul>
+<li><span style="color:red"><strong>Prompt tệ : &ldquo;giải thích pointer&rdquo;</strong></span></li>
+<li><span style="color:green"><strong>Prompt tốt : &ldquo;Tôi là sinh viên năm 2 mới học C++, chưa hiểu khái niệm pointer.
+Hãy giải thích pointer là gì, tại sao cần dùng, kèm ví dụ code
+đơn giản nhất có thể. Giải thích từng dòng code. Không dùng
+thuật ngữ khó.&quot;</strong></span></li>
+</ul>
+<h2 id="phần-2--các-kỹ-thuật-cơ-bản">Phần 2 : Các kỹ thuật cơ bản<a hidden class="anchor" aria-hidden="true" href="#phần-2--các-kỹ-thuật-cơ-bản">#</a></h2>
+<h3 id="kỹ-thuật-1--specificity--tính-cụ-thể-">Kỹ thuật 1 : Specificity ( Tính cụ thể )<a hidden class="anchor" aria-hidden="true" href="#kỹ-thuật-1--specificity--tính-cụ-thể-">#</a></h3>
+<blockquote>
+<p>Là gì , càng nói cụ thể , AI trả lời càng đúng ý .</p>
+</blockquote>
+<blockquote>
+<p>Tại sao ? AI phải đoán ý bạn , Bạn nói mơ hồ -&gt; AI đoán theo hướng phổ biển nhất , chưa chắc đúng với ý bạn
+4 chiều cụ thể cần có:</p>
+</blockquote>
+<div style="overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse; table-layout: fixed; border: 1px solid var(--border);">
+    <thead>
+      <tr style="background-color: var(--code-bg);">
+        <th style="border: 1px solid var(--border); padding: 12px; text-align: left; width: 25%;"> Tiêu chí</th>
+        <th style="border: 1px solid var(--border); padding: 12px; text-align: left; width: 35%;"> Mơ hồ (Vague)</th>
+        <th style="border: 1px solid var(--border); padding: 12px; text-align: left; width: 40%;"> Cụ thể (Specific)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid var(--border); padding: 12px;"><b>Đối tượng</b></td>
+        <td style="border: 1px solid var(--border); padding: 12px;">"Giải thích"</td>
+        <td style="border: 1px solid var(--border); padding: 12px;">"Giải thích cho <b>người mới học</b>"</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid var(--border); padding: 12px;"><b>Phạm vi</b></td>
+        <td style="border: 1px solid var(--border); padding: 12px;">"Về Python"</td>
+        <td style="border: 1px solid var(--border); padding: 12px;">"Về <b>List Comprehension</b> trong Python"</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid var(--border); padding: 12px;"><b>Định dạng</b></td>
+        <td style="border: 1px solid var(--border); padding: 12px;"><i>(Không yêu cầu)</i></td>
+        <td style="border: 1px solid var(--border); padding: 12px;">"Dùng ví dụ, <b>tối đa 5 dòng</b>"</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/learning-log/">Learning Log</a></li>
+      <li><a href="http://localhost:1313/tags/ai/">AI</a></li>
+      <li><a href="http://localhost:1313/tags/claude/">Claude</a></li>
+      <li><a href="http://localhost:1313/tags/software-development/">Software-Development</a></li>
+      <li><a href="http://localhost:1313/tags/ai-first/">Ai-First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/c_bai1_hello-world/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[C Course] Bài 1. Hello World</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/c_bai2_io_var/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[C Course] Bài 2. Biến và nhập xúât cơ bản trong C</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Nhật ký học lập trình</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

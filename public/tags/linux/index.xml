@@ -4,7 +4,7 @@
     <title>Linux on Nhật ký học lập trình</title>
     <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on Nhật ký học lập trình</description>
-    <generator>Hugo -- 0.155.2</generator>
+    <generator>Hugo -- 0.155.3</generator>
     <language>vi-vn</language>
     <lastBuildDate>Sat, 21 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -34,10 +34,8 @@ Từ kernel thường được sử dụng với ý nghĩa thứ 2 , và cũng c
 Tệp thực thi kernel thường được nằm trong đường dẫn &lt;code&gt;/boot/vmlinuz&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;các-công-việc-mà-được-thực-hiện-bởi-kernel&#34;&gt;Các công việc mà được thực hiện bởi Kernel&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;(Process Scheduling) Lập lịch quy trình&lt;/code&gt; : Một máy tính có nhiều hơn 1 bộ xử lý trung tâm ( CPU ) , cái mà thực thi các lệnh của chương trình . Giống như các hệ thống UNIX khác , LINUX là một hệ điều hành &lt;code&gt;đa nhiệm ưu tiên (preemptive multitasking)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;h3 id=&#34;process-scheduling-lập-lịch-quy-trình&#34;&gt;&lt;code&gt;(Process Scheduling) Lập lịch quy trình&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Một máy tính có nhiều hơn 1 bộ xử lý trung tâm ( CPU ) , cái mà thực thi các lệnh của chương trình . Giống như các hệ thống UNIX khác , LINUX là một hệ điều hành &lt;code&gt;đa nhiệm ưu tiên (preemptive multitasking)&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[C Course] Bài 1. Hello World</title>
