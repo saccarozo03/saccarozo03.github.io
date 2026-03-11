@@ -1,6 +1,6 @@
 ---
 title: "[Linux programing Course] Bài -1: Huong dan cai dat Arch Linux"
-date: 2026-03-12
+date: 2026-03-11
 draft: false
 series: ["Linux programing Course"]
 weight: 0
