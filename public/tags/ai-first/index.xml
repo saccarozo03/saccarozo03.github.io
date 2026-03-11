@@ -4,20 +4,49 @@
     <title>Ai-First on Nhật ký học lập trình</title>
     <link>http://localhost:1313/tags/ai-first/</link>
     <description>Recent content in Ai-First on Nhật ký học lập trình</description>
-    <generator>Hugo -- 0.155.2</generator>
+    <generator>Hugo -- 0.155.3</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ai-first/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[AI Course] Bài 1: Tổng quan và hướng dẫn AI đọc hiểu project</title>
-      <link>http://localhost:1313/posts/ai_using_ai/</link>
+      <link>http://localhost:1313/posts/ai_bai1_using_ai/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ai_using_ai/</guid>
+      <guid>http://localhost:1313/posts/ai_bai1_using_ai/</guid>
       <description>&lt;h2 id=&#34;giới-thiệu&#34;&gt;Giới thiệu&lt;/h2&gt;
 &lt;p&gt;Trong thời đại AI-first development, việc biết cách giao tiếp hiệu quả với AI không chỉ là một kỹ năng bổ sung mà đã trở thành yếu tố then chốt quyết định năng suất làm việc. Bài viết này sẽ giúp bạn hiểu rõ cách AI hoạt động và làm thế nào để định hướng AI đọc hiểu project một cách chuyên nghiệp.&lt;/p&gt;
 &lt;h2 id=&#34;phần-1-các-khái-niệm-cơ-bản-về-ai&#34;&gt;Phần 1: Các khái niệm cơ bản về AI&lt;/h2&gt;
 &lt;h3 id=&#34;11-context-window---bộ-nhớ-suy-luận-của-ai&#34;&gt;1.1. Context Window - Bộ nhớ suy luận của AI&lt;/h3&gt;
 &lt;p&gt;Context Window là không gian bộ nhớ mà AI sử dụng để suy luận và trả lời câu hỏi. Đối với Claude AI, con số này là &lt;strong&gt;1,000,000 tokens&lt;/strong&gt; - một con số khổng lồ nhưng vẫn có giới hạn.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AI Course] Bài 2: Kỹ năng giao tiếp với AI  </title>
+      <link>http://localhost:1313/posts/ai_bai2_giaotiepvoiai/</link>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ai_bai2_giaotiepvoiai/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Giúp giao tiếp thông tin giữa người dùng và AI được truyền đi 2 chiều&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;phần-0---hiểu-ai-trước-khi-dùng&#34;&gt;Phần 0 - Hiểu AI trước khi dùng&lt;/h2&gt;
+&lt;p&gt;AI &amp;ldquo;nghĩ như thế nào &amp;quot;
+AI ngôn ngữ (Claude , ChatGPT ) không có não thật , nó hoạt động theo nguyên lý :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bạn gõ văn bản vào&lt;/li&gt;
+&lt;li&gt;AI nhìn vào toàn bộ văn bản đó&lt;/li&gt;
+&lt;li&gt;Dự đoán từ tiếp theo có xác xuất cao nhất&lt;/li&gt;
+&lt;li&gt;Lặp lại cho đến khi thành câu hoàn chỉnh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;hệ-quả-bạn-phải-nhớ-&#34;&gt;Hệ quả bạn phải nhớ :&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Ai không &amp;ldquo;hiểu &amp;quot; - nó dự đoán . Câu hỏi rõ - dự đoán đúng hơn&lt;/li&gt;
+&lt;li&gt;AI không biết bạn là ai , bạn muốn gì nếu bạn không nói rõ&lt;/li&gt;
+&lt;li&gt;AI có thể bịa thông tin trông rất thật - gọi là hallunication&lt;/li&gt;
+&lt;li&gt;AI không có bộ nhớ giữa các cuộc trò chuyện , mỗi chat là trang giấy trắng&lt;/li&gt;
+&lt;li&gt;Garbage in , Garbage out : Prompt tệ -&amp;gt; Câu trả lời tệ , dù AI giỏi đến đâu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;phần-1--prompt-là-gì-&#34;&gt;Phần 1 : Prompt là gì ?&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Prompt&lt;/strong&gt;&lt;/em&gt; = &lt;em&gt;&lt;strong&gt;toàn bộ nội dung bạn gửi cho AI&lt;/strong&gt;&lt;/em&gt; , không chỉ &lt;em&gt;&lt;strong&gt;câu hỏi&lt;/strong&gt;&lt;/em&gt; - mà là &lt;em&gt;&lt;strong&gt;bối cảnh + yêu cầu + ràng buộc&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

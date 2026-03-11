@@ -5,6 +5,12 @@ draft: false
 series: ["Học và sử dụng AI"]
 weight: 2
 tags: ["learning-log", "AI", "claude", "software-development", "ai-first"]
+showToc: true
+tocOpen: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowShareButtons: true
 ---
 
 ## Giới thiệu
